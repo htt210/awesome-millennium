@@ -1,14 +1,22 @@
 # Video: The Exponential Time Hypothesis is False
 
-An 8½-minute explainer in the style of 3Blue1Brown, made with [3b1b's manim](https://github.com/3b1b/manim) (`manimgl` 1.7.2). There is no voiceover; the narration is burned in as captions and also provided as [`script.md`](script.md) (for recording a voiceover) and [`captions.srt`](captions.srt).
+A 9¾-minute explainer in the style of 3Blue1Brown, made with [3b1b's manim](https://github.com/3b1b/manim) (`manimgl` 1.7.2), narrated and captioned. It comes in two voices with identical pictures and timing, so they can be compared side by side:
+
+| Video | Narrator |
+|---|---|
+| [`eth-is-false.mp4`](eth-is-false.mp4) | American man (BookVoice "US-M1") |
+| [`eth-is-false-us-female.mp4`](eth-is-false-us-female.mp4) | American woman (BookVoice "US-F1") |
+
+Both narrators are synthetic voices from the BookVoice reading app (Ru's designed voices: no real person was cloned), run locally as Piper/VITS ONNX models. The narration is also burned in as captions and provided as [`script.md`](script.md) and [`captions.srt`](captions.srt).
 
 | File | What it is |
 |---|---|
-| [`eth-is-false.mp4`](eth-is-false.mp4) | the rendered video, 1080p30 |
 | [`poster.png`](poster.png) | thumbnail |
-| [`eth_video.py`](eth_video.py) | the scenes |
+| [`eth_video.py`](eth_video.py) | the scenes; every caption has a `say` text, the same sentence written for the ear |
+| [`voice.py`](voice.py) | reads a `say` text with a Piper voice, phonemized the way BookVoice reads English |
+| [`make_voiceover.py`](make_voiceover.py) | lays the narration clips under the rendered video, one soundtrack per voice |
 | [`captions_util.py`](captions_util.py) | caption wrapping and plain-text conversion |
-| [`render.sh`](render.sh) | renders every scene, concatenates them, writes the poster and captions |
+| [`render.sh`](render.sh) | renders every scene, concatenates them, adds the narration, writes the poster and captions |
 | [`make_captions.py`](make_captions.py) | builds `captions.srt` and `script.md` from the caption timings each scene logs |
 | [`custom_config.yml`](custom_config.yml) | manimgl settings (black background, CMU Serif) |
 
@@ -29,9 +37,15 @@ An 8½-minute explainer in the style of 3Blue1Brown, made with [3b1b's manim](ht
 pip install manimgl==1.7.2 "setuptools<81" audioop-lts   # the last one is only needed on Python 3.13+
 # plus LaTeX with dvisvgm, ffmpeg, and the CMU Serif font (Debian/Ubuntu: texlive-latex-extra
 # texlive-fonts-extra texlive-science tipa dvisvgm cm-super fonts-cmu ffmpeg)
-./render.sh                # 1080p30; on a machine without a display it uses xvfb-run
+./render.sh                # silent 1080p30, paced for reading; without a display it uses xvfb-run
 QUALITY=-l ./render.sh     # quick 480p preview
 JOBS=3 ./render.sh         # render scenes in parallel
+
+# narrated: one video per voice, every scene waits for the slowest voice
+pip install piper-tts onnxruntime numpy                  # into the same environment as manimgl
+NARRATION_VOICES="us-male=/path/to/eam.onnx,us-female=/path/to/eaf.onnx" PYTHON=$(which python) ./render.sh
 ```
+
+The BookVoice models are not in this repository. Any Piper voice works in their place, for example `en_US-ryan-high` from [rhasspy/piper-voices](https://huggingface.co/rhasspy/piper-voices). VITS samples a new take each time, so `voice.py` caches every clip in `build/voice/` and the scenes and the soundtrack use the same take; delete that folder to get new takes. To hear one line: `python voice.py MODEL.onnx "Text to read." out.wav`.
 
 Intermediate files go to `build/` (ignored by git). Rendering the full video takes about 40 minutes on four CPU cores with Mesa's software renderer.

@@ -49,7 +49,8 @@ def main(scenes: list[str]) -> int:
     offset = 0.0
     srt, md = [], ["# Narration script", "",
                    "Generated from the captions burned into the video (`make_captions.py`). "
-                   "Timestamps refer to `eth-is-false.mp4`; use this text to record a voiceover. "
+                   "Timestamps refer to `eth-is-false.mp4`. The narrators read a spoken version of each "
+                   "caption, the `say` text next to it in `eth_video.py`. "
                    "The video writes the number of satisfying assignments as #F, like the paper; "
                    "this script writes $N(F)$.", ""]
     index = 1

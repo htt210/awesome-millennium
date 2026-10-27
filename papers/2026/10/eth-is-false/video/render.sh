@@ -4,6 +4,9 @@
 #   ./render.sh            # 1080p30, every scene, then concatenate + poster + captions
 #   QUALITY=-l ./render.sh # quick 480p preview
 #   JOBS=3 ./render.sh     # render scenes in parallel
+#   NARRATION_VOICES="us-male=a.onnx,us-female=b.onnx" PYTHON=venv/bin/python ./render.sh
+#                          # voiced: eth-is-false.mp4 with the first voice, eth-is-false-<key>.mp4
+#                          # with the others; every scene waits for the slowest voice (voice.py)
 #
 # Needs manimgl, a LaTeX installation with dvisvgm, ffmpeg and the CMU Serif
 # font. Without a display it runs under xvfb-run (Mesa's software renderer is
@@ -34,8 +37,13 @@ printf '%s\n' "${SCENES[@]}" | xargs -P "$JOBS" -I{} bash -c \
 
 : > build/concat.txt
 for s in "${SCENES[@]}"; do echo "file 'scenes/$s.mp4'" >> build/concat.txt; done
-ffmpeg -y -loglevel error -f concat -safe 0 -i build/concat.txt -c copy -movflags +faststart eth-is-false.mp4
-echo "wrote eth-is-false.mp4"
+ffmpeg -y -loglevel error -f concat -safe 0 -i build/concat.txt -c copy -movflags +faststart build/silent.mp4
+if [ -n "${NARRATION_VOICES:-}" ]; then
+  "${PYTHON:-python3}" make_voiceover.py build/silent.mp4 "${SCENES[@]}"
+else
+  cp build/silent.mp4 eth-is-false.mp4
+  echo "wrote eth-is-false.mp4 (no narration)"
+fi
 
 run "$MANIMGL" eth_video.py Thumbnail -w -s $QUALITY --config_file custom_config.yml --video_dir "$OUT" > build/logs/Thumbnail.log 2>&1
 cp "$OUT/Thumbnail.png" poster.png

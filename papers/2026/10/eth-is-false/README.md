@@ -12,7 +12,7 @@
 
 <a href="video/eth-is-false.mp4"><img src="video/poster.png" alt="Video poster: the deformation polynomial H(T) with Taylor data at T = 1, 2, 3 and the recovered value H(0)" width="100%"></a>
 
-**[▶ Watch the explainer video](video/eth-is-false.mp4)** — 8½ minutes, made with [3Blue1Brown's manim](https://github.com/3b1b/manim), captions burned in.
+**[▶ Watch the explainer video](video/eth-is-false.mp4)** — 9¾ minutes, made with [3Blue1Brown's manim](https://github.com/3b1b/manim), narrated by an American male voice, captions burned in. Also with an [American female narrator](video/eth-is-false-us-female.mp4) (same pictures and timing).
 
 ## Contents
 
