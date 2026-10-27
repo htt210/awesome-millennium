@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# manim intermediate output (scene renders, Tex/Text caches)
+papers/**/video/media/
+papers/**/video/build/
+.DS_Store

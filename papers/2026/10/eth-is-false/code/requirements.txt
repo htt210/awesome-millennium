@@ -1,0 +1,3 @@
+# toy_eth.py needs only the Python standard library (3.10+).
+# make_figures.py:
+matplotlib>=3.8

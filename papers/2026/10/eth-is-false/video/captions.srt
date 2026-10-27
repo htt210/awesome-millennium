@@ -1,0 +1,187 @@
+1
+00:00:03,200 --> 00:00:10,667
+On 26 October 2026, OpenAI posted a preprint with a startling title.
+
+2
+00:00:10,667 --> 00:00:17,800
+A 3-CNF formula is an AND of clauses; each clause is an OR of three literals.
+
+3
+00:00:17,800 --> 00:00:26,000
+3-SAT asks: can we set the n variables to 0 or 1 so that every clause is true?
+
+4
+00:00:26,000 --> 00:00:34,467
+The obvious method tries all 2^n assignments. Every new variable doubles the work.
+
+5
+00:00:34,467 --> 00:00:44,667
+Decades of clever algorithms lowered the base, from 2^n to about 1.307^n ... but every one of them is still exponential.
+
+6
+00:00:44,667 --> 00:00:53,300
+The Exponential Time Hypothesis (Impagliazzo–Paturi, 2001) says this is unavoidable.
+
+7
+00:00:53,300 --> 00:01:04,133
+The preprint claims a deterministic algorithm that counts the solutions of any 3-CNF in subexponential time and polynomial space.
+
+8
+00:01:04,133 --> 00:01:12,033
+That is not P=NP: a time like 2^n/sqrt( log n) still grows faster than every polynomial.
+
+9
+00:01:15,433 --> 00:01:23,966
+Turn each clause into a polynomial Phi_e: it is 1 when the clause is true and 0 when it is false.
+
+10
+00:01:23,966 --> 00:01:32,800
+The product (1-X_a)X_b(1-X_c) equals 1 only on the single violating assignment (0,1,0).
+
+11
+00:01:32,800 --> 00:01:43,600
+Multiply over all clauses and add over all 2^n assignments: the result is the number of solutions, #F.
+
+12
+00:01:43,600 --> 00:01:54,000
+The paper first treats formulas where every variable occurs in at most 3 clauses; then prod _e Phi_e has degree at most 3n.
+
+13
+00:01:54,000 --> 00:02:03,400
+(General k-CNF formulas are reduced to this case at the end.) The question is how to evaluate the sum faster.
+
+14
+00:02:06,800 --> 00:02:14,000
+Suppose the n variables split into r groups, and no clause touches two groups.
+
+15
+00:02:14,000 --> 00:02:24,400
+Then the count factors: count each group on its own and multiply. The cost is about r* 2^2n/r instead of 2^n.
+
+16
+00:02:24,400 --> 00:02:32,600
+Real formulas are tangled: some clauses cross between groups, and the sum no longer factors.
+
+17
+00:02:32,600 --> 00:02:43,800
+The idea: deform the polynomial so that, at special parameter values, clauses talk across groups only through a few integer summaries.
+
+18
+00:02:47,200 --> 00:02:57,233
+Introduce a parameter T. In clause e, replace each input X_v by a linear form whose coefficients are polynomials in T.
+
+19
+00:02:57,233 --> 00:03:07,267
+At T=0 every form is X_v again, so H(0)=#F. With coefficient degree at most R, H has degree at most 3nR.
+
+20
+00:03:07,267 --> 00:03:19,533
+The forms are built so that at T=t in 1,...,Q each clause reads its own group of variables, plus a few integer measurements y=Cx of the other groups.
+
+21
+00:03:19,533 --> 00:03:29,800
+Fix all the measurements vec y, and the groups decouple again: each group is summed on its own, and the results multiply.
+
+22
+00:03:29,800 --> 00:03:40,633
+Cost: (number of measurement values) x (assignments of one group). Subexponential, if there are few measurements and many groups.
+
+23
+00:03:40,633 --> 00:03:46,033
+But this only works at T=1,...,Q. We still need H(0).
+
+24
+00:03:49,433 --> 00:03:56,633
+We can now evaluate H at t=1,...,Q quickly. But the number we want is H(0)=#F.
+
+25
+00:03:56,633 --> 00:04:07,466
+Q values cannot determine a polynomial of degree up to 3nR: many curves pass through the same points, with different values at 0.
+
+26
+00:04:07,466 --> 00:04:15,733
+Instead, compute several Taylor coefficients of H at each point: value, slope, curvature, ...
+
+27
+00:04:15,733 --> 00:04:26,266
+With J coefficients at each of Q points and QJ>deg H, only one polynomial fits: Hermite interpolation recovers H, hence H(0).
+
+28
+00:04:26,266 --> 00:04:38,466
+Each Taylor coefficient costs extra sums (an inclusion–exclusion over <= J variables). That is cheap only if R<< Q: low degree, many points.
+
+29
+00:04:41,867 --> 00:04:54,700
+Multiplying a term by (1-T/s) keeps it at T=0 and deletes it at T=s, at the price of one degree. Each term can afford at most R-1 such factors.
+
+30
+00:04:54,700 --> 00:05:05,800
+Give each occurrence (clause e, variable v) a label: at every point s, the pair (group of v, group assigned to e). A word of Q pairs.
+
+31
+00:05:05,800 --> 00:05:17,334
+The swap Pi_s exchanges the two entries of pair s. After swapping, the coordinate lives in the clause's own group at point s.
+
+32
+00:05:17,334 --> 00:05:27,800
+Write every coordinate as a measured part plus a local part, using M_0=V_0f(W_0) with W_0=1/2sum _s(I-Pi_s) and deg f<= R-1.
+
+33
+00:05:27,800 --> 00:05:38,500
+The swaps share an eigenbasis. On an eigenvector with j antisymmetric factors, M_0 acts by the number (-1)^jf(j).
+
+34
+00:05:38,500 --> 00:05:45,834
+Across all basis vectors, j is binomially distributed, with spread about sqrt Q.
+
+35
+00:05:45,834 --> 00:05:57,867
+Choose f to interpolate (-1)^j on R values of j around the peak. There M_0 acts as the identity; only the thin tails need measuring.
+
+36
+00:05:57,867 --> 00:06:09,900
+Because deg f<= R-1, each term of M_0 disagrees with the clause's group at no more than R-1 points, so a degree-(R-1) multiplier removes it there.
+
+37
+00:06:09,900 --> 00:06:17,800
+Taking R>>sqrt Q makes the measured tails tiny, while R<< Q keeps the Taylor step cheap.
+
+38
+00:06:20,200 --> 00:06:28,233
+The total work is a product of three costs. With the chosen parameters each one is 2^o(n).
+
+39
+00:06:28,233 --> 00:06:41,067
+Multiplied together: 2^O(n( log log n)^2/sqrt( log n)) for bounded-occurrence formulas — and only polynomial space, since nothing is tabulated.
+
+40
+00:06:41,067 --> 00:06:54,400
+General k-CNF formulas: split them into sparse formulas, compress the clauses into O(n) sparse parity tests, and count the common solutions with the same machinery.
+
+41
+00:06:54,400 --> 00:07:08,167
+A parity test passes when an integer sum is even. The Beigel–Tarui polynomial detects evenness modulo 2^ell, so the count is recovered exactly modulo 2^n+1.
+
+42
+00:07:08,167 --> 00:07:18,567
+With a sharper recursive analysis, the paper's main theorem reaches exponent O(n log log n/sqrt( log n)) for every fixed k.
+
+43
+00:07:21,967 --> 00:07:33,600
+If the proof holds, it refutes ETH and its relatives SETH, #ETH, Gap-ETH and NSETH, which underpin a large body of conditional lower bounds.
+
+44
+00:07:33,600 --> 00:07:45,867
+The paper also derives subexponential exact counting for graph colorings and perfect matchings, and a new circuit lower bound for E^NP.
+
+45
+00:07:45,867 --> 00:07:56,767
+It does not settle P vs NP: subexponential is still superpolynomial, and 2^o(n) bounds do not transfer through general reductions.
+
+46
+00:07:56,767 --> 00:08:10,034
+It is also not a practical solver: with the explicit parameters of the paper's overview, the machinery only switches on when log _2 n is about 10^10.
+
+47
+00:08:10,034 --> 00:08:20,567
+Status: a preprint with a reported Lean formalization, now being examined by experts, including the hypothesis's originators.

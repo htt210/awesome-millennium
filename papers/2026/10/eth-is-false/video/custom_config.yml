@@ -1,0 +1,7 @@
+# manimgl configuration for this video (pass with --config_file custom_config.yml)
+camera:
+  background_color: "#000000"
+  fps: 30
+text:
+  font: "CMU Serif"
+  alignment: "CENTER"

@@ -1,0 +1,45 @@
+# The seven Millennium Prize Problems (Clay Mathematics Institute, 2000).
+# Every paper's `millennium[].problem` must be one of these ids.
+# `status_note` is shown in the README table; keep it one line, no "|".
+
+- id: p-vs-np
+  name: P vs NP
+  status: open
+  status_note: Open
+  clay: https://www.claymath.org/millennium/p-vs-np/
+
+- id: riemann-hypothesis
+  name: Riemann Hypothesis
+  status: open
+  status_note: Open
+  clay: https://www.claymath.org/millennium/riemann-hypothesis/
+
+- id: yang-mills
+  name: Yang–Mills Existence and Mass Gap
+  status: open
+  status_note: Open
+  clay: https://www.claymath.org/millennium-problems/
+
+- id: navier-stokes
+  name: Navier–Stokes Existence and Smoothness
+  status: open
+  status_note: Open — a claimed resolution (forced breakdown, Sep 2026) is under evaluation
+  clay: https://www.claymath.org/millennium-problems/
+
+- id: hodge-conjecture
+  name: Hodge Conjecture
+  status: open
+  status_note: Open
+  clay: https://www.claymath.org/millennium-problems/
+
+- id: birch-swinnerton-dyer
+  name: Birch and Swinnerton-Dyer Conjecture
+  status: open
+  status_note: Open
+  clay: https://www.claymath.org/millennium-problems/
+
+- id: poincare-conjecture
+  name: Poincaré Conjecture
+  status: solved
+  status_note: Solved — Perelman (2002–2003); prize awarded 2010, declined
+  clay: https://www.claymath.org/millennium-problems/

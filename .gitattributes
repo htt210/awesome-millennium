@@ -1,0 +1,9 @@
+# Generated indexes: collapsed in pull-request diffs.
+catalog/** linguist-generated=true
+
+# Binary media
+*.mp4 binary
+*.png binary
+*.jpg binary
+*.gif binary
+*.pdf binary

@@ -1,0 +1,108 @@
+# Papers queued for an explainer. They are listed on each problem page under
+# "Queue". Their claims have NOT been reviewed here; notes only summarize what
+# the source claims. When an explainer is written, delete the entry here and
+# create papers/<YYYY>/<MM>/<slug>/ with `python tools/catalog.py new`.
+#
+# Fields: title, authors, date (YYYY-MM-DD), url (primary source),
+#         millennium: [{problem, relation}], note (one line, no "|"),
+#         links: [{label, url}] (optional)
+
+- title: Finite Time Blowup for Navier–Stokes
+  authors: [OpenAI]
+  date: 2026-09-08
+  url: https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf
+  millennium:
+    - problem: navier-stokes
+      relation: resolves
+  note: >-
+    Claims, for every viscosity, a solution that starts from rest under a smooth external force and develops
+    unbounded velocity in finite time with bounded energy — the breakdown alternatives (C) and (D).
+    A Lean formalization was announced; whether it matches the written proof is disputed, and the Clay
+    Institute has not ruled.
+  links:
+    - label: announcement
+      url: https://openai.com/index/navier-stokes-solution/
+    - label: Clay statement
+      url: https://www.claymath.org/news/navier-stokes-announcement/
+    - label: "dispute: Navier–Stokes lost in translation"
+      url: https://arxiv.org/abs/2610.08144
+
+- title: "The Quasi-Riemann Hypothesis: a zero-free half-plane"
+  authors: [OpenAI]
+  date: 2026-09-30
+  url: https://github.com/openai/math/blob/main/preprints/The-Quasi-Riemann-Hypothesis-September-30-2026/paper.pdf
+  millennium:
+    - problem: riemann-hypothesis
+      relation: partial
+  note: >-
+    Claims that every Dirichlet $L$-function, including $\zeta(s)$, has no zeros with $\operatorname{Re}(s) \gt 7/8$
+    (openai/math family 003; a companion gives a different proof for $\operatorname{Re}(s) \gt 11/12$).
+
+- title: Exact Birch–Swinnerton-Dyer Formula from Low Selmer Corank
+  authors: [OpenAI]
+  date: 2026-10-07
+  url: https://github.com/openai/math/blob/main/preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-7-2026/exact-bsd-low-selmer-corank.pdf
+  millennium:
+    - problem: birch-swinnerton-dyer
+      relation: partial
+  note: >-
+    Claims the full BSD leading-term formula for every elliptic curve over $\mathbb{Q}$ whose $q$-power Selmer
+    group has corank $0$ or $1$ for some prime $q$, including finiteness of the Tate–Shafarevich group
+    (openai/math family 002).
+
+- title: The rational Hodge conjecture for CM abelian varieties
+  authors: [OpenAI]
+  date: 2026-10-06
+  url: https://github.com/openai/math/blob/main/preprints/The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026/paper.pdf
+  millennium:
+    - problem: hodge-conjecture
+      relation: partial
+  note: >-
+    Claims the Hodge conjecture for every complex abelian variety with complex multiplication, in every
+    dimension and codimension (openai/math family 032).
+
+- title: Universal Computation with Eventually Stationary Navier–Stokes Forcing
+  authors: [OpenAI]
+  date: 2026-09-27
+  url: https://github.com/openai/math/blob/main/preprints/Universal-Computation-with-Eventually-Stationary-Navier-Stokes-Forcing-September-27-2026/manuscript.pdf
+  millennium:
+    - problem: navier-stokes
+      relation: adjacent
+  note: >-
+    Claims viscous incompressible flows, started from rest, that perform universal computation under smooth
+    forcing: a marked particle reaches a target region exactly when a given Turing machine halts
+    (openai/math family 376).
+
+- title: The Unique Games Theorem
+  authors: [OpenAI]
+  date: 2026-09-23
+  url: https://github.com/openai/math/blob/main/preprints/The-Unique-Games-Theorem-September-23-2026/paper.pdf
+  millennium:
+    - problem: p-vs-np
+      relation: adjacent
+  note: >-
+    Claims a proof of Khot's Unique Games Conjecture, with optimal NP-hardness of approximation for Max-Cut
+    and Vertex Cover (openai/math family 102).
+
+- title: Beyond the Square-Root Exponent for Depth-Three Boolean Circuits
+  authors: [OpenAI]
+  date: 2026-09-23
+  url: https://github.com/openai/math/blob/main/preprints/Beyond-the-Square-Root-Exponent-for-Depth-Three-Boolean-Circuits-September-23-2026/main.pdf
+  millennium:
+    - problem: p-vs-np
+      relation: adjacent
+  note: >-
+    Claims an explicit polynomial-time computable function that needs $2^{\omega(\sqrt{n})}$ gates in
+    depth-three circuits, past a long-standing barrier for circuit lower bounds (openai/math family 112).
+
+- title: The canonical massive continuum limit of the two-dimensional O(3) model
+  authors: [OpenAI]
+  date: 2026-10-04
+  url: https://github.com/openai/math/blob/main/preprints/The-canonical-massive-continuum-limit-of-the-two-dimensional-O3-model-October-4-2026/massive-continuum-o3.pdf
+  millennium:
+    - problem: yang-mills
+      relation: adjacent
+  note: >-
+    Claims a rigorous continuum limit of the two-dimensional $O(3)$ sigma model with a positive mass gap — an
+    asymptotically free toy model for the mass-gap phenomenon, not Yang–Mills theory itself
+    (openai/math family 215).

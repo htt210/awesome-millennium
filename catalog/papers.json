@@ -1,0 +1,70 @@
+[
+  {
+    "slug": "eth-is-false",
+    "path": "papers/2026/10/eth-is-false",
+    "title": "The Exponential Time Hypothesis is False",
+    "short_title": "ETH is false",
+    "authors": [
+      "OpenAI"
+    ],
+    "date": "2026-10-25",
+    "first_version": "2026-10-17",
+    "tldr": "A deterministic algorithm counts the satisfying assignments of any $k$-CNF in subexponential time and polynomial space; the case $k = 3$ refutes ETH.",
+    "millennium": [
+      {
+        "problem": "p-vs-np",
+        "relation": "adjacent",
+        "note": "Refutes ETH, SETH, #ETH, Gap-ETH and NSETH. A subexponential running time can still be superpolynomial, so P vs NP stays open."
+      }
+    ],
+    "fields": [
+      "computational-complexity",
+      "algorithms"
+    ],
+    "tags": [
+      "eth",
+      "seth",
+      "sat",
+      "exact-counting",
+      "polynomial-method",
+      "interpolation",
+      "sparsification",
+      "circuit-lower-bounds",
+      "lean"
+    ],
+    "status": {
+      "review": "preprint",
+      "formalization": "complete",
+      "formalization_system": "Lean 4",
+      "community": "under-examination",
+      "as_of": "2026-10-27",
+      "note": "OpenAI reports a Lean 4 proof of the top-line theorem (with the weaker exponent $n(\\log\\log n)^2/\\sqrt{\\log n}$), checked against a published statement file. An independent working group led by Russell Impagliazzo, Ramamohan Paturi and Ryan Williams is examining the proof."
+    },
+    "links": {
+      "paper": "https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/paper.pdf",
+      "source": "https://github.com/openai/math/tree/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/build",
+      "formalization": "https://github.com/openai/math/blob/main/lean/ComparatorChallenges/SubexponentialSAT.lean",
+      "announcement": "https://openai.com/index/building-scientific-understanding-with-academic-communities/",
+      "related": [
+        {
+          "label": "Lean scope note (openai/math family 378)",
+          "url": "https://github.com/openai/math/blob/main/lean/docs/378.md"
+        },
+        {
+          "label": "openai/math release notes (2026-10-26)",
+          "url": "https://github.com/openai/math/blob/main/history.md"
+        }
+      ]
+    },
+    "explainer": {
+      "added": "2026-10-27",
+      "video": "video/eth-is-false.mp4",
+      "poster": "video/poster.png",
+      "code": "code/toy_eth.py",
+      "figures": "figures",
+      "checks": [
+        "python code/toy_eth.py --quick"
+      ]
+    }
+  }
+]

@@ -1,0 +1,34 @@
+# yaml-language-server: $schema=../../../../schema/paper.schema.json
+# Metadata for one explained paper. `python tools/catalog.py build` validates it
+# and regenerates every index. See CONTRIBUTING.md for the vocabulary.
+slug: {{slug}}
+title: "{{title}}"
+short_title: "{{title}}"
+authors: [TODO]
+date: {{date}}            # date of the version you explain; also sets the directory papers/YYYY/MM/
+first_version: {{date}}   # date of the first version, if different
+tldr: >-
+  TODO: one sentence, no "|", LaTeX math in $...$.
+millennium:               # may be empty: []
+  - problem: p-vs-np      # id from problems/problems.yaml
+    relation: adjacent    # resolves | partial | adjacent
+    note: >-
+      TODO: one line on how the paper bears on the problem, and what it does not settle.
+fields: []                # e.g. [computational-complexity]
+tags: []                  # lowercase-kebab-case
+status:
+  review: preprint        # preprint | under-review | peer-reviewed | withdrawn
+  formalization: none     # none | partial | complete
+  # formalization_system: Lean 4   (required unless formalization is none)
+  community: unexamined   # unexamined | under-examination | accepted | disputed | refuted
+  as_of: {{today}}
+  note: >-
+    TODO: who is checking the result, known issues, retractions — with dates.
+links:
+  paper: https://example.org/TODO.pdf
+  # source:, formalization:, announcement:, related: [{label, url}]
+explainer:
+  added: {{today}}
+  # code: code/...           figures: figures       video: video/....mp4
+  # poster: video/poster.png video_url: https://...  (for videos hosted elsewhere)
+  # checks: [python code/....py --quick]   (run in CI from this directory)
