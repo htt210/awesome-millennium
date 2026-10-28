@@ -12,8 +12,7 @@
 
 <a href="video/eth-is-false.mp4"><img src="video/poster.png" alt="Video poster: switches, a dial, and the curve that leads back to the count at dial 0" width="100%"></a>
 
-> [!NOTE]
-> A new video that tells the story of this page, about 23 minutes long, is being rendered from its [script](video/storyboard.md). Until it lands, [the video](video/eth-is-false.mp4) is the earlier, technical version (9¾ minutes, American male narrator; also with an [American female narrator](video/eth-is-false-us-female.mp4)).
+**[▶ Watch the video](video/eth-is-false.mp4)** (22¾ minutes): the story of this page, told with animations, narrated by an American male voice and captioned. Also with an [American female narrator](video/eth-is-false-us-female.mp4), same pictures and timing. The [script](video/storyboard.md) lists what is on screen and what is said, beat by beat.
 
 ## Contents
 

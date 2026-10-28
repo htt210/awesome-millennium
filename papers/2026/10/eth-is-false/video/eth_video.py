@@ -498,6 +498,13 @@ class Narrated(Scene):
         t = txt(text, 30, YELLOW).to_edge(UP, buff=0.85)
         return t
 
+    def dim(self, opacity: float = 0.85) -> Rectangle:
+        """A dark veil over everything drawn so far, kept under the captions."""
+        veil = FullScreenRectangle().set_fill(BLACK, 0).set_stroke(width=0)
+        self.add(veil)
+        self.bring_to_front(self.caption_box)
+        return veil
+
     def show_gauge(self, value: float):
         self.gauge_mob = gauge(value)
         self.play(FadeIn(self.gauge_mob, shift=0.2 * DOWN))
@@ -696,8 +703,8 @@ class C1Puzzle(Narrated):
         name = card(["This puzzle is called 3-SAT", "3: each rule names three switches   ·   SAT: satisfy every rule"],
                     width=10, size=30)
         name.move_to(0.2 * UP)
-        dim = FullScreenRectangle().set_fill(BLACK, 0.85).set_stroke(width=0)
-        self.play(FadeOut(q), FadeIn(dim), FadeIn(name))
+        dim = self.dim()
+        self.play(FadeOut(q), dim.animate.set_fill(opacity=0.85), FadeIn(name))
         self.finish()
         self.play(FadeOut(name), FadeOut(dim))
 
@@ -924,8 +931,8 @@ class C3Shortcuts(Narrated):
 
         self.narrate("3.6")
         graph = VGroup(chart, *segs, *dots, *labels)
-        dim = FullScreenRectangle().set_fill(BLACK, 0.85).set_stroke(width=0)
-        self.play(FadeIn(dim))
+        dim = self.dim()
+        self.play(dim.animate.set_fill(opacity=0.85))
         big = txt("1,000,000,000,000,000,000,000,000,000,000", 34, EXP_COLOR)
         small = txt("400,000,000,000", 34, BLUE_C)
         lab1 = txt("100 switches, ×2 per switch:", 26, GREY_A)
@@ -1093,8 +1100,8 @@ class C5Claim(Narrated):
         self.finish()
 
         self.narrate("5.7")
-        dim = FullScreenRectangle().set_fill(BLACK, 0.85).set_stroke(width=0)
-        self.play(FadeIn(dim))
+        dim = self.dim()
+        self.play(dim.animate.set_fill(opacity=0.85))
         formula = Tex(R"\text{cost} \approx 2^{n / \sqrt{\log n}}", font_size=72)
         nlab = txt("n = number of switches", 28, GREY_A).next_to(formula, DOWN, buff=0.5)
         VGroup(formula, nlab).move_to(0.5 * UP)
@@ -1727,7 +1734,7 @@ class C8Meaning(Narrated):
 
         self.narrate("8.3")
         ax, chart, exp, sub, pol = shapes_chart()
-        self.play(pnp.animate.scale(0.55).move_to(5.3 * RIGHT + 0.9 * UP), FadeIn(chart), FadeIn(exp), FadeIn(pol),
+        self.play(pnp.animate.scale(0.5).move_to(4.4 * RIGHT + 1.0 * UP), FadeIn(chart), FadeIn(exp), FadeIn(pol),
                   FadeIn(sub))
         lp = txt("P = NP would need this kind", 22, POLY_COLOR).next_to(ax.c2p(7, 1.0), UP, buff=0.12)
         self.cue("polynomial growth")

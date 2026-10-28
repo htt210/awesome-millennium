@@ -9,7 +9,7 @@
 3. **Signposts.** Each chapter opens with a title card and a small road map showing where we are, and ends with a one-sentence recap.
 4. **No formulas on screen** except one, shown once (chapter 5) and read aloud in words. Everything else is numbers, pictures and graphs.
 
-Estimated length: about 23 minutes (about 2,700 words of narration at 145 words per minute, plus about 20% for pauses, recap cards and animations). That is more than twice the first video, the cost of introducing every idea properly. The section "If it is too long" at the end lists cuts.
+Length: the finished video runs 22 minutes 42 seconds (about 2,700 words of narration, plus pauses, recap cards and animations), more than twice the first video: the cost of introducing every idea properly.
 
 ---
 

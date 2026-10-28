@@ -1,9 +1,6 @@
 # Video: The Exponential Time Hypothesis is False
 
-An explainer for a general audience, about 23 minutes long, in the style of 3Blue1Brown, made with [3b1b's manim](https://github.com/3b1b/manim) (`manimgl` 1.7.2). It follows the plain-language page ([`../README.md`](../README.md)) and introduces every idea with an example before naming it. It comes in two voices with identical pictures and timing:
-
-> [!NOTE]
-> The new render is in progress. Until it is committed, the two `.mp4` files below are the earlier, technical version of the video.
+An explainer for a general audience, 22 minutes 42 seconds long, in the style of 3Blue1Brown, made with [3b1b's manim](https://github.com/3b1b/manim) (`manimgl` 1.7.2). It follows the plain-language page ([`../README.md`](../README.md)) and introduces every idea with an example before naming it. It comes in two voices with identical pictures and timing:
 
 | Video | Narrator |
 |---|---|
@@ -59,4 +56,4 @@ NARRATION_VOICES="us-male=/path/to/eam.onnx,us-female=/path/to/eaf.onnx" PYTHON=
 
 The BookVoice models are not in this repository. Any Piper voice works in their place, for example `en_US-ryan-high` from [rhasspy/piper-voices](https://huggingface.co/rhasspy/piper-voices). The narrator's pronunciation of a few words (ETH, 3-SAT, Paturi, years) is set in `PRONOUNCE` in `eth_video.py`. VITS samples a new take each time, so `voice.py` caches every clip in `build/voice/`, and the scenes and the soundtrack use the same take; delete that folder to get new takes. To hear one line: `python voice.py MODEL.onnx "Text to read." out.wav`.
 
-Intermediate files go to `build/` (ignored by git). Rendering the full narrated video takes about two and a half hours on four CPU cores with Mesa's software renderer.
+Intermediate files go to `build/` (ignored by git). Rendering the full narrated video takes about three hours on four CPU cores with Mesa's software renderer.

@@ -1,187 +1,723 @@
 1
-00:00:03,200 --> 00:00:12,267
-On 26 October 2026, OpenAI posted a preprint with a startling title.
+00:00:00,033 --> 00:00:05,533
+Here is a switch. It can be on, or off.
 
 2
-00:00:12,267 --> 00:00:19,767
-A 3-CNF formula is an AND of clauses; each clause is an OR of three literals.
+00:00:05,533 --> 00:00:14,500
+With a few dozen switches, and a list of rules about them, you get one of the most famous puzzles in computer science.
 
 3
-00:00:19,767 --> 00:00:28,933
-3-SAT asks: can we set the n variables to 0 or 1 so that every clause is true?
+00:00:14,500 --> 00:00:20,100
+For fifty years, every method for solving it has hit the same wall.
 
 4
-00:00:28,933 --> 00:00:37,367
-The obvious method tries all 2^n assignments. Every new variable doubles the work.
+00:00:20,100 --> 00:00:24,767
+The work explodes as the puzzle grows.
 
 5
-00:00:37,367 --> 00:00:49,167
-Decades of clever algorithms lowered the base, from 2^n to about 1.307^n ... but every one of them is still exponential.
+00:00:24,767 --> 00:00:34,067
+In October 2026, a paper from OpenAI, written by one of its AI models, claimed a way around that wall.
 
 6
-00:00:49,167 --> 00:01:00,333
-The Exponential Time Hypothesis (Impagliazzo–Paturi, 2001) says this is unavoidable.
+00:00:34,067 --> 00:00:41,800
+Not a practical one. But if it is right, it overturns a belief that a whole field was built on.
 
 7
-00:01:00,333 --> 00:01:11,400
-The preprint claims a deterministic algorithm that counts the solutions of any 3-CNF in subexponential time and polynomial space.
+00:00:41,800 --> 00:00:47,733
+Let's see what that belief was, and how the paper gets around it.
 
 8
-00:01:11,400 --> 00:01:21,767
-That is not P=NP: a time like 2^n/sqrt( log n) still grows faster than every polynomial.
+00:00:54,000 --> 00:01:00,467
+We start with four switches, called A, B, C and D.
 
 9
-00:01:25,167 --> 00:01:34,600
-Turn each clause into a polynomial Phi_e: it is 1 when the clause is true and 0 when it is false.
+00:01:00,467 --> 00:01:07,167
+And here is a rule. A rule names three switches, and says how it would like each of them.
 
 10
-00:01:34,600 --> 00:01:49,134
-The product (1-X_a)X_b(1-X_c) equals 1 only on the single violating assignment (0,1,0).
+00:01:07,167 --> 00:01:13,767
+This one says: A on, or B off, or C on.
 
 11
-00:01:49,134 --> 00:02:01,500
-Multiply over all clauses and add over all 2^n assignments: the result is the number of solutions, #F.
+00:01:13,767 --> 00:01:20,234
+The important word is "or". The rule is happy if at least one of its three wishes comes true.
 
 12
-00:02:01,500 --> 00:02:12,100
-The paper first treats formulas where every variable occurs in at most 3 clauses; then prod _e Phi_e has degree at most 3n.
+00:01:20,234 --> 00:01:25,334
+It does not need all three. Just one.
 
 13
-00:02:12,100 --> 00:02:21,134
-(General k-CNF formulas are reduced to this case at the end.) The question is how to evaluate the sum faster.
+00:01:25,334 --> 00:01:34,900
+Right now, A is off and C is off, so those two wishes fail. But B is off, and the rule wanted B off.
 
 14
-00:02:24,533 --> 00:02:31,600
-Suppose the n variables split into r groups, and no clause touches two groups.
+00:01:34,900 --> 00:01:40,000
+One wish came true, so the rule is happy.
 
 15
-00:02:31,600 --> 00:02:45,200
-Then the count factors: count each group on its own and multiply. The cost is about r* 2^2n/r instead of 2^n.
+00:01:40,000 --> 00:01:47,734
+If we flip B on, now none of its wishes come true, and the rule is unhappy.
 
 16
-00:02:45,200 --> 00:02:53,433
-Real formulas are tangled: some clauses cross between groups, and the sum no longer factors.
+00:01:47,734 --> 00:01:53,300
+A real puzzle has many rules. Here are three.
 
 17
-00:02:53,433 --> 00:03:04,466
-The idea: deform the polynomial so that, at special parameter values, clauses talk across groups only through a few integer summaries.
+00:01:53,300 --> 00:02:01,067
+And the puzzle is: can you set the switches so that every rule is happy at the same time?
 
 18
-00:03:07,867 --> 00:03:18,700
-Introduce a parameter T. In clause e, replace each input X_v by a linear form whose coefficients are polynomials in T.
+00:02:01,067 --> 00:02:11,100
+Let's try. A on makes rule one happy. B on makes rule two happy. C on makes rule three happy. And D can stay off.
 
 19
-00:03:18,700 --> 00:03:33,300
-At T=0 every form is X_v again, so H(0)=#F. With coefficient degree at most R, H has degree at most 3nR.
+00:02:11,100 --> 00:02:16,034
+Every rule is happy. We found a solution.
 
 20
-00:03:33,300 --> 00:03:47,234
-The forms are built so that at T=t in 1,...,Q each clause reads its own group of variables, plus a few integer measurements y=Cx of the other groups.
+00:02:16,034 --> 00:02:22,867
+This puzzle has a name: 3-SAT. Three, because each rule names three switches.
 
 21
-00:03:47,234 --> 00:03:57,267
-Fix all the measurements vec y, and the groups decouple again: each group is summed on its own, and the results multiply.
+00:02:22,867 --> 00:02:30,700
+SAT, short for satisfy, because we want to satisfy every rule.
 
 22
-00:03:57,267 --> 00:04:09,267
-Cost: (number of measurement values) x (assignments of one group). Subexponential, if there are few measurements and many groups.
+00:02:30,700 --> 00:02:38,634
+It looks like a toy, but a huge range of real problems can be rewritten as this puzzle: making timetables,
 
 23
-00:04:09,267 --> 00:04:15,767
-But this only works at T=1,...,Q. We still need H(0).
+00:02:38,634 --> 00:02:45,534
+checking that a computer chip is designed correctly, planning routes, even solving Sudoku.
 
 24
-00:04:19,167 --> 00:04:27,867
-We can now evaluate H at t=1,...,Q quickly. But the number we want is H(0)=#F.
+00:02:45,534 --> 00:02:52,534
+That is why computer scientists have studied it more than almost any other problem.
 
 25
-00:04:27,867 --> 00:04:39,167
-Q values cannot determine a polynomial of degree up to 3nR: many curves pass through the same points, with different values at 0.
+00:02:52,534 --> 00:02:58,767
+The paper actually answers a harder question. It doesn't just find one good setting.
 
 26
-00:04:39,167 --> 00:04:48,100
-Instead, compute several Taylor coefficients of H at each point: value, slope, curvature, ...
+00:02:58,767 --> 00:03:08,234
+It counts how many good settings there are. If you can count them, you can certainly tell whether there is at least one.
 
 27
-00:04:48,100 --> 00:05:03,267
-With J coefficients at each of Q points and QJ>deg H, only one polynomial fits: Hermite interpolation recovers H, hence H(0).
+00:03:08,234 --> 00:03:19,000
+So: switches, rules, and one question. How many ways are there to make every rule happy?
 
 28
-00:05:03,267 --> 00:05:17,767
-Each Taylor coefficient costs extra sums (an inclusion–exclusion over <= J variables). That is cheap only if R<< Q: low degree, many points.
+00:03:23,200 --> 00:03:31,500
+The obvious method is to try every possible setting and check the rules each time. How many settings are there?
 
 29
-00:05:21,167 --> 00:05:37,834
-Multiplying a term by (1-T/s) keeps it at T=0 and deletes it at T=s, at the price of one degree. Each term can afford at most R-1 such factors.
+00:03:31,500 --> 00:03:36,133
+With one switch, two: off, or on.
 
 30
-00:05:37,834 --> 00:05:52,400
-Give each occurrence (clause e, variable v) a label: at every point s, the pair (group of v, group assigned to e). A word of Q pairs.
+00:03:36,133 --> 00:03:43,933
+Add a second switch, and each of those two settings splits in two. Four settings.
 
 31
-00:05:52,400 --> 00:06:04,400
-The swap Pi_s exchanges the two entries of pair s. After swapping, the coordinate lives in the clause's own group at point s.
+00:03:43,933 --> 00:03:49,667
+A third switch: eight. A fourth: sixteen.
 
 32
-00:06:04,400 --> 00:06:23,200
-Write every coordinate as a measured part plus a local part, using M_0=V_0f(W_0) with W_0=1/2sum _s(I-Pi_s) and deg f<= R-1.
+00:03:49,667 --> 00:03:54,633
+Every switch you add doubles the number of settings.
 
 33
-00:06:23,200 --> 00:06:36,467
-The swaps share an eigenbasis. On an eigenvector with j antisymmetric factors, M_0 acts by the number (-1)^jf(j).
+00:03:54,633 --> 00:04:02,533
+Doubling sounds harmless, so let's put numbers on it. Suppose a computer checks a billion settings every second.
 
 34
-00:06:36,467 --> 00:06:44,467
-Across all basis vectors, j is binomially distributed, with spread about sqrt Q.
+00:04:02,533 --> 00:04:08,633
+With thirty switches it needs about one second. With fifty-five switches, a year.
 
 35
-00:06:44,467 --> 00:06:58,167
-Choose f to interpolate (-1)^j on R values of j around the peak. There M_0 acts as the identity; only the thin tails need measuring.
+00:04:08,633 --> 00:04:14,600
+With eighty-eight switches, longer than the universe has existed.
 
 36
-00:06:58,167 --> 00:07:12,467
-Because deg f<= R-1, each term of M_0 disagrees with the clause's group at no more than R-1 points, so a degree-(R-1) multiplier removes it there.
+00:04:14,600 --> 00:04:20,400
+Real puzzles have thousands, or millions, of switches.
 
 37
-00:07:12,467 --> 00:07:21,400
-Taking R>>sqrt Q makes the measured tails tiny, while R<< Q keeps the Taylor step cheap.
+00:04:20,400 --> 00:04:23,033
+This kind of growth has a name.
 
 38
-00:07:23,800 --> 00:07:32,300
-The total work is a product of three costs. With the chosen parameters each one is 2^o(n).
+00:04:23,033 --> 00:04:32,067
+When every extra switch multiplies the work by the same factor, here by two, we call the growth exponential.
 
 39
-00:07:32,300 --> 00:07:48,633
-Multiplied together: 2^O(n( log log n)^2/sqrt( log n)) for bounded-occurrence formulas — and only polynomial space, since nothing is tabulated.
+00:04:32,067 --> 00:04:38,733
+Keep an eye on this number: how much the work is multiplied by each extra switch.
 
 40
-00:07:48,633 --> 00:08:02,967
-General k-CNF formulas: split them into sparse formulas, compress the clauses into O(n) sparse parity tests, and count the common solutions with the same machinery.
+00:04:38,733 --> 00:04:47,333
+It's the measuring stick for the rest of this video. For trying everything, it's times two.
 
 41
-00:08:02,967 --> 00:08:19,267
-A parity test passes when an integer sum is even. The Beigel–Tarui polynomial detects evenness modulo 2^ell, so the count is recovered exactly modulo 2^n+1.
+00:04:47,333 --> 00:04:55,867
+So trying everything is exponential, with a factor of two per switch.
 
 42
-00:08:19,267 --> 00:08:31,400
-With a sharper recursive analysis, the paper's main theorem reaches exponent O(n log log n/sqrt( log n)) for every fixed k.
+00:05:01,100 --> 00:05:09,600
+Of course, people have found smarter methods than trying everything. Here is the simplest shortcut.
 
 43
-00:08:34,800 --> 00:08:49,367
-If the proof holds, it refutes ETH and its relatives SETH, #ETH, Gap-ETH and NSETH, which underpin a large body of conditional lower bounds.
+00:05:09,600 --> 00:05:11,400
+Take any rule.
 
 44
-00:08:49,367 --> 00:09:01,400
-The paper also derives subexponential exact counting for graph colorings and perfect matchings, and a new circuit lower bound for E^NP.
+00:05:11,400 --> 00:05:20,800
+Either its first wish comes true; or the first fails and the second comes true; or the first two fail and the third comes true.
 
 45
-00:09:01,400 --> 00:09:12,967
-It does not settle P vs NP: subexponential is still superpolynomial, and 2^o(n) bounds do not transfer through general reductions.
+00:05:20,800 --> 00:05:25,234
+There is no other way to make it happy.
 
 46
-00:09:12,967 --> 00:09:26,533
-It is also not a practical solver: with the explicit parameters of the paper's overview, the machinery only switches on when log _2 n is about 10^10.
+00:05:25,234 --> 00:05:29,567
+So instead of trying both settings of one switch at a time,
 
 47
-00:09:26,533 --> 00:09:36,667
-Status: a preprint with a reported Lean formalization, now being examined by experts, including the hypothesis's originators.
+00:05:29,567 --> 00:05:37,900
+we explore these three cases, and each case settles one, two or three switches at once.
+
+48
+00:05:37,900 --> 00:05:44,700
+That alone brings the factor per switch down from two to about one point eight four.
+
+49
+00:05:44,700 --> 00:05:56,034
+Researchers kept improving the tricks. By 1985 the factor was down to one point six. By 1999, one point three three.
+
+50
+00:05:56,034 --> 00:06:00,800
+Today the best known is about one point three.
+
+51
+00:06:00,800 --> 00:06:03,300
+That is a huge improvement.
+
+52
+00:06:03,300 --> 00:06:13,434
+For a hundred switches, it is the difference between a one followed by thirty zeros, and about four hundred billion.
+
+53
+00:06:13,434 --> 00:06:21,500
+But notice what never changed. Each method still multiplies the work by a fixed factor for every switch.
+
+54
+00:06:21,500 --> 00:06:29,734
+The factor got smaller. It never started to shrink as the puzzle grows.
+
+55
+00:06:29,734 --> 00:06:39,034
+Every shortcut so far is still exponential. Just a gentler exponential.
+
+56
+00:06:44,266 --> 00:06:52,166
+So here is the natural question. Can the factor be pushed all the way down toward one?
+
+57
+00:06:52,166 --> 00:06:59,400
+A factor of one would mean adding a switch no longer multiplies the work at all.
+
+58
+00:06:59,400 --> 00:07:09,266
+In 2001, two computer scientists, Russell Impagliazzo and Ramamohan Paturi, proposed an answer: no.
+
+59
+00:07:09,266 --> 00:07:19,033
+There is some floor, a bit above one. Maybe one point zero one, maybe one point two, nobody knows exactly where.
+
+60
+00:07:19,033 --> 00:07:24,433
+But no method, however clever, will ever get below it.
+
+61
+00:07:24,433 --> 00:07:35,433
+This is the Exponential Time Hypothesis, or ETH. A hypothesis, because nobody proved it. It's a bet.
+
+62
+00:07:35,433 --> 00:07:44,233
+But it was a bet that almost everyone took. Researchers built a large body of results on top of it, each of the form:
+
+63
+00:07:44,233 --> 00:07:53,533
+if ETH is true, then this other problem cannot be solved faster than such and such.
+
+64
+00:07:53,533 --> 00:08:04,633
+ETH says the wall is real: this puzzle will always be exponential. Many results stand on it.
+
+65
+00:08:09,833 --> 00:08:19,633
+The new paper claims a method whose factor per switch is not fixed at all. It keeps shrinking as the puzzle grows.
+
+66
+00:08:19,633 --> 00:08:28,033
+To see what that means, let's compare three kinds of growth, using our measuring stick: the average work per switch.
+
+67
+00:08:28,033 --> 00:08:35,900
+First, exponential growth. The factor stays the same forever: a flat line.
+
+68
+00:08:35,900 --> 00:08:43,966
+Now a very different kind of growth: the kind computer scientists consider fast, called polynomial.
+
+69
+00:08:43,966 --> 00:08:52,400
+Here, doubling the number of switches multiplies the work by a fixed amount, like eight, instead of squaring it.
+
+70
+00:08:52,400 --> 00:08:59,866
+Spread over all the switches, the work per switch quickly drops to almost one.
+
+71
+00:08:59,866 --> 00:09:07,466
+And in between, a third kind: the factor per switch keeps shrinking toward one, but slowly.
+
+72
+00:09:07,466 --> 00:09:16,700
+This is called subexponential. Faster than any exponential, slower than any polynomial.
+
+73
+00:09:16,700 --> 00:09:19,833
+That's what the paper claims for our puzzle.
+
+74
+00:09:19,833 --> 00:09:27,600
+A method to count all the good settings, with a cost whose factor per switch sinks toward one.
+
+75
+00:09:27,600 --> 00:09:35,066
+And here's why that matters. If the factor keeps sinking, it eventually goes below any floor you pick.
+
+76
+00:09:35,066 --> 00:09:40,600
+So there is no floor. ETH would be false.
+
+77
+00:09:40,600 --> 00:09:49,566
+For those who like symbols: the cost is roughly two to the power n, divided by the square root of the logarithm of n.
+
+78
+00:09:49,566 --> 00:09:58,600
+The square root of log n grows forever, very slowly, and that's what makes the factor shrink.
+
+79
+00:09:58,600 --> 00:10:09,833
+So: a factor that sinks below any floor. That's the claim. Now, how could that possibly work?
+
+80
+00:10:15,066 --> 00:10:20,066
+The first idea is to turn the puzzle into ordinary arithmetic.
+
+81
+00:10:20,066 --> 00:10:34,266
+We'll use a smaller puzzle: three switches, and two rules. Rule one: A on, or B off, or C on. Rule two: B on, or C on.
+
+82
+00:10:34,266 --> 00:10:41,333
+For any setting, give each rule a score: one if the rule is happy, zero if it is not.
+
+83
+00:10:41,333 --> 00:10:48,533
+With every switch off, rule one is happy, because it wants B off, so it scores one.
+
+84
+00:10:48,533 --> 00:10:54,433
+Rule two wants B or C on, so it scores zero.
+
+85
+00:10:54,433 --> 00:11:00,300
+Now multiply the scores. One times zero is zero.
+
+86
+00:11:00,300 --> 00:11:08,000
+When is the product one? Only when every rule scores one, that is, when every rule is happy.
+
+87
+00:11:08,000 --> 00:11:13,133
+A single unhappy rule makes the whole product zero.
+
+88
+00:11:13,133 --> 00:11:19,300
+So go through all eight settings, write down each product, and add them up.
+
+89
+00:11:19,300 --> 00:11:25,700
+The total, five, is exactly the number of good settings.
+
+90
+00:11:25,700 --> 00:11:34,400
+We've turned counting into a big sum of products. That alone doesn't save any work: we still visited every setting.
+
+91
+00:11:34,400 --> 00:11:40,266
+But sums and products are things algebra knows how to rearrange.
+
+92
+00:11:41,300 --> 00:11:42,934
+Here's the dream.
+
+93
+00:11:42,934 --> 00:11:54,067
+Suppose the switches split into two teams, and no rule mixes the teams: every rule only talks about switches in one team.
+
+94
+00:11:54,067 --> 00:12:01,834
+Then the teams can't affect each other. Count the good settings of team one on its own. Say there are three hundred.
+
+95
+00:12:01,834 --> 00:12:06,900
+Count team two on its own: say five hundred.
+
+96
+00:12:06,900 --> 00:12:12,534
+Every good setting of team one can be combined with every good setting of team two.
+
+97
+00:12:12,534 --> 00:12:17,567
+So the total is three hundred times five hundred.
+
+98
+00:12:17,567 --> 00:12:24,234
+And the work collapses. Trying all forty switches at once means about a trillion settings.
+
+99
+00:12:24,234 --> 00:12:30,867
+Two teams of twenty, counted separately, need about two million.
+
+100
+00:12:30,867 --> 00:12:39,600
+Of course, real puzzles aren't like this. However you split the switches, some rules reach across.
+
+101
+00:12:40,633 --> 00:12:44,100
+But there's a middle ground. Look at this rule.
+
+102
+00:12:44,100 --> 00:12:53,033
+It crosses between teams: it mentions A from team one, and X and Y from team two.
+
+103
+00:12:53,033 --> 00:13:01,467
+Notice what the rule needs to know about team two. Not which of X and Y is on: only how many of them are on.
+
+104
+00:13:01,467 --> 00:13:07,333
+Zero, one, or two. Let's call that number a total.
+
+105
+00:13:07,333 --> 00:13:16,200
+Now fix the total, say at zero. Then the crossing rule only cares about team one, and the teams separate again.
+
+106
+00:13:16,200 --> 00:13:24,967
+Count the good settings of team one, count the good settings of team two that have exactly that total, and multiply.
+
+107
+00:13:24,967 --> 00:13:32,633
+Then do the same with the total fixed at one, and at two. Add the three answers up.
+
+108
+00:13:32,633 --> 00:13:38,900
+So teams that share only a few totals can still be counted almost separately.
+
+109
+00:13:38,900 --> 00:13:49,500
+The price: one round for every possible value of the totals. That's affordable, as long as there are only a few totals.
+
+110
+00:13:50,533 --> 00:13:58,333
+In real puzzles, rules need to know much more than a few totals. So the paper does something surprising.
+
+111
+00:13:58,333 --> 00:14:04,100
+It doesn't change the puzzle. It changes the arithmetic.
+
+112
+00:14:04,100 --> 00:14:09,733
+Remember the sum of products from step one. The paper adds a dial to it.
+
+113
+00:14:09,733 --> 00:14:19,033
+Inside every rule, each switch is replaced by a blend of switches, and the dial controls the blend.
+
+114
+00:14:19,033 --> 00:14:25,867
+At zero, there is no blending at all: the sum is exactly our count.
+
+115
+00:14:25,867 --> 00:14:32,467
+And at some special dial settings, one, two, three, and so on,
+
+116
+00:14:32,467 --> 00:14:41,267
+the blends are arranged so that every rule sees switches from its own team, plus only a few totals from the other teams.
+
+117
+00:14:41,267 --> 00:14:45,600
+Exactly the situation of step three.
+
+118
+00:14:45,600 --> 00:14:49,900
+So at those settings, the sum is fast to compute.
+
+119
+00:14:49,900 --> 00:14:58,633
+But there's a catch: with the blending switched on, the result isn't counting anything any more. It's just a number.
+
+120
+00:14:58,633 --> 00:15:04,567
+The count we want sits at zero, where the shortcut doesn't work.
+
+121
+00:15:04,567 --> 00:15:12,967
+We can compute quickly at one, two, three. We need the answer at zero. How do we get there?
+
+122
+00:15:14,000 --> 00:15:20,700
+Picture turning the dial slowly and watching the number change. It traces a curve.
+
+123
+00:15:20,700 --> 00:15:31,167
+The paper shows that this curve is of a simple kind, a polynomial, which means it can only wiggle a limited number of times.
+
+124
+00:15:31,167 --> 00:15:39,400
+We know three points on the curve: at one, two and three. We want its height at zero.
+
+125
+00:15:39,400 --> 00:15:42,234
+But three points are not enough.
+
+126
+00:15:42,234 --> 00:15:49,834
+Here are several curves, all allowed the same number of wiggles, all passing through the same three points.
+
+127
+00:15:49,834 --> 00:15:53,500
+At zero, they disagree.
+
+128
+00:15:53,500 --> 00:15:57,600
+So the method collects more information at each point.
+
+129
+00:15:57,600 --> 00:16:07,767
+Not just the height, but the slope: how steeply the curve is climbing there, like the steepness of a hill under your feet.
+
+130
+00:16:07,767 --> 00:16:18,667
+Once the slopes at one, two and three are known too, only one curve fits. And at zero, it lands on fourteen.
+
+131
+00:16:18,667 --> 00:16:29,800
+This is a real example, computed by our own code, with six switches. Trying every setting confirms the answer: fourteen.
+
+132
+00:16:29,800 --> 00:16:33,100
+For a bigger puzzle the curve can wiggle more,
+
+133
+00:16:33,100 --> 00:16:40,167
+so you need more information at each point: the slope, how the curve bends, and so on.
+
+134
+00:16:40,167 --> 00:16:50,267
+But the principle is the same: enough information at the easy points pins down the whole curve, and with it, the count.
+
+135
+00:16:51,300 --> 00:16:58,634
+Here is the hard part, and the heart of the paper. Every extra piece of information costs work.
+
+136
+00:16:58,634 --> 00:17:06,267
+So the method only pays off if the curve wiggles little, while there are many easy points to measure it at.
+
+137
+00:17:06,267 --> 00:17:10,834
+Those two goals pull against each other.
+
+138
+00:17:10,834 --> 00:17:16,500
+The paper's main invention is a construction that achieves both at once:
+
+139
+00:17:16,500 --> 00:17:21,634
+a clever way of blending in which most of the mixing cancels itself out,
+
+140
+00:17:21,634 --> 00:17:27,434
+and only a small leftover needs to be tracked with totals.
+
+141
+00:17:27,434 --> 00:17:34,000
+Finally, all of this works best when each switch appears in only a few rules.
+
+142
+00:17:34,000 --> 00:17:42,534
+The paper shows that any puzzle can be broken into tidy pieces like that, without changing the count.
+
+143
+00:17:42,534 --> 00:17:48,167
+Let's put it together. Turn counting into arithmetic. Add a dial.
+
+144
+00:17:48,167 --> 00:17:55,767
+At special settings, the puzzle splits into teams that share only a few totals, so it's fast.
+
+145
+00:17:55,767 --> 00:18:03,100
+Measure the curve there, and follow it back to zero, where the true count lives.
+
+146
+00:18:03,100 --> 00:18:09,800
+Adding up all the costs, each part grows more slowly than any fixed factor per switch.
+
+147
+00:18:09,800 --> 00:18:14,634
+And that is the claim: subexponential.
+
+148
+00:18:17,866 --> 00:18:25,466
+So, is this a fast new way to solve puzzles? No. And it isn't close.
+
+149
+00:18:25,466 --> 00:18:29,566
+The method only wins as puzzles grow without limit.
+
+150
+00:18:29,566 --> 00:18:37,500
+We took the explicit numbers in the paper's overview and worked out when it starts to pay off.
+
+151
+00:18:37,500 --> 00:18:44,066
+It beats simply trying everything when the number of switches has about eighteen billion digits.
+
+152
+00:18:44,066 --> 00:18:51,766
+Not eighteen billion switches. A number of switches eighteen billion digits long.
+
+153
+00:18:51,766 --> 00:18:58,100
+To beat the best older method, about three hundred and forty billion digits.
+
+154
+00:18:58,100 --> 00:19:06,166
+For comparison, the number of atoms in the observable universe has about eighty digits.
+
+155
+00:19:06,166 --> 00:19:14,533
+These are rough figures, from an analysis that wasn't trying to be efficient, so the true crossover could be much earlier.
+
+156
+00:19:14,533 --> 00:19:21,533
+But nobody expects this method to run on a real computer.
+
+157
+00:19:21,533 --> 00:19:29,666
+Its importance is not what it does. It's what it proves is possible.
+
+158
+00:19:33,900 --> 00:19:40,434
+If the proof is right, ETH is false, and so are its stronger cousins.
+
+159
+00:19:40,434 --> 00:19:45,467
+Results that started with "if ETH is true" lose their footing.
+
+160
+00:19:45,467 --> 00:19:53,134
+Some can be rescued from other assumptions that are still believed. Others will need rethinking.
+
+161
+00:19:53,134 --> 00:19:58,934
+What about the most famous question in computer science, P versus NP?
+
+162
+00:19:58,934 --> 00:20:05,834
+It's one of the seven Millennium Prize Problems, with a million-dollar prize.
+
+163
+00:20:05,834 --> 00:20:14,667
+Roughly, it asks whether puzzles like ours can be solved with polynomial growth, the fast kind.
+
+164
+00:20:14,667 --> 00:20:24,100
+The new method is subexponential, which is still slower than polynomial. So P versus NP stays open.
+
+165
+00:20:24,100 --> 00:20:33,800
+It doesn't break encryption: everyday encryption doesn't depend on ETH, and the method is far too slow anyway.
+
+166
+00:20:33,800 --> 00:20:37,034
+And it doesn't give faster puzzle solvers:
+
+167
+00:20:37,034 --> 00:20:45,934
+practical solvers already handle huge real-world puzzles with tricks that work well in practice.
+
+168
+00:20:45,934 --> 00:20:54,000
+What it changes is our understanding of what is possible in principle.
+
+169
+00:20:58,233 --> 00:21:02,100
+Is it true? It's too early to say for sure.
+
+170
+00:21:02,100 --> 00:21:10,433
+The paper is a preprint, not yet checked by peer review, and it was written by an AI model.
+
+171
+00:21:10,433 --> 00:21:20,133
+OpenAI reports that part of it has been checked by computer, in a system called Lean, where a machine verifies every logical step.
+
+172
+00:21:20,133 --> 00:21:28,067
+That check covers a slightly weaker version of the result, which would still break ETH.
+
+173
+00:21:28,067 --> 00:21:40,067
+And a group of experts, including Impagliazzo and Paturi, who proposed ETH in the first place, is examining the proof.
+
+174
+00:21:40,067 --> 00:21:47,933
+We also ran the method's main steps on small puzzles with our own code, and it produces the exact counts.
+
+175
+00:21:47,933 --> 00:21:55,467
+That can't confirm the proof for large puzzles, but it shows the ideas fit together.
+
+176
+00:21:55,500 --> 00:22:03,367
+Let's recap. A puzzle of switches and rules, where trying everything doubles the work with every switch.
+
+177
+00:22:03,367 --> 00:22:15,167
+Fifty years of shortcuts that made the growth gentler, but never changed its kind. A bet, ETH, that it never could.
+
+178
+00:22:15,167 --> 00:22:21,034
+And now a paper that blends the puzzle with a dial, solves it at easy points,
+
+179
+00:22:21,034 --> 00:22:28,167
+and follows a curve back to the true count, with a cost whose factor keeps sinking.
+
+180
+00:22:28,167 --> 00:22:33,900
+If it holds up, the wall is still there for every puzzle we could ever build.
+
+181
+00:22:33,900 --> 00:22:40,734
+But in principle, it was never a wall at all.

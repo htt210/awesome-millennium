@@ -4,6 +4,7 @@
 #   ./render.sh            # 1080p30, every scene, then concatenate + poster + captions
 #   QUALITY=-l ./render.sh # quick 480p preview
 #   JOBS=3 ./render.sh     # render scenes in parallel
+#   RESUME=1 ./render.sh   # keep scenes already rendered (build/scenes/<Scene>.mp4 and its caption log)
 #   NARRATION_VOICES="us-male=a.onnx,us-female=b.onnx" PYTHON=venv/bin/python ./render.sh
 #                          # voiced: eth-is-false.mp4 with the first voice, eth-is-false-<key>.mp4
 #                          # with the others; every scene waits for the slowest voice (voice.py)
@@ -29,10 +30,11 @@ run() {
   fi
 }
 export -f run
-export MANIMGL QUALITY OUT
+export MANIMGL QUALITY OUT RESUME
 
 printf '%s\n' "${SCENES[@]}" | xargs -P "$JOBS" -I{} bash -c \
-  'run "$MANIMGL" eth_video.py {} -w $QUALITY --config_file custom_config.yml --video_dir "$OUT" > build/logs/{}.log 2>&1 \
+  'if [ -n "${RESUME:-}" ] && [ -s "$OUT/{}.mp4" ] && [ -s build/captions/{}.json ]; then echo "kept {}"; exit 0; fi
+   run "$MANIMGL" eth_video.py {} -w $QUALITY --config_file custom_config.yml --video_dir "$OUT" > build/logs/{}.log 2>&1 \
    && echo "rendered {}" || { echo "FAILED {} (see build/logs/{}.log)"; exit 255; }'
 
 : > build/concat.txt
