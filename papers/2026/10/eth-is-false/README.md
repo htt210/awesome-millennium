@@ -10,10 +10,10 @@
 | **Status** (27 October 2026) | Not yet peer reviewed. OpenAI reports a computer-checked proof (in Lean) of a slightly weaker version; a group of experts is examining it |
 | **More** | [technical walkthrough](technical.md) · [video](video/) · [code that checks the math on small examples](code/toy_eth.py) |
 
-<a href="video/eth-is-false.mp4"><img src="video/poster.png" alt="Video poster" width="100%"></a>
+<a href="video/eth-is-false.mp4"><img src="video/poster.png" alt="Video poster: switches, a dial, and the curve that leads back to the count at dial 0" width="100%"></a>
 
 > [!NOTE]
-> The video still follows the older, technical version of this page. A new video based on this text is coming.
+> A new video that tells the story of this page, about 23 minutes long, is being rendered from its [script](video/storyboard.md). Until it lands, [the video](video/eth-is-false.mp4) is the earlier, technical version (9¾ minutes, American male narrator; also with an [American female narrator](video/eth-is-false-us-female.mp4)).
 
 ## Contents
 

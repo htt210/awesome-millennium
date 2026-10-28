@@ -86,6 +86,8 @@ Videos use [3Blue1Brown's manim](https://github.com/3b1b/manim) (`manimgl`), not
 - `captions.srt`, burned in or shipped alongside,
 - `poster.png`, a still used as the thumbnail.
 
+**Script first.** Write the script before animating: a `storyboard.md` that gives, for every beat, what is on screen and the exact narration, with one idea per beat and an example before every new term. Get it reviewed, then animate from it (the ETH video reads its narration straight from its storyboard).
+
 **Narration.** A voiceover is optional. If you add one, keep a spoken version of each caption next to it in the scene file (numbers, symbols and names written out the way they should be read) and let the scene wait for the voice, as the ETH video does with `voice.py` and `make_voiceover.py`. Do not commit voice models: the scripts take model paths at render time.
 
 **Size policy.** A rendered video up to about 50 MB may be committed next to its sources. Larger videos should be uploaded as a GitHub Release asset (or another stable host) and linked with `explainer.video_url`; keep only the sources, captions and poster in git. This keeps clones small as the collection grows.

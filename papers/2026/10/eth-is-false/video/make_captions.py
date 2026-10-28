@@ -17,14 +17,22 @@ sys.path.insert(0, str(HERE))
 from captions_util import plain, to_markdown  # noqa: E402
 
 TITLES = {
-    "S1Hook": "1. The claim",
-    "S2Polynomial": "2. Counting is a polynomial sum",
-    "S3Groups": "3. The dream: independent groups",
-    "S4Separation": "4. Deform, then separate",
-    "S5Hermite": "5. From easy points back to T = 0",
-    "S6Matrix": "6. Low degree, many points: the matrix trick",
-    "S7Costs": "7. Paying the bill",
-    "S8Meaning": "8. What falls, and what does not",
+    "C0Open": "0. Cold open",
+    "C1Puzzle": "1. The puzzle",
+    "C2Doubling": "2. Why it gets hard so fast",
+    "C3Shortcuts": "3. Fifty years of shortcuts",
+    "C4Bet": "4. The bet called ETH",
+    "C5Claim": "5. The new claim",
+    "C6aArithmetic": "6a. Turning checking into arithmetic",
+    "C6bTeams": "6b. The dream: independent teams",
+    "C6cTotals": "6c. Teams that share only a total",
+    "C6dDial": "6d. The dial",
+    "C6eCurve": "6e. From the easy points back to zero",
+    "C6fBalance": "6f. The balancing act, and the rest",
+    "C7Catch": "7. The catch",
+    "C8Meaning": "8. What it means, and what it doesn't",
+    "C9Status": "9. Is it true?",
+    "C10Close": "10. Closing",
 }
 
 
@@ -49,10 +57,9 @@ def main(scenes: list[str]) -> int:
     offset = 0.0
     srt, md = [], ["# Narration script", "",
                    "Generated from the captions burned into the video (`make_captions.py`). "
-                   "Timestamps refer to `eth-is-false.mp4`. The narrators read a spoken version of each "
-                   "caption, the `say` text next to it in `eth_video.py`. "
-                   "The video writes the number of satisfying assignments as #F, like the paper; "
-                   "this script writes $N(F)$.", ""]
+                   "Timestamps refer to `eth-is-false.mp4`. The words come from "
+                   "[`storyboard.md`](storyboard.md), the reviewed script, which also describes what is on "
+                   "screen.", ""]
     index = 1
     for scene in scenes:
         data = json.loads((HERE / "build" / "captions" / f"{scene}.json").read_text())

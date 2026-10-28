@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Lay the narration clips under the rendered video, one soundtrack per voice.
 
-Each scene logs when its captions start (build/captions/<Scene>.json); a
-caption's clip (voice.py, cached in build/voice/<key>/ while the scenes
-rendered) starts voice_lead seconds later. The scenes waited for the slowest
+Each scene logs when each caption's clip starts (voice_at, in
+build/captions/<Scene>.json); the clips were made by voice.py and cached in
+build/voice/<key>/ while the scenes rendered. The scenes waited for the slowest
 voice, so clips never overlap, and every voice fits the same picture.
 
     NARRATION_VOICES="us-male=a.onnx,us-female=b.onnx" \\
@@ -37,7 +37,7 @@ def soundtrack(voice, scenes: list[str], total: float, out: Path) -> int:
             with wave.open(str(voice.clip(cap["say"])), "rb") as w:
                 assert w.getframerate() == rate and w.getsampwidth() == 2 and w.getnchannels() == 1
                 clip = w.readframes(w.getnframes())
-            start = 2 * int((offset + cap["start"] + data["voice_lead"]) * rate)
+            start = 2 * int((offset + cap["voice_at"]) * rate)
             clip = clip[: len(pcm) - start]
             pcm[start:start + len(clip)] = clip
             placed += 1

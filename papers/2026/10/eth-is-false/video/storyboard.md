@@ -1,8 +1,8 @@
-# Video script, draft 2: "The Exponential Time Hypothesis is False"
+# Video script: "The Exponential Time Hypothesis is False"
 
-*Draft for review, 28 October 2026. Nothing has been animated yet.* This script follows the plain-language explainer ([`../README.md`](../README.md)). Each beat lists what is on screen and the exact narration. Captions show the same words.
+*Reviewed on 28 October 2026, before anything was animated.* This script follows the plain-language explainer ([`../README.md`](../README.md)) and is the source of the video's narration: each scene in [`eth_video.py`](eth_video.py) reads its beats from the tables below, by number. Each beat lists what is on screen and the exact narration. Captions show the same words; the narrator says a few of them differently (`PRONOUNCE` in `eth_video.py`).
 
-**How this draft differs from the first video.** The first video covered the whole technical argument in 8½ minutes and named things before showing them. This one follows four rules:
+**How this script differs from the first video.** The first video covered the whole technical argument in 8½ minutes and named things before showing them. This one follows four rules:
 
 1. **One idea per beat.** A beat ends with a pause, about 1.5 seconds, before the next idea starts.
 2. **Example first, name second.** Every new word is introduced by showing a concrete case, and only then named. The "New words" column at the end lists where each word first appears.
@@ -35,7 +35,7 @@ Estimated length: about 23 minutes (about 2,700 words of narration at 145 words 
 | 1.6 | Rules 2 and 3 appear beside Rule 1. | A real puzzle has many rules. Here are three. |
 | 1.7 | Text: **Can you set the switches so that every rule is happy?** | And the puzzle is: can you set the switches so that every rule is happy at the same time? |
 | 1.8 | Pause. Then the switches move one at a time to A on, B on, C on, D off; each rule turns green as it becomes happy. | Let's try. A on makes rule one happy. B on makes rule two happy. C on makes rule three happy. And D can stay off. Every rule is happy. We found a solution. |
-| 1.9 | Caption card: **This puzzle is called 3-SAT.** ("3" for three switches per rule, "SAT" for *satisfy*.) | This puzzle has a name: three-sat. Three, because each rule names three switches. Sat, short for satisfy, because we want to satisfy every rule. |
+| 1.9 | Caption card: **This puzzle is called 3-SAT.** ("3" for three switches per rule, "SAT" for *satisfy*.) | This puzzle has a name: 3-SAT. Three, because each rule names three switches. SAT, short for satisfy, because we want to satisfy every rule. |
 | 1.10 | Icons appear around the puzzle: a timetable, a computer chip, a map route, a Sudoku grid, each with an arrow into the switches. | It looks like a toy, but a huge range of real problems can be rewritten as this puzzle: making timetables, checking that a computer chip is designed correctly, planning routes, even solving Sudoku. That is why computer scientists have studied it more than almost any other problem. |
 | 1.11 | The single solution splits into a stack of solutions with a counter: "1, 2, 3 …". | The paper actually answers a harder question. It doesn't just find one good setting. It counts how many good settings there are. If you can count them, you can certainly tell whether there is at least one. |
 | 1.12 | **Recap card:** "Switches, rules that want at least one wish, and the question: how many settings make every rule happy?" | So: switches, rules, and one question. How many ways are there to make every rule happy? |
@@ -74,9 +74,9 @@ Estimated length: about 23 minutes (about 2,700 words of narration at 145 words 
 | 4.1 | Road map, third box lit. The history chart, with a dashed line at ×1 along the bottom. | So here is the natural question. Can the factor be pushed all the way down toward one? |
 | 4.2 | Text at the dashed line: "×1 = the work stops multiplying". | A factor of one would mean adding a switch no longer multiplies the work at all. |
 | 4.3 | Portrait-free name card: *Russell Impagliazzo & Ramamohan Paturi, 2001*. A shaded floor rises a little above ×1, with a "?" on it. | In 2001, two computer scientists, Russell Impagliazzo and Ramamohan Paturi, proposed an answer: no. There is some floor, a bit above one. Maybe one point zero one, maybe one point two, nobody knows exactly where. But no method, however clever, will ever get below it. |
-| 4.4 | Card: **The Exponential Time Hypothesis (ETH):** "the factor per switch can never get arbitrarily close to ×1". | This is the Exponential Time Hypothesis, or E T H. A hypothesis, because nobody proved it. It's a bet. |
-| 4.5 | A stone labeled ETH at the bottom of the screen; blocks stack on it, each labeled "if ETH is true, then …". | But it was a bet that almost everyone took. Researchers built a large body of results on top of it, each of the form: if E T H is true, then this other problem cannot be solved faster than such and such. |
-| 4.6 | **Recap card:** "ETH: exponential growth is unavoidable for this puzzle. A foundation stone, never proved." | E T H says the wall is real: this puzzle will always be exponential. Many results stand on it. |
+| 4.4 | Card: **The Exponential Time Hypothesis (ETH):** "the factor per switch can never get arbitrarily close to ×1". | This is the Exponential Time Hypothesis, or ETH. A hypothesis, because nobody proved it. It's a bet. |
+| 4.5 | A stone labeled ETH at the bottom of the screen; blocks stack on it, each labeled "if ETH is true, then …". | But it was a bet that almost everyone took. Researchers built a large body of results on top of it, each of the form: if ETH is true, then this other problem cannot be solved faster than such and such. |
+| 4.6 | **Recap card:** "ETH: exponential growth is unavoidable for this puzzle. A foundation stone, never proved." | ETH says the wall is real: this puzzle will always be exponential. Many results stand on it. |
 
 ## Chapter 5 — The new claim (≈ 2:00)
 
@@ -87,7 +87,7 @@ Estimated length: about 23 minutes (about 2,700 words of narration at 145 words 
 | 5.3 | Second line (green) drawn: drops to ×1 almost immediately. Beside it: "10 switches → 1,000 steps; 20 switches → 8,000". | Now a very different kind of growth: the kind computer scientists consider fast, called polynomial. Here, doubling the number of switches multiplies the work by a fixed amount, like eight, instead of squaring it. Spread over all the switches, the work per switch quickly drops to almost one. |
 | 5.4 | Third line (blue) drawn slowly between them, sinking gradually. | And in between, a third kind: the factor per switch keeps shrinking toward one, but slowly. This is called subexponential. Faster than any exponential, slower than any polynomial. |
 | 5.5 | The blue line is highlighted. Card: **The claim: counting the good settings of this puzzle takes subexponential time.** | That's what the paper claims for our puzzle. A method to count all the good settings, with a cost whose factor per switch sinks toward one. |
-| 5.6 | The ETH floor from chapter 4 appears; the blue line sinks through it. The ETH stone cracks. | And here's why that matters. If the factor keeps sinking, it eventually goes below any floor you pick. So there is no floor. E T H would be false. |
+| 5.6 | The ETH floor from chapter 4 appears; the blue line sinks through it. The ETH stone cracks. | And here's why that matters. If the factor keeps sinking, it eventually goes below any floor you pick. So there is no floor. ETH would be false. |
 | 5.7 | The one formula of the video: "cost ≈ 2 to the power n ÷ √(log n)", with "n = number of switches". | For those who like symbols: the cost is roughly two to the power n, divided by the square root of the logarithm of n. The square root of log n grows forever, very slowly, and that's what makes the factor shrink. |
 | 5.8 | **Recap card:** "Exponential: fixed factor. Subexponential: factor sinks slowly. The paper claims subexponential, so ETH is false." | So: a factor that sinks below any floor. That's the claim. Now, how could that possibly work? |
 
@@ -173,11 +173,11 @@ Estimated length: about 23 minutes (about 2,700 words of narration at 145 words 
 
 | # | On screen | Narration |
 |---|---|---|
-| 8.1 | The ETH stone cracked; some blocks above it wobble, others are propped up by new pillars labeled "other assumptions". | If the proof is right, E T H is false, and so are its stronger cousins. Results that started with "if E T H is true" lose their footing. Some can be rescued from other assumptions that are still believed. Others will need rethinking. |
-| 8.2 | Card: **P vs NP**, one of the seven Millennium Prize Problems, $1,000,000. | What about the most famous question in computer science, P versus N P? It's one of the seven Millennium Prize Problems, with a million-dollar prize. |
+| 8.1 | The ETH stone cracked; some blocks above it wobble, others are propped up by new pillars labeled "other assumptions". | If the proof is right, ETH is false, and so are its stronger cousins. Results that started with "if ETH is true" lose their footing. Some can be rescued from other assumptions that are still believed. Others will need rethinking. |
+| 8.2 | Card: **P vs NP**, one of the seven Millennium Prize Problems, $1,000,000. | What about the most famous question in computer science, P versus NP? It's one of the seven Millennium Prize Problems, with a million-dollar prize. |
 | 8.3 | The three-growth graph returns; the green polynomial line is labeled "P = NP would need this". | Roughly, it asks whether puzzles like ours can be solved with polynomial growth, the fast kind. |
-| 8.4 | The blue subexponential line is labeled "what the paper claims", clearly above the green line. | The new method is subexponential, which is still slower than polynomial. So P versus N P stays open. |
-| 8.5 | Two crossed-out icons: a padlock (encryption) and a laptop running a solver. | It doesn't break encryption: everyday encryption doesn't depend on E T H, and the method is far too slow anyway. And it doesn't give faster puzzle solvers: practical solvers already handle huge real-world puzzles with tricks that work well in practice. |
+| 8.4 | The blue subexponential line is labeled "what the paper claims", clearly above the green line. | The new method is subexponential, which is still slower than polynomial. So P versus NP stays open. |
+| 8.5 | Two crossed-out icons: a padlock (encryption) and a laptop running a solver. | It doesn't break encryption: everyday encryption doesn't depend on ETH, and the method is far too slow anyway. And it doesn't give faster puzzle solvers: practical solvers already handle huge real-world puzzles with tricks that work well in practice. |
 | 8.6 | **Recap card:** "Changes what's possible in principle. Not P vs NP, not encryption, not practice." | What it changes is our understanding of what is possible in principle. |
 
 ## Chapter 9 — Is it true? (≈ 1:05)
@@ -185,15 +185,15 @@ Estimated length: about 23 minutes (about 2,700 words of narration at 145 words 
 | # | On screen | Narration |
 |---|---|---|
 | 9.1 | Card: "Preprint, not yet peer reviewed. Written by an AI model at OpenAI." | Is it true? It's too early to say for sure. The paper is a preprint, not yet checked by peer review, and it was written by an AI model. |
-| 9.2 | A proof checker icon: "Lean: a computer checks every logical step". Label: "covers a slightly weaker, still ETH-breaking version". | OpenAI reports that part of it has been checked by computer, in a system called Lean, where a machine verifies every logical step. That check covers a slightly weaker version of the result, which would still break E T H. |
-| 9.3 | Names: Impagliazzo, Paturi, Williams: "examining the proof". | And a group of experts, including Impagliazzo and Paturi, who proposed E T H in the first place, is examining the proof. |
+| 9.2 | A proof checker icon: "Lean: a computer checks every logical step". Label: "covers a slightly weaker, still ETH-breaking version". | OpenAI reports that part of it has been checked by computer, in a system called Lean, where a machine verifies every logical step. That check covers a slightly weaker version of the result, which would still break ETH. |
+| 9.3 | Names: Impagliazzo, Paturi, Williams: "examining the proof". | And a group of experts, including Impagliazzo and Paturi, who proposed ETH in the first place, is examining the proof. |
 | 9.4 | Our toy code running, with checks turning green. | We also ran the method's main steps on small puzzles with our own code, and it produces the exact counts. That can't confirm the proof for large puzzles, but it shows the ideas fit together. |
 
 ## Chapter 10 — Closing (≈ 0:50)
 
 | # | On screen | Narration |
 |---|---|---|
-| 10.1 | The full road map, all five boxes lit, then the switches from the opening. | Let's recap. A puzzle of switches and rules, where trying everything doubles the work with every switch. Fifty years of shortcuts that made the growth gentler, but never changed its kind. A bet, E T H, that it never could. |
+| 10.1 | The full road map, all five boxes lit, then the switches from the opening. | Let's recap. A puzzle of switches and rules, where trying everything doubles the work with every switch. Fifty years of shortcuts that made the growth gentler, but never changed its kind. A bet, ETH, that it never could. |
 | 10.2 | The dial turns; the curve lands on the count. | And now a paper that blends the puzzle with a dial, solves it at easy points, and follows a curve back to the true count, with a cost whose factor keeps sinking. |
 | 10.3 | Final title card, links: explainer page, technical walkthrough. | If it holds up, the wall is still there for every puzzle we could ever build. But in principle, it was never a wall at all. |
 
@@ -221,18 +221,9 @@ Estimated length: about 23 minutes (about 2,700 words of narration at 145 words 
 | P vs NP, Millennium Prize | 8.2–8.3 | built on polynomial growth from 5.3 |
 | Lean, peer review | 9.1–9.2 | one-line definitions |
 
-## If it is too long
-
-Cuts that keep every concept introduced, in order of least loss:
-
-1. **Drop chapter 9** to a single closing caption (saves ~1 min).
-2. **Shorten chapter 3** to the simple shortcut and the step chart, without the 100-switch comparison (saves ~0.5 min).
-3. **Merge 6f into 6e** as two sentences: "it's hard to get both; that's the paper's main invention" (saves ~1 min).
-4. **Split the video in two:** part 1 = chapters 0–5 and 7–9 (the story, ~14 min); part 2 = chapter 6 (how it works, ~8½ min).
-
 ## Notes for production
 
 - **Pacing:** about 145 words per minute of narration. Each beat ends with at least 1.5 s of silence; each recap card stays up 3 s after the narration ends. Animations play *while* the narrator describes them, not before.
 - **Graphs:** chapters 2, 3, 5, 6b, 6e and 7 reuse the eight figures of the explainer page, redrawn in manim so that they build up step by step.
-- **Narrator:** your choice of the BookVoice US male or US female voice. The previous video used both.
-- **Pronunciation:** "E T H" is spelled out; "three-sat"; "Impagliazzo"; "Pa-toori".
+- **Narrator:** both BookVoice US voices, male and female, with the same pictures and timing.
+- **Pronunciation:** the narrator says "E T H", "three-sat" and "Pa-toori"; the captions show ETH, 3-SAT and Paturi (`PRONOUNCE` in `eth_video.py`).

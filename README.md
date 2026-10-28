@@ -11,7 +11,7 @@ Visual explainers for papers that claim to solve, partly solve, or reshape the l
 
 ## Featured: The Exponential Time Hypothesis is False
 
-<a href="papers/2026/10/eth-is-false/"><img src="papers/2026/10/eth-is-false/video/poster.png" alt="Poster of the explainer video: the deformed counting polynomial H(T), its Taylor data at T = 1, 2, 3 and the recovered count at T = 0" width="100%"></a>
+<a href="papers/2026/10/eth-is-false/"><img src="papers/2026/10/eth-is-false/video/poster.png" alt="Poster of the explainer video: switches, a dial, and the curve that leads back to the count at dial 0" width="100%"></a>
 
 On 26 October 2026 OpenAI released a preprint giving a **deterministic algorithm that counts the satisfying assignments of any $k$-CNF formula in time $2^{O(n \log\log n / \sqrt{\log n})}$** (times a polynomial in the input size) and polynomial space. For $3$-SAT this refutes the Exponential Time Hypothesis, and with it SETH, #ETH, Gap-ETH and NSETH. It does **not** resolve P vs NP. [Read the explainer →](papers/2026/10/eth-is-false/)
 

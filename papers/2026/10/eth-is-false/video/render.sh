@@ -14,7 +14,7 @@
 set -euo pipefail
 cd "$(dirname "$0")"
 
-SCENES=(S1Hook S2Polynomial S3Groups S4Separation S5Hermite S6Matrix S7Costs S8Meaning)
+SCENES=(C0Open C1Puzzle C2Doubling C3Shortcuts C4Bet C5Claim C6aArithmetic C6bTeams C6cTotals C6dDial C6eCurve C6fBalance C7Catch C8Meaning C9Status C10Close)
 QUALITY=${QUALITY:---hd}
 JOBS=${JOBS:-1}
 MANIMGL=${MANIMGL:-manimgl}
