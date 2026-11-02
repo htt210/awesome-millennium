@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../../../../schema/paper.schema.json
+slug: navier-stokes-blowup
+title: Finite Time Blowup for Navier–Stokes
+short_title: Navier–Stokes blowup
+authors: [OpenAI]
+date: 2026-09-08
+tldr: >-
+  For every viscosity, a smooth force that is switched on for a while drives a fluid starting at rest to
+  unbounded speed at time 1 with bounded energy, which would settle the Clay problem through its breakdown
+  alternatives (C) and (D).
+millennium:
+  - problem: navier-stokes
+    relation: resolves
+    note: >-
+      Claims breakdown alternatives (C) and (D) of the official problem, which allow a smooth, decaying force.
+      Whether flows with no force can break down stays open. The Clay Institute has not ruled.
+fields: [partial-differential-equations, fluid-dynamics]
+tags: [navier-stokes, blowup, singularity, forcing, self-similar, convex-integration, weak-strong-uniqueness, lean]
+status:
+  review: preprint
+  formalization: complete
+  formalization_system: Lean 4
+  community: under-examination
+  as_of: 2026-11-02
+  note: >-
+    OpenAI published a Lean 4 formalization (about 429,000 lines) of both breakdown statements, checked against
+    an adaptation of the Formal Conjectures statement of the problem; we have not re-run it. Bastounis,
+    Circelli and Hansen (arXiv 2610.08144, 6 October 2026) show that parts of the Lean proof follow different
+    arguments, and sometimes prove different intermediate bounds, from the written paper; they make no claim
+    that the written proof is wrong. The Clay Institute says it is evaluating the claim.
+links:
+  paper: https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf
+  formalization: https://github.com/openai/NavierStokesAndEuler
+  announcement: https://openai.com/index/navier-stokes-solution/
+  related:
+    - label: Clay Institute statement
+      url: https://www.claymath.org/news/navier-stokes-announcement/
+    - label: "Bastounis, Circelli, Hansen: Navier–Stokes lost in translation (arXiv 2610.08144)"
+      url: https://arxiv.org/abs/2610.08144
+    - label: "Formal Conjectures: Lean statement of the problem"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/Millenium/NavierStokes.lean
+    - label: "Companion paper: Finite time blowup for the Euler equation"
+      url: https://cdn.openai.com/pdf/315b36cd-ec98-4023-8342-93345194ece1/euler.pdf
+    - label: "Official problem description (C. Fefferman)"
+      url: https://www.claymath.org/wp-content/uploads/2022/06/navierstokes.pdf
+explainer:
+  added: 2026-11-02
+  code: code/make_figures.py
+  figures: figures

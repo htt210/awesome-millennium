@@ -24,7 +24,15 @@ The official problem asks for **any one** of four statements:
 ## Explained here
 
 <!-- BEGIN:papers -->
-_No explainers yet — see the queue below._
+### Claimed resolutions
+
+*Papers that claim to settle the problem as stated by the Clay Institute.*
+
+| Date | Paper | Status |
+|---|---|---|
+| 2026-09-08 | **[Finite Time Blowup for Navier–Stokes](../papers/2026/09/navier-stokes-blowup/)**<br>OpenAI — For every viscosity, a smooth force that is switched on for a while drives a fluid starting at rest to unbounded speed at time 1 with bounded energy, which would settle the Clay problem through its breakdown alternatives (C) and (D). | Preprint · Formalized (Lean 4) · Under examination |
+
+- *Navier–Stokes blowup*: Claims breakdown alternatives (C) and (D) of the official problem, which allow a smooth, decaying force. Whether flows with no force can break down stays open. The Clay Institute has not ruled.
 <!-- END:papers -->
 
 ## Queue
@@ -32,8 +40,6 @@ _No explainers yet — see the queue below._
 Papers we plan to explain next. Their claims have **not** been reviewed here yet.
 
 <!-- BEGIN:backlog -->
-- **[Finite Time Blowup for Navier–Stokes](https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf)** — OpenAI, 2026-09-08 · *resolves* · [announcement](https://openai.com/index/navier-stokes-solution/) · [Clay statement](https://www.claymath.org/news/navier-stokes-announcement/) · [dispute: Navier–Stokes lost in translation](https://arxiv.org/abs/2610.08144)  
-  Claims, for every viscosity, a solution that starts from rest under a smooth external force and develops unbounded velocity in finite time with bounded energy — the breakdown alternatives (C) and (D). A Lean formalization was announced; whether it matches the written proof is disputed, and the Clay Institute has not ruled.
 - **[Universal Computation with Eventually Stationary Navier–Stokes Forcing](https://github.com/openai/math/blob/main/preprints/Universal-Computation-with-Eventually-Stationary-Navier-Stokes-Forcing-September-27-2026/manuscript.pdf)** — OpenAI, 2026-09-27 · *adjacent*  
   Claims viscous incompressible flows, started from rest, that perform universal computation under smooth forcing: a marked particle reaches a target region exactly when a given Turing machine halts (openai/math family 376).
 <!-- END:backlog -->

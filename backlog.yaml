@@ -7,26 +7,6 @@
 #         millennium: [{problem, relation}], note (one line, no "|"),
 #         links: [{label, url}] (optional)
 
-- title: Finite Time Blowup for Navier–Stokes
-  authors: [OpenAI]
-  date: 2026-09-08
-  url: https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf
-  millennium:
-    - problem: navier-stokes
-      relation: resolves
-  note: >-
-    Claims, for every viscosity, a solution that starts from rest under a smooth external force and develops
-    unbounded velocity in finite time with bounded energy — the breakdown alternatives (C) and (D).
-    A Lean formalization was announced; whether it matches the written proof is disputed, and the Clay
-    Institute has not ruled.
-  links:
-    - label: announcement
-      url: https://openai.com/index/navier-stokes-solution/
-    - label: Clay statement
-      url: https://www.claymath.org/news/navier-stokes-announcement/
-    - label: "dispute: Navier–Stokes lost in translation"
-      url: https://arxiv.org/abs/2610.08144
-
 - title: "The Quasi-Riemann Hypothesis: a zero-free half-plane"
   authors: [OpenAI]
   date: 2026-09-30
