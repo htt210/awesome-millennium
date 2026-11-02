@@ -1,17 +1,14 @@
 # Finite Time Blowup for Navier–Stokes
 
-> **In one paragraph.** The Navier–Stokes equations describe how water and air move. The Millennium Prize question asks whether their solutions always stay smooth, or whether a flow can tear itself apart in a finite time, with its speed shooting to infinity at a point. On 8 September 2026 OpenAI released a paper claiming the second answer: for every viscosity, a fluid that starts at rest, pushed by a carefully designed smooth force, spins faster and faster in a shrinking region until its speed has no limit at time 1, while its total energy stays finite. The official problem explicitly allows this kind of example (its options (C) and (D)), so if the proof is right, it settles the problem as written. It would not tell us whether flows left to themselves, with no force, can break down. OpenAI also published a computer-checked proof in Lean. A group of mathematicians has shown that the computer proof does not follow the written paper step by step, which makes the paper itself still a matter for human review.
+> **In one paragraph.** The Navier–Stokes equations describe how water and air move. The Millennium Prize question asks whether their solutions always stay smooth, or whether a flow can tear itself apart in a finite time, with its speed shooting to infinity at a point. On 8 September 2026 OpenAI released a paper claiming the second answer. For every viscosity, a fluid that starts at rest, pushed by a carefully designed smooth force, forms a vortex that narrows and spins ever faster until its speed has no limit at time 1, while its total energy stays finite. The official problem explicitly allows this kind of example (its options (C) and (D)), so if the proof is right, it settles the problem as written. It would not tell us whether flows left to themselves, with no force, can break down. OpenAI also published a computer-checked proof in Lean. A group of mathematicians has shown that the computer proof does not follow the written paper step by step, so the paper itself still needs human review.
 
 | | |
 |---|---|
-| **Paper** | [Finite Time Blowup for Navier–Stokes](https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf), OpenAI, 8 September 2026 |
-| **The claim, plainly** | For every viscosity there is a smooth push, applied for a while to a fluid at rest, that makes the fluid's speed infinite at one point at time 1, with finite energy, and the equations cannot be continued smoothly past that moment |
+| **Paper** | [Finite Time Blowup for Navier–Stokes](https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf), OpenAI, 8 September 2026 (166 pages) |
+| **The claim, plainly** | For every viscosity there is a smooth push, applied for a while to a fluid at rest, that makes the fluid's speed infinite at one point at time 1, with finite energy, so that the equations cannot be continued smoothly past that moment |
 | **Millennium problem** | [Navier–Stokes existence and smoothness](../../../../problems/navier-stokes.md): claims options (C) and (D) |
 | **Status** (2 November 2026) | Not peer reviewed. Lean formalization published by OpenAI; its relation to the written proof is [disputed](#8-the-dispute-the-computer-proof-is-not-the-paper). The Clay Institute says it is evaluating the claim |
 | **More** | [Lean formalization](https://github.com/openai/NavierStokesAndEuler) · [figures](figures/) · [figure code](code/make_figures.py) |
-
-> [!NOTE]
-> **How this page was written.** We could not obtain the written paper, which is hosted on a site this project's build environment cannot reach. The statement of the result below is taken from the published Lean formalization, which states it formally, and matches OpenAI's announcement. The outline in Section 6 is reconstructed from the formalization's documentation and from the manuscript sections it cites. The dispute in Section 8 is summarized from the critics' paper. We will check everything against the paper itself before this page is final.
 
 ## Contents
 
@@ -50,7 +47,7 @@ If a blowup can happen, the equations stop making sense at that point and moment
 - solutions can always be continued in a weak, "rough" sense (Leray);
 - any breakdown must be confined to a vanishingly small set of points (Caffarelli, Kohn and Nirenberg, 1982);
 - blowup has been proved for modified equations, for example Terence Tao's "averaged" Navier–Stokes in 2016;
-- blowup has been proved for the frictionless Euler equations in special settings, for example rough data (Elgindi, 2021) and fluid next to a wall (Chen and Hou, with computer-assisted proofs).
+- blowup has been proved for related equations, notably forced Euler equations without friction (Córdoba and Martínez-Zoroa) and Navier–Stokes with weakened friction (with Zheng). These built singularities by amplifying disturbances across smaller and smaller scales.
 
 For the real equations in three dimensions, the question has stayed open. In 2000 the Clay Mathematics Institute made it one of its seven Millennium Prize Problems, worth one million dollars.
 
@@ -72,79 +69,103 @@ The paper claims (C) and (D).
 
 ## 4. Why the force is not a cheat
 
-At first sight, allowing a force seems to make breakdown easy. Here is the cheat: draw any flow you like that blows up, plug it into the equations, and call whatever is left over "the force". The equations then hold by definition.
+At first sight, allowing a force seems to make breakdown easy. The paper says so itself: for any flow you like, you can *define* the force as whatever is left over when you plug the flow into the equations, and the equations then hold by construction.
 
-The catch is that the rules require the force itself to be **perfectly smooth everywhere, at every moment, including the moment of blowup**, and to fade away. With the cheat, the force needed to hold up a blowup almost always blows up too.
+The catch is that the rules require the force itself to be **perfectly smooth everywhere, at every moment, including the moment of blowup**, and to fade away. If you draw a blowup and solve for the force, the force almost always blows up too.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="figures/force-dark.png">
   <img src="figures/force-light.png" alt="Two panels of schematic curves against time. Left, the cheat: fluid speed shoots up at time 1, and the force you would need shoots up even earlier. Right, the claim: fluid speed still shoots up at time 1, while the force is a smooth bump that rises and falls." width="100%">
 </picture>
 
-So the real challenge is to find a breakdown that a *smooth* push can sustain: a flow that tears itself apart while the force driving it stays calm. That is what the paper claims to construct.
+In the paper's words, "the challenge is to choose a flow that blows up while this residual remains smooth". The individual terms of the equation may each blow up. They must cancel so precisely that their sum, the force, stays smooth, along with all its derivatives, right through the singular moment.
 
 ## 5. The claim
 
-Stated in plain words from the formal version, for **every** positive viscosity:
+Theorem 1.1 of the paper, in plain words, for **every** positive viscosity:
 
-- the fluid **starts at rest**, and stays at rest for a while (until time 3/8);
-- an outside **force** acts only inside a bounded region of space and a bounded stretch of time after the start, and is smooth everywhere;
-- up to time 1 the flow is perfectly **smooth**, and its total **energy stays bounded**;
-- as time approaches 1, the **speed** somewhere in the fluid **grows without limit**;
-- **no smooth solution** with bounded energy, driven by the same force from the same rest state, can exist for all time.
+- the fluid **starts at rest**, and stays at rest for an initial stretch of time;
+- an outside **force** acts only inside a bounded region of space, from some time after the start until time 2 at the latest, and is smooth everywhere;
+- up to time 1 the flow is perfectly **smooth**, it stays inside a fixed bounded region, and its total **energy stays bounded**;
+- as time approaches 1, the **speed** near the centre **grows without limit**;
+- so **no smooth solution** with bounded energy, driven by the same force from the same rest state, can exist for all time.
 
-The paper proves the same in the wrap-around box. Together these are options (C) and (D).
+Because everything happens in a bounded region, the same example fits inside the wrap-around box (Corollary 10.6). Together these are options (C) and (D).
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="figures/blowup-dark.png">
   <img src="figures/blowup-light.png" alt="Two panels against time. Left: top speed on a log scale, rising slowly and then shooting up as time approaches 1. Right: total kinetic energy, rising after the start and then staying bounded up to time 1." width="100%">
 </picture>
 
-How can the speed be infinite while the energy is finite? The fast motion happens in a region that shrinks as time runs out. Its volume shrinks faster than the square of the speed grows, so the energy contained in it stays small.
+How can the speed be infinite while the energy is finite? The fast motion happens in a region that shrinks as time runs out, and its volume shrinks faster than the square of the speed grows. In the paper's numbers, the energy in the core falls like $(1-t)^{1/2-3h}$, which tends to zero (Section 6 explains $h$).
 
 ## 6. How the construction works
 
-*This section is reconstructed from the formalization; see the note at the top.*
+The paper builds the flow in three regions: a collapsing **core**, a surrounding ring-shaped zone called the **annulus**, and a calm **exterior**. Then it repairs the leftover errors and shows that no other solution can avoid the blowup.
 
-### Step 1: a collapsing swirl
+### Step 1: a collapsing vortex at the core
 
-At the heart of the construction is a **swirl**: fluid spinning around an axis, like water around a drain, but arranged symmetrically around the centre. As time approaches 1, the swirling ring **shrinks toward the centre** and **spins faster**. The formalization states the rates:
-- the ring's size shrinks like the square root of the time left, $\sqrt{1-t}$;
-- its swirl speed grows like $(1-t)^{-(1/2+h)}$, where $h$ is a fixed small number between 0 and $1/100$.
+Use the vertical line through the centre as an axis. Near it, fluid **spirals inward**. As it moves in, it **spins faster**, like a figure skater pulling in their arms: a parcel of fluid that keeps its angular momentum must spin faster at a smaller radius. Incompressibility forbids the incoming fluid from piling up near the axis, so it escapes **up and down along the axis**, which lets the inflow and spin-up continue. Friction keeps competing throughout, carrying angular momentum back outward.
 
-A flow that keeps the same shape while shrinking like this is called **self-similar**: each moment looks like a zoomed-in copy of the moment before. For the unforced equations, exactly self-similar blowups are known *not* to exist under natural conditions (Nečas, Růžička and Šverák, 1996; Tsai, 1998). The construction here is only approximately self-similar, and it has the force to help it.
+The core keeps the same shape while it shrinks: it is self-similar to leading order. Write $\tau = 1 - t$ for the time left. Then:
+
+- its **width** shrinks like $\tau^{1/2}$;
+- its **height** shrinks a little more slowly, like $\tau^{1/2-h}$, where $h$ is a fixed number between 0 and $1/100$. So the core becomes an ever more slender column;
+- its **spin and axial speeds** grow like $\tau^{-1/2-h}$, without limit.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="figures/collapse-dark.png">
-  <img src="figures/collapse-light.png" alt="Left: concentric rings seen from above at times 0.5, 0.75, 0.9, 0.97 and 0.99, shrinking toward the centre, with arrows that grow longer as the rings shrink. Right: on a log scale against time, the size of the ring falls toward zero and the swirl speed rises without limit." width="100%">
+  <img src="figures/collapse-light.png" alt="Left: concentric circles seen from above at times 0.5, 0.75, 0.9, 0.97 and 0.99, shrinking toward the centre, with arrows that grow longer as they shrink. Right: on a log scale against time, the width and height of the core fall toward zero, the height more slowly, while the swirl speed rises without limit." width="100%">
 </picture>
 
-### Step 2: the pattern is not quite a solution
+### Step 2: the seam leaves an imbalance
 
-A drawn-up collapsing pattern does not satisfy the equations exactly. Plugging it in leaves an **error**, and near time 1 that error is far from smooth. If it were simply called "the force", we would be back to the cheat.
+Inside the core, the flow balances the equations to leading order. Far outside, the flow is a calm circular motion that slows with distance from the axis. Joining the two leaves an **imbalance in the annulus** between them. The background flow alone would need an outside force there that blows up as $t \to 1$, which is exactly the cheat the rules forbid.
 
-### Step 3: repair, round after round
+### Step 3: pulses that carry the missing momentum
 
-The construction removes the error in infinitely many **repair rounds**. Each round adds small, rapidly oscillating **waves** inside a thin ring around the collapsing core. Their combined effect cancels most of the remaining error. Each round's waves are finer, and the error left behind is much smaller. The rounds are arranged so that the leftover error becomes perfectly smooth, in all its derivatives, right through time 1. The force is defined as exactly what the final flow lacks, which is now that smooth leftover.
+So the paper makes **the fluid's own motion** supply the missing push. It adds **pulses**: small, rapidly oscillating ripples confined to the annulus, each wrapping around a complete ring, and lasting only a short time.
+
+- **Seeded, then amplified.** Each pulse is started by an *exponentially small* force. The shear of the background flow then makes it grow. In a spinning flow whose rotation falls off fast enough with radius, fluid nudged outward keeps a surplus of spin, and that surplus pushes it further out: a self-reinforcing instability.
+- **Then damped.** The same shear tilts the pulse's ripples, making them finer and finer across the radius, until friction wins and the pulse dies out. Each pulse grows and then decays.
+- **The payoff.** Although each ripple averages to zero, the *products* of its velocity components do not. A ripple moving outward with extra spin and inward with less spin carries angular momentum outward either way. This averaged **momentum flux** acts like an internal force on the background, and the pulses are tuned so that it cancels the imbalance from Step 2.
+- **Two families.** The imbalance has two components (spin momentum and vertical momentum). The paper uses two families of pulses whose fluxes point in different directions, mixed with positive weights. This works because the background was shaped so that the needed flux lies inside the "cone" those two directions span.
+- **Finer and finer.** As time runs out, the pulses are placed on ever smaller scales of space and time, keeping pace with the collapsing core.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="figures/repair-dark.png">
-  <img src="figures/repair-light.png" alt="Left: a shaded collapsing core surrounded by three wavy rings, each with finer and smaller wiggles. Right: a bar chart on a log scale of the error left over after each repair round, falling extremely fast." width="100%">
+  <img src="figures/repair-light.png" alt="Left: a shaded collapsing core surrounded by three wavy rings in the annulus, each with finer and smaller wiggles. Right: a bar chart on a log scale of the error left over after each correction round, falling extremely fast." width="100%">
 </picture>
 
-Building flows out of layers of fine waves that cancel errors is the idea behind **convex integration**. It was invented by John Nash for geometry and later used by Tristan Buckmaster, Vlad Vicol and others to build unexpected solutions of fluid equations. The formalization's vocabulary (stress cones, covariance targets, wave pulses, a "diagonal" choice of stages) is that of this toolbox.
+Using oscillations to produce a prescribed average stress is a classic idea from **convex integration**, the technique Buckmaster and Vicol used to build unexpected solutions of Navier–Stokes. The new twist here is *dynamical amplification*. The pulses are not simply placed; they are grown by the flow itself. In this respect the method is closer in spirit to the forced-Euler singularities of Córdoba and Martínez-Zoroa.
 
-### Step 4: outside the core
+### Step 4: correct, and correct again
 
-Away from the collapsing core, the flow is gentle. Far out it simply spreads like heat, and the construction is cut off so that everything lives in a bounded region.
+The pulses fix the leading imbalance but create new, smaller errors: their interactions with each other and with the background, and the effects of switching them on and off. The paper removes these in an **infinite cycle of corrections**. Each round:
+- re-solves the pulse equations;
+- adjusts the pulse strengths;
+- corrects the average flow and the pressure;
+- restores five bookkeeping integrals.
 
-### Step 5: no other solution can escape
+Each round makes the error vanish faster at the singular point. The paper tracks the rate with an exponent that starts at $1/5$ and gains $1/10$ every round. The corrections are summed with cutoffs that shrink stage by stage. In the end, the leftover error and **all its derivatives vanish faster than any power** as the singular point is approached.
 
-Building one flow that blows up is not quite enough. The rules ask that **no** smooth, finite-energy solution with the same force and starting state exists for all time. The paper shows that any such solution would have to **coincide** with the constructed one up to time 1. This is a comparison, or uniqueness, argument: two solutions that start together, with one of them well behaved, can never drift apart. So any rival solution inherits the blowup and cannot be smooth forever. This is the part of the proof examined most closely in the dispute (Section 8).
+### Step 5: the calm exterior, and the force
 
-### Step 6: every viscosity at once
+Outside the annulus, the flow is a purely circular motion that spreads exactly like heat. It solves the equations with no force at all. The whole construction is then cut off smoothly in space, so everything lives in a bounded region.
 
-The construction is done once, at viscosity 1. Zooming space by the square root of the viscosity, $u_\nu(t,x)=\sqrt{\nu}\cdot u(t,x/\sqrt{\nu})$, turns it into a solution at any viscosity $\nu$, with the same blowup time.
+The **force is defined as the leftover**: whatever the final flow lacks to satisfy the equations exactly. Near the singular moment that leftover vanishes to every order, so the force extends smoothly through time 1. The paper continues it smoothly past time 1 and switches it off by time 2.
+
+### Step 6: no other solution can escape
+
+Building one flow that blows up is not quite enough. The rules ask that **no** smooth, finite-energy solution with the same force and starting state exists for all time. Lemma 10.5 of the paper shows that any such solution must **coincide** with the constructed one up to time 1. This is a uniqueness argument: two solutions that start together, with one of them well behaved, can never drift apart. So any rival solution inherits the blowup. This lemma is where the dispute's second example sits (Section 8).
+
+### Step 7: every viscosity at once
+
+Everything above is done at viscosity 1. Zooming space by the square root of the viscosity turns it into a solution at any viscosity $\nu$, with the same blowup time:
+
+```math
+u_\nu(x,t) = \sqrt{\nu}\; u\big(x/\sqrt{\nu},\, t\big), \qquad p_\nu(x,t) = \nu\, p\big(x/\sqrt{\nu},\, t\big), \qquad f_\nu(x,t) = \sqrt{\nu}\; f\big(x/\sqrt{\nu},\, t\big).
+```
 
 ## 7. Checking it by computer
 
@@ -160,8 +181,8 @@ If that check holds, the *theorem* is true, whatever the merits of the written p
 On 6 October 2026 A. Bastounis, F. Circelli and A. C. Hansen posted [*Navier–Stokes lost in translation*](https://arxiv.org/abs/2610.08144). Their point is narrow, and important.
 
 **What they claim.** According to the authors, the Lean proof was produced by translating the paper into Lean with AI and accepting the translation once it compiled. A translation that compiles can quietly prove *different* steps from the paper. They give two concrete examples:
-- **An inverse estimate** (the paper's Lemma 8.6, equation 8.19). The paper claims a bound that costs four extra derivatives. The Lean version proves a weaker bound costing five, by summing a different series.
-- **A pressure bound in the uniqueness argument** (equation 10.19, Lemma 10.5). Both the bound and the way it is proved differ: different inequalities, a different route through Sobolev embedding, and an extra continuity step.
+- **An inverse estimate** (the paper's Lemma 8.6, equation 8.19, in the mean-flow corrections). The paper claims a bound that costs four extra derivatives. The Lean version proves a weaker bound costing five, by summing a different series.
+- **A pressure bound in the uniqueness argument** (equation 10.19, in the proof of Lemma 10.5). Both the bound and the way it is proved differ: different inequalities, a different route through Sobolev embedding, and an extra continuity step.
 
 **What they do not claim.** They do not say the written proof is wrong, or that the theorem is false. Their conclusion is that a compiling Lean proof certifies the *theorem*, not the *paper*: the paper's own arguments still need ordinary peer review.
 
@@ -186,17 +207,22 @@ So the two questions come apart:
 - **mean that real water or air blows up.** The equations are a model; at tiny scales real fluids are made of molecules, and the force here is specially engineered;
 - **change weather forecasting or engineering.** It is an existence proof about an idealized model, not a new simulation method.
 
+OpenAI released a companion paper the same day, [*Finite time blowup for the Euler equation*](https://cdn.openai.com/pdf/315b36cd-ec98-4023-8342-93345194ece1/euler.pdf). It claims a blowup *without any force* for the friction-free Euler equations. That paper is not covered here.
+
 ## Words used on this page
 
 | Here | In the paper |
 |---|---|
-| speed infinite at a point | blowup; the velocity is unbounded as $t \to 1$ |
+| speed infinite at a point | blowup; $\lVert u(t) \rVert_{L^\infty}$ is unbounded as $t \to 1$ |
 | smooth | infinitely differentiable, $C^\infty$ |
 | wrap-around box | the torus $\mathbb{R}^3/\mathbb{Z}^3$ |
 | friction strength | viscosity $\nu$ |
-| collapsing swirl | an axisymmetric, approximately self-similar profile with swirl |
-| repair rounds, waves | correction stages, wave packets (convex-integration style) |
-| no other solution can escape | weak–strong uniqueness, comparison |
-| error | the Navier–Stokes residual |
+| time left | $\tau = 1 - t$ |
+| collapsing vortex | the concentrating axisymmetric background, self-similar to leading order |
+| annulus, exterior | the pulse annulus; the heat exterior |
+| pulses | oscillatory wave packets, two families |
+| momentum flux | stress; averaged quadratic products (covariances) of the pulse velocities |
+| leftover, error | the momentum residual $R(u,p)$; the force is $f = R(u,p)$ |
+| no other solution can escape | the uniqueness Lemma 10.5 |
 
-Figures: [`code/make_figures.py`](code/make_figures.py). The blowup rates come from `LocalAngularGrowth.lean` and `BaseAngularGrowth.lean` in the formalization; everything else drawn is schematic.
+Figures: [`code/make_figures.py`](code/make_figures.py). The scales of the core come from Section 2.1 and Theorem 3.1 of the paper; everything else drawn is schematic.

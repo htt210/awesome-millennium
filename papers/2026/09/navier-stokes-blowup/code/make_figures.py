@@ -4,12 +4,12 @@
     pip install -r requirements.txt
     python make_figures.py            # writes ../figures/*.png
 
-Two figures use the blowup law stated in the Lean formalization
-(NavierStokes/LocalAngularGrowth.lean, BaseAngularGrowth.lean): along a ray at
-distance sqrt(2 X tau) from the centre, tau = 1 - t, the swirl speed behaves
-like e0 * tau^-(1/2 + h) with 0 < h < 1/100. The constants e0, X and h below
-are illustrative choices inside that range. Every other figure is a labelled
-schematic.
+Two figures use the scales stated in the paper (Section 2.1 and Theorem 3.1(iv);
+also LocalAngularGrowth.lean in the formalization), with tau = 1 - t: the core's
+width shrinks like tau^(1/2), its height like tau^(1/2 - h), and its swirl
+speed grows like tau^-(1/2 + h), with 0 < h < 1/100. The constants and the
+value of h below are illustrative choices inside that range. Every other
+figure is a labelled schematic.
 """
 
 from __future__ import annotations
@@ -227,13 +227,14 @@ def fig_collapse():
                 ax.text(r * math.cos(math.radians(-25)) + 0.04, r * math.sin(math.radians(-25)), f"t = {t}",
                         fontsize=10.5, color=c, va="center")
         ax.plot([0], [0], "o", ms=6, color=th["ink"])
-        ax.text(-1.04, 0.9, "innermost rings:\nt = 0.97 and 0.99", fontsize=10.5, color=th["ink2"])
-        ax.text(0, -1.03, "seen from above: the ring of swirling fluid shrinks\nand spins faster (arrow length ~ speed)",
+        ax.text(-1.04, 0.9, "innermost circles:\nt = 0.97 and 0.99", fontsize=10.5, color=th["ink2"])
+        ax.text(0, -1.03, "seen from above: the spinning core narrows\nand spins faster (arrow length ~ speed)",
                 ha="center", fontsize=11, color=th["ink2"])
         a2 = fig.add_axes([0.58, 0.16, 0.38, 0.62])
         a2.set_axisbelow(True)
         ts = [0.5 + 0.4999 * i / 1000 for i in range(1001)]
-        a2.plot(ts, [math.sqrt(1 - t) / math.sqrt(0.5) for t in ts], color=th["s1"], label="size of the ring")
+        a2.plot(ts, [math.sqrt(1 - t) / math.sqrt(0.5) for t in ts], color=th["s1"], label="width of the core")
+        a2.plot(ts, [((1 - t) / 0.5) ** (0.5 - 0.15) for t in ts], color=th["s3"], label="height of the core")
         a2.plot(ts, [(1 - t) ** -SPEED_EXP * 0.5 ** SPEED_EXP for t in ts], color=th["s2"], label="swirl speed")
         a2.set_yscale("log")
         a2.set_xlim(0.5, 1.0)
@@ -241,9 +242,9 @@ def fig_collapse():
         a2.set_xlabel("time")
         a2.set_ylabel("relative to t = 0.5 (log scale)")
         a2.legend(loc="upper left", frameon=False, fontsize=11)
-        title(fig, "The collapsing swirl at the core",
-              "Size shrinks like the square root of the time left; speed grows a bit faster than one over that.\n"
-              "Rates from the formalization; constants illustrative.", th)
+        title(fig, "The collapsing vortex at the core",
+              "Width shrinks like the square root of the time left, height a little more slowly; speed grows a bit\n"
+              "faster than one over the width. Rates from the paper; constants and h exaggerated for visibility.", th)
         save(fig, "collapse", mode)
 
 
@@ -261,13 +262,14 @@ def fig_repair():
         ax.axis("off")
         ax.add_patch(Circle((0, 0), 0.45, fc=th["s2"], ec="none", alpha=0.25))
         ax.text(0, 0, "collapsing\ncore", ha="center", va="center", fontsize=11, color=th["ink"])
+        ax.text(0, 0.98, "annulus: where the pulses live", ha="center", fontsize=11, color=th["ink2"])
         for k, (freq, amp, c) in enumerate([(8, 0.05, th["s1"]), (20, 0.03, th["s3"]), (44, 0.018, th["s2"])]):
             r0 = 0.6 + 0.14 * k
             angs = [2 * math.pi * i / 1200 for i in range(1201)]
             xs = [(r0 + amp * math.sin(freq * a)) * math.cos(a) for a in angs]
             ys = [(r0 + amp * math.sin(freq * a)) * math.sin(a) for a in angs]
             ax.plot(xs, ys, color=c, lw=1.8)
-        ax.text(0, -1.06, "repair waves in the ring around the core:\neach round finer and weaker",
+        ax.text(0, -1.06, "pulses around complete rings: amplified by the\nshear, then damped; finer as time runs out",
                 ha="center", fontsize=11, color=th["ink2"])
         a2 = fig.add_axes([0.56, 0.16, 0.40, 0.62])
         a2.set_axisbelow(True)
@@ -280,8 +282,8 @@ def fig_repair():
         a2.set_ylabel("error left over (log scale)")
         a2.grid(axis="x", visible=False)
         title(fig, "Repairing the leftover error, round after round",
-              "Schematic. The collapsing pattern is not an exact solution: fine waves cancel what is left,\n"
-              "so that what the flow still lacks is smooth, and the force supplies exactly that.", th)
+              "Schematic. Pulses supply the missing momentum flux; each correction round shrinks what is left,\n"
+              "until the leftover is smooth through the singular time. The force is exactly that leftover.", th)
         save(fig, "repair", mode)
 
 
