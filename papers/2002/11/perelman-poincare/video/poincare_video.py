@@ -83,7 +83,7 @@ def ring_loop(d, t):
     """A loop around the doughnut's hole; t = 0 near the outer edge, t = 1 tight around the hole."""
     w = interpolate(0.86 * d.w, 0.42 * d.w, t)
     h = interpolate(0.78 * d.h, 0.34 * d.h, t)
-    return Ellipse(width=w, height=h).set_stroke(LOOP, 5).move_to(d.c + 0.02 * UP)
+    return Ellipse(width=w, height=h).set_stroke(LOOP, 5).move_to(d[0].get_center() + 0.02 * UP)
 
 
 def mug(center=ORIGIN, color=TORUS):
