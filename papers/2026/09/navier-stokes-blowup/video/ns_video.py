@@ -50,7 +50,7 @@ def swirl_field(center=ORIGIN, strength=1.0, tight=1.0, nx=13, ny=7, dx=0.95, co
             p = np.array([(i - (nx - 1) / 2) * dx, (j - (ny - 1) / 2) * dx, 0])
             d = p - center
             r = max(np.linalg.norm(d), 0.25)
-            speed = strength * min(1.0, tight / (r + 0.3))
+            speed = strength * max(0.35, min(1.0, tight / (r + 0.3)))
             v = np.array([-d[1], d[0], 0]) / r * speed * 0.45
             if np.linalg.norm(v) < 0.05:
                 continue
@@ -141,7 +141,7 @@ class C0Open(Video):
     def construct(self):
         self.chapter_title = "0. Cold open"
         tight = ValueTracker(0.6)
-        field = always_redraw(lambda: swirl_field(tight=tight.get_value()))
+        field = always_redraw(lambda: swirl_field(tight=tight.get_value()).shift(0.3 * UP))
         self.narrate("0.1")
         self.play(FadeIn(field), run_time=2)
         self.finish()
@@ -236,7 +236,7 @@ class C1Equations(Video):
         # 4. force
         self.narrate("1.5")
         c4 = effect_card(4, "An outside force", ORANGE)
-        field = swirl_field(tight=0.5, strength=0.6).shift(0.3 * DOWN)
+        field = swirl_field(tight=0.5, strength=0.6).scale(0.8).shift(0.2 * DOWN)
         push = Arrow(5.5 * LEFT + 0.3 * DOWN, 2.5 * LEFT + 0.3 * DOWN, buff=0, fill_color=ORANGE, thickness=8)
         self.play(FadeIn(c4), FadeIn(field))
         self.play(GrowArrow(push))
@@ -375,20 +375,20 @@ class C3Force(Video):
         left.shift(3.4 * LEFT + 0.2 * UP - left.box.get_center())
         one = DashedLine(left.c2p(1, 0), left.c2p(1, 10)).set_stroke(GREY_B, 1.5)
         speed = curve(left, blowup_speed, 0.3, 0.995, n=400, color=ORANGE, width=5, ylim=(-0.1, 10.2))
-        sl = txt("fluid speed", 22, ORANGE).next_to(left.c2p(0.5, 8.5), RIGHT, buff=0)
+        sl = txt("fluid speed", 24, ORANGE).next_to(left.c2p(1.08, 8.6), RIGHT, buff=0)
         self.narrate("3.1")
         self.play(FadeIn(left), ShowCreation(one))
         self.play(ShowCreation(speed, run_time=2), FadeIn(sl))
         self.cue("call whatever is left")
         need = curve(left, lambda t: 0.9 * on(t) * (1 - t) ** -1.6 if t < 1 else 99, 0.3, 0.99, n=400,
                      color=RED_C, width=5, ylim=(-0.1, 10.2))
-        nl = txt("force you would need", 22, RED_C).next_to(left.c2p(0.5, 7.3), RIGHT, buff=0)
+        nl = txt("force you would need", 24, RED_C).next_to(left.c2p(1.08, 7.2), RIGHT, buff=0)
         self.play(ShowCreation(need, run_time=2), FadeIn(nl))
         self.finish()
 
         self.narrate("3.2")
         self.cue("The force itself must be")
-        cross = Cross(VGroup(need, nl), stroke_color=RED_C)
+        cross = Cross(need, stroke_color=RED_C)
         self.play(ShowCreation(cross))
         self.finish()
 
@@ -402,7 +402,8 @@ class C3Force(Video):
         self.play(FadeIn(right), ShowCreation(one2))
         self.play(ShowCreation(force, run_time=2), FadeIn(fl))
         self.cue("Each term")
-        self.play(ShowCreation(speed2, run_time=2))
+        sl2 = txt("fluid speed", 24, ORANGE).next_to(right.c2p(1.08, 8.6), RIGHT, buff=0)
+        self.play(ShowCreation(speed2, run_time=2), FadeIn(sl2))
         self.finish()
 
         self.recap("3.4", ["The force must stay smooth at the moment of blowup.",
@@ -838,7 +839,12 @@ class C8Meaning(Video):
                  ("8.3", "✗", "Not real water blowing up; no change to weather or engineering", RED_C)]
         rows = VGroup()
         for beat, mark, text, color in items:
-            row = VGroup(txt(mark, 40, color), txt(text, 28)).arrange(RIGHT, buff=0.4)
+            if mark == "✓":
+                sym = VMobject().set_points_as_corners([[-0.22, 0.0, 0], [-0.06, -0.18, 0], [0.24, 0.22, 0]])
+            else:
+                sym = VGroup(Line([-0.18, -0.18, 0], [0.18, 0.18, 0]), Line([-0.18, 0.18, 0], [0.18, -0.18, 0]))
+            sym.set_stroke(color, 6)
+            row = VGroup(sym, txt(text, 32)).arrange(RIGHT, buff=0.4)
             rows.add(row)
         rows.arrange(DOWN, aligned_edge=LEFT, buff=0.5).move_to(0.4 * UP)
         for (beat, *_), row in zip(items, rows):
@@ -859,7 +865,7 @@ class C9Close(Video):
         big = self.roadmap(-1, big=True).move_to(2.6 * UP)
         self.play(FadeIn(big, lag_ratio=0.2))
         tight = ValueTracker(0.6)
-        field = always_redraw(lambda: swirl_field(tight=tight.get_value()).scale(0.8).shift(0.4 * DOWN))
+        field = always_redraw(lambda: swirl_field(tight=tight.get_value()).scale(0.8).shift(0.25 * DOWN))
         self.play(FadeIn(field))
         self.cue("A spinning column")
         self.play(tight.animate.set_value(3.0), run_time=5)
