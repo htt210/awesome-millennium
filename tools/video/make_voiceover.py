@@ -59,7 +59,7 @@ def main(video_dir: Path, name: str, silent: Path, scenes: list[str]) -> int:
         out = video_dir / (f"{name}.mp4" if i == 0 else f"{name}-{key}.mp4")
         subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(silent), "-i", str(track),
                         "-map", "0:v", "-map", "1:a", "-c:v", "copy",
-                        "-af", "loudnorm=I=-16:TP=-2:LRA=11,alimiter=limit=0.79:level=disabled", "-ar", "48000", "-c:a", "aac", "-b:a", "64k",
+                        "-af", "loudnorm=I=-16:TP=-2:LRA=11,alimiter=limit=0.63:level=disabled", "-ar", "48000", "-c:a", "aac", "-b:a", "64k",
                         "-metadata:s:a:0", f"title=Narration ({key})", "-movflags", "+faststart", str(out)],
                        check=True)
         print(f"wrote {out.name} ({placed} narration clips, voice {key})")
