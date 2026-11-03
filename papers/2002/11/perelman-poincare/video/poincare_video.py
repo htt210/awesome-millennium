@@ -229,7 +229,7 @@ def wiggly(scale=1.4, center=ORIGIN, color=SHAPE):
 def paper_cards(size=24):
     papers = [("1. The entropy formula", "November 2002"), ("2. Ricci flow with surgery", "March 2003"),
               ("3. Finite extinction time", "July 2003")]
-    return VGroup(*[card([a, b], width=3.9, size=size) for a, b in papers]).arrange(RIGHT, buff=0.3)
+    return VGroup(*[card([f"{a}  ·  {b}"], width=8.0, size=size) for a, b in papers]).arrange(DOWN, buff=0.25)
 
 
 def mark_rows(items, size=32):
@@ -524,7 +524,7 @@ class C3Flow(Video):
 
         self.narrate("3.3")
         parts = VGroup(Tex(R"\partial_t g", font_size=80), Tex("=", font_size=80),
-                       Tex(R"-2 \mathrm{Ric}(g)", font_size=80)).arrange(RIGHT, buff=0.35).move_to(0.9 * UP)
+                       Tex(R"-2 \operatorname{Ric}(g)", font_size=80)).arrange(RIGHT, buff=0.35).move_to(0.9 * UP)
         parts[0].set_color(BLUE_B)
         parts[2].set_color(ORANGE)
         labs = VGroup(txt("how the shape changes", 26, BLUE_B).next_to(parts[0], DOWN, buff=0.5),
@@ -550,7 +550,7 @@ class C3Flow(Video):
         left = always_redraw(lambda: snap_curve(snaps, k.get_value(), cl))
         self.play(ShowCreation(left), run_time=1.5)
         self.cue("Every point moves")
-        self.play(k.animate.set_value(40), run_time=6, rate_func=linear)
+        self.play(k.animate.set_value(14), run_time=7, rate_func=linear)
         self.finish()
 
         self.narrate("3.5")
@@ -624,9 +624,9 @@ class C4Necks(Video):
         self.cue("and keep flowing")
         rounds = VGroup(*[Circle(radius=1.15).set_fill(SHAPE, 0.22).set_stroke(SHAPE, 3).move_to(p.get_center())
                           for p in pieces])
-        self.play(Transform(pieces, rounds), run_time=2)
+        self.play(FadeTransform(pieces, rounds), run_time=2)
         self.finish()
-        self.play(FadeOut(pieces))
+        self.play(FadeOut(rounds))
 
         self.narrate("4.5")
         items = ["1. only singularities you can cut", "2. cuts stay under control", "3. a clear ending"]
@@ -657,7 +657,7 @@ class C5Perelman(Video):
     def construct(self):
         self.chapter(3, "5. What Perelman added")
         self.narrate("5.1")
-        papers = paper_cards().move_to(0.5 * UP)
+        papers = paper_cards(28).move_to(0.4 * UP)
         for k, phrase in enumerate(["In November 2002", "posted the first", "Together"]):
             self.cue(phrase)
             self.play(FadeIn(papers[k], shift=0.1 * UP))
@@ -753,7 +753,7 @@ class C5Perelman(Video):
                 parts.add(curve(ax, lambda t, a=a, b=b, v0=v0: v0 * math.sqrt(max(1 - (t - a) / (b - a), 0)), a,
                                 b - 1e-4, color=BLUE_C, width=5))
         ext = VGroup(Dot(ax.c2p(1.0, 0), radius=0.1, fill_color=YELLOW),
-                     txt("extinct", 26, YELLOW).next_to(ax.c2p(1.0, 0), UP, buff=0.35))
+                     txt("extinct", 26, YELLOW).next_to(ax.c2p(1.0, 0), RIGHT, buff=0.25))
         self.play(FadeIn(ax))
         self.play(ShowCreation(parts, lag_ratio=1.0), run_time=5, rate_func=linear)
         self.play(FadeIn(ext))
@@ -844,7 +844,7 @@ class C6Together(Video):
         self.play(balls[0].animate.move_to(center + 1.7 * LEFT), balls[2].animate.move_to(center + 1.7 * RIGHT),
                   balls[1].animate.move_to(center), run_time=1.5)
         one = ball(1.6, center)
-        self.play(Transform(balls, one), run_time=2)
+        self.play(FadeTransform(balls, one), run_time=2)
         lab = txt("a three-sphere", 30, YELLOW).next_to(one, DOWN, buff=0.4)
         self.play(FadeIn(lab))
         self.finish()
@@ -860,7 +860,7 @@ class C7Checked(Video):
     def construct(self):
         self.chapter(4, "7. Checked")
         self.narrate("7.1")
-        papers = paper_cards().move_to(1.0 * UP)
+        papers = paper_cards(28).move_to(0.9 * UP)
         nj = txt("never sent to a journal", 28, GREY_A).next_to(papers, DOWN, buff=0.5)
         self.play(FadeIn(papers))
         self.play(FadeIn(nj))
