@@ -288,9 +288,12 @@ class C2Question(Video):
         ax = Chart((-3, 3), (0, 6), 7.5, 3.6, grid=False, xlabel="position", ylabel="speed")
         ax.shift(0.4 * UP - ax.box.get_center())
         sharp = ValueTracker(1.0)
-        prof = always_redraw(lambda: curve(ax, lambda x: 1.2 / sharp.get_value() *
-                                           math.exp(-x * x * sharp.get_value() ** 2 / 2), -3, 3, n=400,
-                                           color=ORANGE, ylim=(-0.1, 6.3)))
+        def bell(x):
+            s = sharp.get_value()
+            return 1.2 * s * math.exp(-x * x * s * s / 2)
+        # two monotone halves, so the spike is cut cleanly where it leaves the chart
+        prof = always_redraw(lambda: VGroup(*[curve(ax, bell, a, b, n=300, color=ORANGE, ylim=(-0.1, 6.0))
+                                              for a, b in ((-3, 0), (0, 3))]))
         self.narrate("2.1")
         self.play(FadeIn(ax), FadeIn(prof))
         self.finish()
@@ -719,7 +722,7 @@ class C6Rest(Video):
         self.finish()
 
         self.narrate("6e.2")
-        sf = txt("smooth forever?", 30, BLUE_C).move_to(uch.c2p(0.75, 5))
+        sf = txt("smooth forever?", 30, BLUE_C).move_to(uch.c2p(0.55, 5.5))
         self.play(FadeIn(sf))
         self.play(ShowCreation(Cross(sf, stroke_color=RED_C)))
         self.finish()
@@ -761,7 +764,7 @@ class C7Check(Video):
     def construct(self):
         self.chapter(4, "7. Is it right?")
         self.narrate("7.1")
-        c1 = card(["Lean 4", "about 429,000 lines · no gaps · no extra axioms"], width=9, size=30).move_to(1.6 * UP)
+        c1 = card(["Lean 4", "about 429,000 lines", "no gaps · no extra axioms"], width=9, size=30).move_to(1.6 * UP)
         self.play(FadeIn(c1))
         self.finish()
 
@@ -805,9 +808,12 @@ class C7Check(Video):
         qa = [("Is the theorem true?", "the Lean check"), ("Is the paper's proof right?", "peer review"),
               ("Has the prize been won?", "the Clay Institute")]
         table = VGroup()
-        for q, a in qa:
-            table.add(VGroup(txt(q, 30), txt("→  " + a, 30, YELLOW)).arrange(RIGHT, buff=0.6))
-        table.arrange(DOWN, aligned_edge=LEFT, buff=0.45).move_to(0.4 * UP)
+        for k, (q, a) in enumerate(qa):
+            # questions right-aligned and answers left-aligned on one column, so the arrows line up
+            y = (0.4 + 0.75 * (1 - k)) * UP
+            qt = txt(q, 30).move_to(y, aligned_edge=RIGHT).shift(0.4 * LEFT)
+            at = txt("→  " + a, 30, YELLOW).move_to(y, aligned_edge=LEFT).shift(0.4 * RIGHT)
+            table.add(VGroup(qt, at))
         for row, phrase in zip(table, ["Is the theorem true", "Is the paper's proof", "And has the prize"]):
             self.cue(phrase)
             self.play(FadeIn(row, shift=0.1 * RIGHT))
