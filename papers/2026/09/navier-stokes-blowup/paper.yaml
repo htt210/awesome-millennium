@@ -48,3 +48,5 @@ explainer:
   added: 2026-11-02
   code: code/make_figures.py
   figures: figures
+  video: video/navier-stokes-blowup.mp4
+  poster: video/poster.png

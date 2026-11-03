@@ -8,7 +8,11 @@
 | **The claim, plainly** | For every viscosity there is a smooth push, applied for a while to a fluid at rest, that makes the fluid's speed infinite at one point at time 1, with finite energy, so that the equations cannot be continued smoothly past that moment |
 | **Millennium problem** | [Navier–Stokes existence and smoothness](../../../../problems/navier-stokes.md): claims options (C) and (D) |
 | **Status** (2 November 2026) | Not peer reviewed. Lean formalization published by OpenAI; its relation to the written proof is [disputed](#8-the-dispute-the-computer-proof-is-not-the-paper). The Clay Institute says it is evaluating the claim |
-| **More** | [Lean formalization](https://github.com/openai/NavierStokesAndEuler) · [figures](figures/) · [figure code](code/make_figures.py) |
+| **More** | [video](video/) · [Lean formalization](https://github.com/openai/NavierStokesAndEuler) · [figures](figures/) · [figure code](code/make_figures.py) |
+
+<a href="video/navier-stokes-blowup.mp4"><img src="video/poster.png" alt="Video poster: the title Finite Time Blowup for Navier–Stokes over a swirling flow and the core, annulus and exterior of the construction" width="100%"></a>
+
+**[▶ Watch the video](video/navier-stokes-blowup.mp4)** (17¾ minutes): the story of this page, told with animations, narrated by an American male voice and captioned. Also with an [American female narrator](video/navier-stokes-blowup-us-female.mp4), same pictures and timing. The [script](video/storyboard.md) lists what is on screen and what is said, beat by beat.
 
 ## Contents
 
