@@ -184,7 +184,10 @@ class C1Equations(Video):
         self.play(FadeOut(VGroup(field, lab)))
 
         def effect_card(n, name, color):
-            return card([f"{n}. {name}"], width=8, size=30).set_color(color).to_edge(UP, buff=0.9)
+            c = card([f"{n}. {name}"], width=8, size=30).to_edge(UP, buff=0.9)
+            c[0].set_stroke(color, 3)
+            c[1].set_color(color)
+            return c
 
         # 1. carried along
         self.narrate("1.2")
@@ -227,7 +230,6 @@ class C1Equations(Video):
         self.play(FadeIn(c3), FadeIn(sq))
         self.cue("Squash a blob")
         self.play(sq.animate.stretch(0.5, 1).stretch(2.0, 0), FadeIn(area), run_time=2)
-        self.play(sq.animate.stretch(2.0, 1).stretch(0.5, 0), run_time=1.5)
         self.finish()
         self.play(FadeOut(VGroup(c3, sq, area)))
 
@@ -247,6 +249,8 @@ class C1Equations(Video):
         names = [("time change", 0, WHITE), ("carried along", 2, YELLOW), ("friction", 4, BLUE_B),
                  ("pressure", 6, GREEN_B), ("force", 8, ORANGE)]
         labels = VGroup(*[txt(n, 22, c).next_to(eq[i], DOWN, buff=0.45) for n, i, c in names])
+        for lab_ in labels:
+            lab_.set_y(eq.get_bottom()[1] - 0.6)
         self.play(Write(eq), run_time=2)
         self.play(FadeIn(labels, lag_ratio=0.2))
         self.cue("the tug of war")
@@ -452,7 +456,7 @@ class C4Claim(Video):
 class C5Core(Video):
     def construct(self):
         self.chapter(3, "5. How it works: the collapsing vortex")
-        reg = regions().shift(0.3 * DOWN)
+        reg = regions(r_ext=2.7).shift(0.1 * UP)
         self.narrate("5.1")
         self.cue("a collapsing core")
         self.play(FadeIn(reg.core), FadeIn(reg.labels[0]))
@@ -508,7 +512,7 @@ class C5Core(Video):
 
         col = always_redraw(column)
         axis2 = DashedLine(2.5 * LEFT + 3.0 * DOWN, 2.5 * LEFT + 2.6 * UP).set_stroke(GREY_B, 2)
-        wl = txt("width: like the square root of the time left", 24, GREY_A).move_to(2.6 * RIGHT + 1.0 * UP)
+        wl = txt("width: like the square root of the time left", 24, GREY_A).move_to(2.6 * RIGHT + 1.7 * UP)
         hl = txt("height: a little more slowly", 24, GREY_A).next_to(wl, DOWN, aligned_edge=LEFT, buff=0.3)
         self.play(ShowCreation(axis2), FadeIn(col))
         self.cue("Its width")
@@ -519,8 +523,8 @@ class C5Core(Video):
         self.finish()
 
         self.narrate("5.6")
-        meter = speed_chart(4.6, 2.6, "swirl speed")
-        meter.shift(3.0 * RIGHT + 1.3 * DOWN - meter.box.get_center())
+        meter = speed_chart(4.6, 2.3, "swirl speed")
+        meter.shift(3.0 * RIGHT + 0.8 * DOWN - meter.box.get_center())
         sp = curve(meter, blowup_speed, 0.3, 0.996, n=500, color=ORANGE, width=5, ylim=(-0.1, 10.2))
         self.play(FadeIn(meter))
         self.play(ShowCreation(sp), run_time=4)
@@ -536,7 +540,7 @@ class C5Core(Video):
 class C6Pulses(Video):
     def construct(self):
         self.chapter(3, "6. How it works: pulses and corrections")
-        reg = regions().shift(2.6 * LEFT + 0.3 * DOWN)
+        reg = regions(r_ext=2.7).shift(2.6 * LEFT + 0.1 * UP)
         c = reg.core.get_center()
 
         self.narrate("6a.1")
@@ -560,7 +564,7 @@ class C6Pulses(Video):
         # 6b — pulses
         self.narrate("6b.1")
         rip = ripple_ring(center=c)
-        self.play(ShowCreation(rip), run_time=2)
+        self.play(ShowCreation(rip), reg.labels[1].animate.set_opacity(0), run_time=2)
         self.finish()
 
         self.narrate("6b.2")
@@ -589,12 +593,12 @@ class C6Pulses(Video):
         self.narrate("6b.4")
         stripes = VGroup(*[Line(UP * 0.9, DOWN * 0.9).set_stroke(FAMILY1, 3).shift(RIGHT * 0.25 * k)
                            for k in range(-4, 5)])
-        frame = Rectangle(width=2.6, height=2.0).set_stroke(GREY_B, 1.5)
-        patch = VGroup(frame, stripes).move_to(3.6 * RIGHT + 1.6 * DOWN)
+        frame = Rectangle(width=2.6, height=1.9).set_stroke(GREY_B, 1.5)
+        patch = VGroup(frame, stripes).move_to(3.6 * RIGHT + 1.4 * DOWN)
         plab = txt("the ripple, close up", 20, GREY_A).next_to(patch, DOWN, buff=0.15)
         self.play(FadeIn(patch), FadeIn(plab))
         self.cue("tilts the ripples")
-        self.play(stripes.animate.apply_matrix([[1, 0.9], [0, 1]]).stretch(0.55, 0), run_time=2.5)
+        self.play(stripes.animate.apply_matrix([[1, 0.9], [0, 1]], about_point=frame.get_center()).stretch(0.55, 0), run_time=2.5)
         self.cue("until friction wins")
         decay = curve(env, envelope, 0.5, 1.0, n=100, color=FAMILY1, width=5)
         self.play(ShowCreation(decay), stripes.animate.set_stroke(opacity=0.25), rip.animate.set_stroke(width=2),
