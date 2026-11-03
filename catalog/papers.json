@@ -139,5 +139,75 @@
       "code": "code/make_figures.py",
       "figures": "figures"
     }
+  },
+  {
+    "slug": "perelman-poincare",
+    "path": "papers/2002/11/perelman-poincare",
+    "title": "Perelman's Ricci flow papers: the proof of the Poincaré conjecture",
+    "short_title": "Poincaré conjecture (Perelman)",
+    "authors": [
+      "Grigori Perelman"
+    ],
+    "date": "2002-11-11",
+    "first_version": "2002-11-11",
+    "tldr": "Three arXiv preprints (2002–03) that finish Richard Hamilton's program: let a shape smooth itself by its own curvature (Ricci flow), cut out the thin necks that form, and show that a closed three-dimensional shape in which every loop can be shrunk dies out in finite time, which forces it to be the three-sphere.",
+    "millennium": [
+      {
+        "problem": "poincare-conjecture",
+        "relation": "resolves",
+        "note": "Proves the conjecture (and, with more work, Thurston's geometrization conjecture). The Clay Institute awarded the prize in 2010; Perelman declined it. The smooth four-dimensional Poincaré conjecture is a different question and is still open."
+      }
+    ],
+    "fields": [
+      "geometric-topology",
+      "differential-geometry",
+      "geometric-analysis"
+    ],
+    "tags": [
+      "poincare-conjecture",
+      "ricci-flow",
+      "surgery",
+      "geometrization",
+      "three-manifolds",
+      "perelman",
+      "hamilton"
+    ],
+    "status": {
+      "review": "preprint",
+      "formalization": "none",
+      "community": "accepted",
+      "as_of": "2026-11-03",
+      "note": "Perelman posted three preprints to arXiv (November 2002, March 2003, July 2003) and never submitted them to a journal. Three teams wrote out the missing details in 2006: Kleiner and Lott (notes, published 2008), Morgan and Tian (a book, 2007) and Cao and Zhu (2006). Colding and Minicozzi gave an independent proof of the finite extinction step. Perelman declined the Fields Medal in 2006, and the Clay Institute awarded him the Millennium Prize on 18 March 2010, which he also declined. We know of no complete computer-checked proof."
+    },
+    "links": {
+      "paper": "https://arxiv.org/abs/math/0211159",
+      "related": [
+        {
+          "label": "Perelman, Ricci flow with surgery on three-manifolds (2003)",
+          "url": "https://arxiv.org/abs/math/0303109"
+        },
+        {
+          "label": "Perelman, Finite extinction time for the solutions to the Ricci flow on certain three-manifolds (2003)",
+          "url": "https://arxiv.org/abs/math/0307245"
+        },
+        {
+          "label": "Kleiner and Lott, Notes on Perelman's papers",
+          "url": "https://arxiv.org/abs/math/0605667"
+        },
+        {
+          "label": "Morgan and Tian, Ricci flow and the Poincaré conjecture",
+          "url": "https://arxiv.org/abs/math/0607607"
+        },
+        {
+          "label": "Clay Institute press release (2010)",
+          "url": "https://www.claymath.org/wp-content/uploads/2022/06/Poincare-press-release.pdf"
+        }
+      ]
+    },
+    "explainer": {
+      "added": "2026-11-03",
+      "code": "code/make_figures.py",
+      "figures": "figures"
+    }
   }
 ]

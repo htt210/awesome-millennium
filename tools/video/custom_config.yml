@@ -1,0 +1,7 @@
+# manimgl configuration for the narrated videos (render.sh passes it with --config_file)
+camera:
+  background_color: "#000000"
+  fps: 30
+text:
+  font: "CMU Serif"
+  alignment: "CENTER"

@@ -28,6 +28,14 @@
 
 - [Finite Time Blowup for Navier–Stokes](../papers/2026/09/navier-stokes-blowup/) (2026-09-08)
 
+## geometrization
+
+- [Perelman's Ricci flow papers: the proof of the Poincaré conjecture](../papers/2002/11/perelman-poincare/) (2002-11-11)
+
+## hamilton
+
+- [Perelman's Ricci flow papers: the proof of the Poincaré conjecture](../papers/2002/11/perelman-poincare/) (2002-11-11)
+
 ## interpolation
 
 - [The Exponential Time Hypothesis is False](../papers/2026/10/eth-is-false/) (2026-10-25)
@@ -41,9 +49,21 @@
 
 - [Finite Time Blowup for Navier–Stokes](../papers/2026/09/navier-stokes-blowup/) (2026-09-08)
 
+## perelman
+
+- [Perelman's Ricci flow papers: the proof of the Poincaré conjecture](../papers/2002/11/perelman-poincare/) (2002-11-11)
+
+## poincare-conjecture
+
+- [Perelman's Ricci flow papers: the proof of the Poincaré conjecture](../papers/2002/11/perelman-poincare/) (2002-11-11)
+
 ## polynomial-method
 
 - [The Exponential Time Hypothesis is False](../papers/2026/10/eth-is-false/) (2026-10-25)
+
+## ricci-flow
+
+- [Perelman's Ricci flow papers: the proof of the Poincaré conjecture](../papers/2002/11/perelman-poincare/) (2002-11-11)
 
 ## sat
 
@@ -64,6 +84,14 @@
 ## sparsification
 
 - [The Exponential Time Hypothesis is False](../papers/2026/10/eth-is-false/) (2026-10-25)
+
+## surgery
+
+- [Perelman's Ricci flow papers: the proof of the Poincaré conjecture](../papers/2002/11/perelman-poincare/) (2002-11-11)
+
+## three-manifolds
+
+- [Perelman's Ricci flow papers: the proof of the Poincaré conjecture](../papers/2002/11/perelman-poincare/) (2002-11-11)
 
 ## weak-strong-uniqueness
 
