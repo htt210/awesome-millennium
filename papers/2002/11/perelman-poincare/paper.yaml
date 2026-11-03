@@ -46,3 +46,5 @@ explainer:
   added: 2026-11-03
   code: code/make_figures.py
   figures: figures
+  video: video/perelman-poincare.mp4
+  poster: video/poster.png

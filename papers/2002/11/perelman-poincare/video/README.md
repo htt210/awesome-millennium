@@ -1,6 +1,6 @@
 # Video: Perelman's proof of the Poincaré conjecture
 
-An explainer for a general audience, DURATION long, in the style of 3Blue1Brown, made with [3b1b's manim](https://github.com/3b1b/manim) (`manimgl` 1.7.2). It follows the plain-language page ([`../README.md`](../README.md)) and introduces every idea with a picture before naming it. It comes in two voices with identical pictures and timing:
+An explainer for a general audience, 13 minutes 41 seconds long, in the style of 3Blue1Brown, made with [3b1b's manim](https://github.com/3b1b/manim) (`manimgl` 1.7.2). It follows the plain-language page ([`../README.md`](../README.md)) and introduces every idea with a picture before naming it. It comes in two voices with identical pictures and timing:
 
 | Video | Narrator |
 |---|---|

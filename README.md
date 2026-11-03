@@ -33,7 +33,7 @@ On 26 October 2026 OpenAI released a preprint giving a **deterministic algorithm
 
 <!-- BEGIN:latest -->
 - **[Perelman's Ricci flow papers: the proof of the Poincaré conjecture](papers/2002/11/perelman-poincare/)** (2002-11-11) — Three arXiv preprints (2002–03) that finish Richard Hamilton's program: let a shape smooth itself by its own curvature (Ricci flow), cut out the thin necks that form, and show that a closed three-dimensional shape in which every loop can be shrunk dies out in finite time, which forces it to be the three-sphere.  
-  *Poincaré Conjecture (resolves) · Preprint · Not formalized · Accepted · explainer + code*
+  *Poincaré Conjecture (resolves) · Preprint · Not formalized · Accepted · explainer + video + code*
 - **[Finite Time Blowup for Navier–Stokes](papers/2026/09/navier-stokes-blowup/)** (2026-09-08) — For every viscosity, a smooth force that is switched on for a while drives a fluid starting at rest to unbounded speed at time 1 with bounded energy, which would settle the Clay problem through its breakdown alternatives (C) and (D).  
   *Navier–Stokes Existence and Smoothness (resolves) · Preprint · Formalized (Lean 4) · Under examination · explainer + video + code*
 - **[The Exponential Time Hypothesis is False](papers/2026/10/eth-is-false/)** (2026-10-25) — A deterministic algorithm counts the satisfying assignments of any $k$-CNF in subexponential time and polynomial space; the case $k = 3$ refutes ETH.  

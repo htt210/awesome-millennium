@@ -8,7 +8,11 @@
 | **The claim, plainly** | A closed three-dimensional space in which every loop can be shrunk to a point is a three-sphere |
 | **Millennium problem** | [Poincaré conjecture](../../../../problems/poincare-conjecture.md): solved; the only Millennium problem the Clay Institute has declared solved |
 | **Status** (3 November 2026) | Never submitted to a journal. Details written out and checked by three teams in 2006 (Kleiner–Lott, Morgan–Tian, Cao–Zhu). Accepted. Clay prize awarded 2010, declined |
-| **More** | [figures](figures/) · [figure code](code/make_figures.py) |
+| **More** | [video](video/) · [figures](figures/) · [figure code](code/make_figures.py) |
+
+<a href="video/perelman-poincare.mp4"><img src="video/poster.png" alt="Video poster: the title The Poincaré conjecture over a ball with a loop, a dumbbell with a thin neck, and a wiggly curve rounding itself out" width="100%"></a>
+
+**[▶ Watch the video](video/perelman-poincare.mp4)** (13¾ minutes): the story of this page, told with animations, narrated by an American male voice and captioned. Also with an [American female narrator](video/perelman-poincare-us-female.mp4), same pictures and timing. The [script](video/storyboard.md) lists what is on screen and what is said, beat by beat.
 
 ## Contents
 
