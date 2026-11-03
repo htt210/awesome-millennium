@@ -862,7 +862,7 @@ class C9Close(Video):
     def construct(self):
         self.chapter_title = "9. Closing"
         self.narrate("9.1")
-        big = self.roadmap(-1, big=True).move_to(2.6 * UP)
+        big = self.roadmap(-1, big=True).move_to(3.0 * UP)
         self.play(FadeIn(big, lag_ratio=0.2))
         tight = ValueTracker(0.6)
         field = always_redraw(lambda: swirl_field(tight=tight.get_value()).scale(0.8).shift(0.25 * DOWN))
