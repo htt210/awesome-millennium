@@ -127,7 +127,8 @@ def wrap(text: str, width: int) -> str:
 # ---------------------------------------------------------------------------
 
 def txt(s: str, size: float = 30, color=WHITE, **kw) -> Text:
-    return Text(s, font=SERIF, font_size=size, color=color, **kw)
+    # manimgl's Text ignores `color=`, so colour it afterwards
+    return Text(s, font=SERIF, font_size=size, **kw).set_color(color)
 
 
 class Switch(VGroup):

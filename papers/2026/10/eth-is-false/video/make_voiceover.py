@@ -61,7 +61,7 @@ def main(silent: str, scenes: list[str]) -> int:
         out = HERE / ("eth-is-false.mp4" if i == 0 else f"eth-is-false-{key}.mp4")
         subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", silent, "-i", str(track),
                         "-map", "0:v", "-map", "1:a", "-c:v", "copy",
-                        "-af", "loudnorm=I=-16:TP=-1.5:LRA=11", "-ar", "48000", "-c:a", "aac", "-b:a", "64k",
+                        "-af", "loudnorm=I=-16:TP=-2:LRA=11,alimiter=limit=0.79:level=disabled", "-ar", "48000", "-c:a", "aac", "-b:a", "64k",
                         "-metadata:s:a:0", f"title=Narration ({key})", "-movflags", "+faststart", str(out)],
                        check=True)
         print(f"wrote {out.name} ({placed} narration clips, voice {key})")

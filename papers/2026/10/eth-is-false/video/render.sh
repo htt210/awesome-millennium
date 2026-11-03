@@ -33,7 +33,8 @@ export -f run
 export MANIMGL QUALITY OUT RESUME
 
 printf '%s\n' "${SCENES[@]}" | xargs -P "$JOBS" -I{} bash -c \
-  'if [ -n "${RESUME:-}" ] && [ -s "$OUT/{}.mp4" ] && [ -s build/captions/{}.json ]; then echo "kept {}"; exit 0; fi
+  'export TMPDIR=$(mktemp -d)   # private temp files: parallel scenes otherwise race on the same text SVGs
+   if [ -n "${RESUME:-}" ] && [ -s "$OUT/{}.mp4" ] && [ -s build/captions/{}.json ]; then echo "kept {}"; exit 0; fi
    run "$MANIMGL" eth_video.py {} -w $QUALITY --config_file custom_config.yml --video_dir "$OUT" > build/logs/{}.log 2>&1 \
    && echo "rendered {}" || { echo "FAILED {} (see build/logs/{}.log)"; exit 255; }'
 
