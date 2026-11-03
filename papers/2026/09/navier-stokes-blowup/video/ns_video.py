@@ -355,7 +355,7 @@ class C2Question(Video):
         self.play(*[c[0].animate.set_stroke(GREY_B, 2) for c in grid.cells[:2]],
                   *[c[0].animate.set_stroke(BLUE_C, 5).set_fill(BLUE_E, 0.6) for c in grid.cells[2:]])
         self.cue("The paper claims")
-        claimed = VGroup(*[txt("claimed", 24, BLUE_B).move_to(c[0].get_corner(UR) + np.array([-0.75, -0.3, 0]))
+        claimed = VGroup(*[txt("claimed", 26, YELLOW).move_to(c[0].get_corner(UR) + np.array([-0.75, -0.3, 0]))
                            for c in grid.cells[2:]])
         self.play(FadeIn(claimed))
         self.finish()
