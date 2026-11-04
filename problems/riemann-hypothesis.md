@@ -16,13 +16,21 @@ Equivalently, the prime-counting function obeys $\pi(x) = \operatorname{Li}(x) +
 
 ## The landscape
 
-- **Zero-free regions.** Classical results (de la Vallée Poussin, Vinogradov–Korobov) exclude zeros only in regions that shrink toward $\operatorname{Re}(s) = 1$. A *zero-free half-plane* $\operatorname{Re}(s) \gt \sigma_0$ for some fixed $\sigma_0 \lt 1$ — the "quasi-Riemann hypothesis" — would already be a historic advance.
+- **Zero-free regions.** Classical results (de la Vallée Poussin, Vinogradov–Korobov) exclude zeros only in regions that shrink toward $\operatorname{Re}(s) = 1$. A *zero-free half-plane* $\operatorname{Re}(s) \gt \sigma_0$ for some fixed $\sigma_0 \lt 1$ — the "quasi-Riemann hypothesis" — would already be a historic advance. OpenAI claimed one with $\sigma_0 = 7/8$ in September 2026; it is under examination (see below).
 - **Generalized RH** extends the question to Dirichlet $L$-functions and beyond; Landau–Siegel zeros are the main obstruction in that setting.
 
 ## Explained here
 
 <!-- BEGIN:papers -->
-_No explainers yet — see the queue below._
+### Partial results
+
+*Papers that prove a special case or a significant piece of the problem.*
+
+| Date | Paper | Status |
+|---|---|---|
+| 2026-09-30 | **[The Quasi-Riemann Hypothesis: a zero-free half-plane Re(s) > 7/8](../papers/2026/09/quasi-riemann-hypothesis/)**<br>OpenAI — Claims that the Riemann zeta function and every Dirichlet $L$-function have no zeros with real part above $7/8$, a fixed margin from the edge that holds at every height and for every character, which mathematicians call the quasi-Riemann hypothesis. | Preprint · Formalized (Lean 4) · Under examination |
+
+- *Quasi-Riemann hypothesis*: Keeps every zero of zeta between real parts $1/8$ and $7/8$; the Riemann hypothesis asks for exactly $1/2$ and stays open. If right, it also removes Landau–Siegel zeros and settles Vinogradov's conjecture on the least quadratic nonresidue.
 <!-- END:papers -->
 
 ## Queue
@@ -30,6 +38,5 @@ _No explainers yet — see the queue below._
 Papers we plan to explain next. Their claims have **not** been reviewed here yet.
 
 <!-- BEGIN:backlog -->
-- **[The Quasi-Riemann Hypothesis: a zero-free half-plane](https://github.com/openai/math/blob/main/preprints/The-Quasi-Riemann-Hypothesis-September-30-2026/paper.pdf)** — OpenAI, 2026-09-30 · *partial*  
-  Claims that every Dirichlet $L$-function, including $\zeta(s)$, has no zeros with $\operatorname{Re}(s) \gt 7/8$ (openai/math family 003; a companion gives a different proof for $\operatorname{Re}(s) \gt 11/12$).
+_Nothing queued._
 <!-- END:backlog -->

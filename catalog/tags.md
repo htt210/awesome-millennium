@@ -16,6 +16,14 @@
 
 - [Finite Time Blowup for Navier–Stokes](../papers/2026/09/navier-stokes-blowup/) (2026-09-08)
 
+## cubic-theta
+
+- [The Quasi-Riemann Hypothesis: a zero-free half-plane Re(s) > 7/8](../papers/2026/09/quasi-riemann-hypothesis/) (2026-09-30)
+
+## dirichlet-l-functions
+
+- [The Quasi-Riemann Hypothesis: a zero-free half-plane Re(s) > 7/8](../papers/2026/09/quasi-riemann-hypothesis/) (2026-09-30)
+
 ## eth
 
 - [The Exponential Time Hypothesis is False](../papers/2026/10/eth-is-false/) (2026-10-25)
@@ -36,13 +44,26 @@
 
 - [Perelman's Ricci flow papers: the proof of the Poincaré conjecture](../papers/2002/11/perelman-poincare/) (2002-11-11)
 
+## hecke-l-functions
+
+- [The Quasi-Riemann Hypothesis: a zero-free half-plane Re(s) > 7/8](../papers/2026/09/quasi-riemann-hypothesis/) (2026-09-30)
+
 ## interpolation
 
 - [The Exponential Time Hypothesis is False](../papers/2026/10/eth-is-false/) (2026-10-25)
 
+## landau-siegel-zeros
+
+- [The Quasi-Riemann Hypothesis: a zero-free half-plane Re(s) > 7/8](../papers/2026/09/quasi-riemann-hypothesis/) (2026-09-30)
+
+## large-sieve
+
+- [The Quasi-Riemann Hypothesis: a zero-free half-plane Re(s) > 7/8](../papers/2026/09/quasi-riemann-hypothesis/) (2026-09-30)
+
 ## lean
 
 - [The Exponential Time Hypothesis is False](../papers/2026/10/eth-is-false/) (2026-10-25)
+- [The Quasi-Riemann Hypothesis: a zero-free half-plane Re(s) > 7/8](../papers/2026/09/quasi-riemann-hypothesis/) (2026-09-30)
 - [Finite Time Blowup for Navier–Stokes](../papers/2026/09/navier-stokes-blowup/) (2026-09-08)
 
 ## navier-stokes
@@ -64,6 +85,10 @@
 ## ricci-flow
 
 - [Perelman's Ricci flow papers: the proof of the Poincaré conjecture](../papers/2002/11/perelman-poincare/) (2002-11-11)
+
+## riemann-zeta
+
+- [The Quasi-Riemann Hypothesis: a zero-free half-plane Re(s) > 7/8](../papers/2026/09/quasi-riemann-hypothesis/) (2026-09-30)
 
 ## sat
 
@@ -96,3 +121,7 @@
 ## weak-strong-uniqueness
 
 - [Finite Time Blowup for Navier–Stokes](../papers/2026/09/navier-stokes-blowup/) (2026-09-08)
+
+## zero-free-region
+
+- [The Quasi-Riemann Hypothesis: a zero-free half-plane Re(s) > 7/8](../papers/2026/09/quasi-riemann-hypothesis/) (2026-09-30)

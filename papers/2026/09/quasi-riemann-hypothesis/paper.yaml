@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../../../../schema/paper.schema.json
+slug: quasi-riemann-hypothesis
+title: "The Quasi-Riemann Hypothesis: a zero-free half-plane Re(s) > 7/8"
+short_title: Quasi-Riemann hypothesis
+authors: [OpenAI]
+date: 2026-09-30
+first_version: 2026-09-30
+tldr: >-
+  Claims that the Riemann zeta function and every Dirichlet $L$-function have no zeros with real part above $7/8$,
+  a fixed margin from the edge that holds at every height and for every character, which mathematicians call the
+  quasi-Riemann hypothesis.
+millennium:
+  - problem: riemann-hypothesis
+    relation: partial
+    note: >-
+      Keeps every zero of zeta between real parts $1/8$ and $7/8$; the Riemann hypothesis asks for exactly $1/2$
+      and stays open. If right, it also removes Landau–Siegel zeros and settles Vinogradov's conjecture on the
+      least quadratic nonresidue.
+fields: [number-theory, analytic-number-theory]
+tags: [riemann-zeta, zero-free-region, dirichlet-l-functions, hecke-l-functions, landau-siegel-zeros, cubic-theta, large-sieve, lean]
+status:
+  review: preprint
+  formalization: complete
+  formalization_system: Lean 4
+  community: under-examination
+  as_of: 2026-11-04
+  note: >-
+    Dated 30 September 2026 and released with OpenAI's batch of manuscripts on 6 October. OpenAI published a Lean 4
+    formalization of the 7/8 statement for zeta, for all Dirichlet $L$-functions and for the Hecke family; we have not
+    re-run it. A shorter companion proving 11/12, written with human assistance, followed on 5 October. Quanta
+    (19 October) reports that number theorists are working through the proof and that Peter Sarnak is teaching a
+    course on it. Banks, Kerr and Green have posted independent reworkings of the related Landau–Siegel argument.
+    No error has been reported as of this date, and no journal has reviewed it.
+links:
+  paper: https://github.com/openai/math/blob/main/preprints/The-Quasi-Riemann-Hypothesis-September-30-2026/paper.pdf
+  formalization: https://github.com/openai/math/blob/main/lean/docs/003.md
+  related:
+    - label: "Companion: a shorter proof of the 11/12 half-plane (5 October 2026)"
+      url: https://github.com/openai/math/blob/main/preprints/The-Quasi-Riemann-Hypothesis-October-5-2026/paper2.pdf
+    - label: "Uniform exclusion of Landau–Siegel zeros (OpenAI, 1 October 2026)"
+      url: https://github.com/openai/math/blob/main/preprints/Uniform-exclusion-of-Landau-Siegel-zeros-October-1-2026/paper.pdf
+    - label: "Quanta: AI proved the quasi-Riemann hypothesis. What happens now? (19 October 2026)"
+      url: https://www.quantamagazine.org/ai-proved-the-quasi-riemann-hypothesis-what-happens-now-20261019/
+    - label: "Banks: the Landau–Siegel argument with explicit constants (arXiv 2610.15483)"
+      url: https://arxiv.org/abs/2610.15483
+    - label: "Kerr: a simpler proof of the Landau–Siegel gap (arXiv 2610.21099)"
+      url: https://arxiv.org/abs/2610.21099
+    - label: "Green: On Landau–Siegel zeros"
+      url: https://hexagonmath.org/2610.00311v2
+    - label: Clay Institute problem description (Bombieri)
+      url: https://www.claymath.org/millennium/riemann-hypothesis/
+explainer:
+  added: 2026-11-04
+  code: code/make_figures.py
+  figures: figures

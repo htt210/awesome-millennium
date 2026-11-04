@@ -7,17 +7,6 @@
 #         millennium: [{problem, relation}], note (one line, no "|"),
 #         links: [{label, url}] (optional)
 
-- title: "The Quasi-Riemann Hypothesis: a zero-free half-plane"
-  authors: [OpenAI]
-  date: 2026-09-30
-  url: https://github.com/openai/math/blob/main/preprints/The-Quasi-Riemann-Hypothesis-September-30-2026/paper.pdf
-  millennium:
-    - problem: riemann-hypothesis
-      relation: partial
-  note: >-
-    Claims that every Dirichlet $L$-function, including $\zeta(s)$, has no zeros with $\operatorname{Re}(s) \gt 7/8$
-    (openai/math family 003; a companion gives a different proof for $\operatorname{Re}(s) \gt 11/12$).
-
 - title: Exact Birch–Swinnerton-Dyer Formula from Low Selmer Corank
   authors: [OpenAI]
   date: 2026-10-07
