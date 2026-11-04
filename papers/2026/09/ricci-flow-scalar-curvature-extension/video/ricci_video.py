@@ -33,6 +33,15 @@ class Video(Narrated):
     BUILD = HERE / "build"
 
 
+def pow10(k: int) -> str:
+    """10 to the power k, with Unicode superscripts (1 and 10 written plainly)."""
+    if k == 0:
+        return "1"
+    if k == 1:
+        return "10"
+    return "10" + str(k).translate(str.maketrans("-0123456789", "⁻⁰¹²³⁴⁵⁶⁷⁸⁹"))
+
+
 def counts(n: int):
     return n * n * (n * n - 1) // 12, min(n * (n + 1) // 2, n * n * (n * n - 1) // 12), 1
 
@@ -147,7 +156,7 @@ class C1Flow(Video):
         circ = Circle(radius=1.4).set_stroke(BLUE_C, 4).move_to(3.8 * LEFT + 0.4 * UP)
         ax = Chart((0, 1), (0, 3), 6.0, 3.2, xticks=(0, 0.5, 1), yticks=(0, 1, 2, 3),
                    xfmt=lambda v: txt(f"{v:g} T" if v else "0", 18, GREY_B),
-                   yfmt=lambda v: txt(f"10^{int(v)}" if v > 1 else ("1" if v == 0 else "10"), 18, GREY_B),
+                   yfmt=lambda v: txt(pow10(int(v)), 18, GREY_B),
                    xlabel="time", ylabel="curvature", grid=False)
         ax.shift(2.4 * RIGHT + 0.45 * UP - ax.box.get_center())
         R = curve(ax, lambda f: math.log10(12 / (1 - f)), 0, 0.985, n=300, color=ORANGE, width=4, ylim=(0, 3))
@@ -280,8 +289,8 @@ class C3Question(Video):
 
         self.narrate("3.3")
         ax2 = Chart((0, 4), (0, 12), 7.0, 3.4, xticks=(0, 1, 2, 3, 4), yticks=(0, 4, 8, 12),
-                    xfmt=lambda v: txt(f"10^-{int(v)}" if v else "1", 18, GREY_B),
-                    yfmt=lambda v: txt(f"10^{int(v)}" if v else "1", 18, GREY_B),
+                    xfmt=lambda v: txt(pow10(-int(v)), 18, GREY_B),
+                    yfmt=lambda v: txt(pow10(int(v)), 18, GREY_B),
                     xlabel="time left before the tear", ylabel="full curvature", grid=False)
         ax2.shift(1.0 * LEFT + 0.45 * UP - ax2.box.get_center())
         lines = VGroup()
@@ -362,7 +371,9 @@ class C4Claims(Video):
                                           color=ORANGE, width=4))
         keys = VGroup(txt("radius of S²", 20, BLUE_C), txt("radius of the big sphere", 20, ORANGE))
         keys.arrange(RIGHT, buff=0.6).next_to(ax.box, UP, buff=0.15)
-        cone = txt("a cone forms here (schematic)", 22, YELLOW).next_to(ax.c2p(0, 0.15), RIGHT, buff=0.3)
+        cone = VGroup(txt("a cone forms here (schematic)", 22, YELLOW).next_to(ax.c2p(0.02, 1.25), RIGHT, buff=0.1))
+        cone.add(Arrow(cone[0].get_bottom() + 1.2 * LEFT, ax.c2p(0.01, 0.05), buff=0.1).set_stroke(YELLOW, 3)
+                 .set_fill(YELLOW))
         self.add(ax, r1, r2, keys)
         self.play(tr.animate.set_value(1.0), run_time=3)
         r1.clear_updaters()
