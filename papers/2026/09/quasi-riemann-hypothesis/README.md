@@ -8,7 +8,11 @@
 | **The claim, plainly** | Riemann's zeta function, and every Dirichlet $L$-function, has no zeros with real part greater than $7/8$ |
 | **Millennium problem** | [Riemann hypothesis](../../../../problems/riemann-hypothesis.md): partial progress; the hypothesis itself stays open |
 | **Status** (4 November 2026) | Not peer reviewed. Lean formalization of the main statements published by OpenAI. Under examination by number theorists; no error reported |
-| **More** | [shorter 11/12 companion](https://github.com/openai/math/blob/main/preprints/The-Quasi-Riemann-Hypothesis-October-5-2026/paper2.pdf) · [Lean scope](https://github.com/openai/math/blob/main/lean/docs/003.md) · [figures](figures/) · [figure code](code/make_figures.py) |
+| **More** | [video](video/) · [shorter 11/12 companion](https://github.com/openai/math/blob/main/preprints/The-Quasi-Riemann-Hypothesis-October-5-2026/paper2.pdf) · [Lean scope](https://github.com/openai/math/blob/main/lean/docs/003.md) · [figures](figures/) · [figure code](code/make_figures.py) |
+
+<a href="video/quasi-riemann-hypothesis.mp4"><img src="video/poster.png" alt="Video poster: the title The Quasi-Riemann Hypothesis over the critical strip with orange zero-free bands past 1/8 and 7/8, and a prime staircase following a smooth curve" width="100%"></a>
+
+**[▶ Watch the video](video/quasi-riemann-hypothesis.mp4)** (13½ minutes): the story of this page, told with animations, narrated by an American male voice and captioned. Also with an [American female narrator](video/quasi-riemann-hypothesis-us-female.mp4), same pictures and timing. The [script](video/storyboard.md) lists what is on screen and what is said, beat by beat.
 
 ## Contents
 
