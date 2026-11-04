@@ -206,7 +206,7 @@ class C1Shapes(Video):
 
         self.narrate("1.3")
         la, lb = loop_a(d), loop_b(d)
-        ta = txt("a class", 24, LOOPA).next_to(la, UP, buff=0.05).shift(1.5 * LEFT)
+        ta = txt("a class", 24, LOOPA).next_to(d, LEFT, buff=0.3)
         tb = txt("a class", 24, LOOPB).next_to(lb, RIGHT, buff=0.15)
         self.play(ShowCreation(la), FadeIn(ta))
         self.play(ShowCreation(lb), FadeIn(tb))
@@ -270,7 +270,7 @@ class C2Conjecture(Video):
         self.finish()
 
         self.narrate("2.3")
-        badge = card(["Hodge class:", "rational, and in the middle column"], width=4.6, size=24).to_edge(RIGHT, buff=0.4)
+        badge = card(["Hodge class:", "rational, and in the middle column"], width=4.0, size=22).to_edge(RIGHT, buff=0.2)
         badge.shift(0.6 * UP)
         self.play(FadeIn(badge))
         self.finish()
@@ -379,7 +379,7 @@ class C3CM(Video):
         m2 = VGroup(tick(), txt("hexagonal: lands", 24, GREEN_C)).arrange(RIGHT, buff=0.25).next_to(h, DOWN, buff=0.3)
         self.play(FadeIn(m1), FadeIn(m2))
         self.cue("it is said to have")
-        cm = txt("complex multiplication: CM", 32, YELLOW).move_to(0.4 * UP)
+        cm = txt("complex multiplication: CM", 32, YELLOW).move_to(2.7 * UP)
         self.play(FadeIn(cm, scale=1.2))
         self.finish()
         self.clear_content()
@@ -537,12 +537,12 @@ class C5How(Video):
 class C6Follow(Video):
     def construct(self):
         self.chapter(3, "6. What follows")
-        src = card(["Hodge for CM abelian varieties"], width=5.2, size=28).move_to(4.0 * LEFT + 0.4 * UP)
+        src = card(["Hodge for CM abelian varieties"], width=5.2, size=28).move_to(4.0 * LEFT + 0.05 * UP)
         outs = VGroup(card(["the Tate conjecture for abelian varieties", "over finite fields (Milne)"], width=6.4, size=24),
                       card(["the Hodge standard conjecture for abelian", "varieties, every characteristic (Milne)"],
                            width=6.4, size=24),
                       card(["companion papers: powers of certain sixfolds,", "Jacobians of abelian covers"], width=6.4,
-                           size=24)).arrange(DOWN, buff=0.3).move_to(2.6 * RIGHT + 0.4 * UP)
+                           size=24)).arrange(DOWN, buff=0.2).move_to(2.6 * RIGHT + 0.05 * UP)
         arrs = VGroup(*[Arrow(src.get_right(), o.get_left(), buff=0.1, fill_color=GREY_B, thickness=3) for o in outs])
         for k, beat in enumerate(["6.1", "6.2", "6.3"]):
             self.narrate(beat)
@@ -576,7 +576,7 @@ class C7Check(Video):
                                                                   "Kuga–Satake\ncorrespondences for K3",
                                                                   "Hodge for products\nof K3 surfaces")])
         papers.arrange(RIGHT, buff=0.3).move_to(0.9 * UP)
-        xs = VGroup(*[cross(s=1.4).move_to(p) for p in papers])
+        xs = VGroup(*[cross(s=0.9).move_to(p.get_corner(UR) + 0.05 * DL) for p in papers])
         wl = txt("withdrawn 6 and 7 October: a sign error", 26, RED_C).next_to(papers, DOWN, buff=0.4)
         self.play(FadeIn(papers))
         self.play(ShowCreation(xs), FadeIn(wl))
