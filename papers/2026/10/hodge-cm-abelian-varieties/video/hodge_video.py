@@ -147,9 +147,10 @@ class C0Open(Video):
         self.chapter_title = "0. Cold open"
         d = doughnut(5.2, 2.7, 0.4 * UP)
         self.narrate("0.1")
+        la, lb = loop_a(d), loop_b(d)
         self.play(FadeIn(d))
-        self.play(ShowCreation(loop_a(d)))
-        self.play(ShowCreation(loop_b(d)))
+        self.play(ShowCreation(la))
+        self.play(ShowCreation(lb))
         self.finish()
 
         self.narrate("0.2")
@@ -166,7 +167,7 @@ class C0Open(Video):
         self.narrate("0.3")
         title = txt("The Hodge conjecture for CM abelian varieties", 46)
         sub = txt("OpenAI preprint, September 2026", 30, GREY_A).next_to(title, DOWN, buff=0.4)
-        self.play(FadeOut(VGroup(*self.mobjects)), Write(title, run_time=2))
+        self.play(FadeOut(VGroup(d, la, lb, cyc, shadow, q)), Write(title, run_time=2))
         self.play(FadeIn(sub))
         self.finish()
         self.clear_caption()
