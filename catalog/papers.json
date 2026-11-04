@@ -137,7 +137,9 @@
     "explainer": {
       "added": "2026-11-04",
       "code": "code/make_figures.py",
-      "figures": "figures"
+      "figures": "figures",
+      "video": "video/exact-bsd-low-selmer-corank.mp4",
+      "poster": "video/poster.png"
     }
   },
   {

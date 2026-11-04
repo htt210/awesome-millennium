@@ -10,6 +10,8 @@
 | **Status** (4 November 2026) | Not peer reviewed. No formalization. Relies on three unreviewed companion papers. No public expert assessment found |
 | **More** | [companions](#7-what-follows) · [figures](figures/) · [figure code](code/make_figures.py) |
 
+**[▶ Watch the video](video/exact-bsd-low-selmer-corank.mp4)** (13 minutes): the story of this page, told with animations, narrated by an American male voice and captioned. Also with an [American female narrator](video/exact-bsd-low-selmer-corank-us-female.mp4), same pictures and timing. The [script](video/storyboard.md) lists what is on screen and what is said, beat by beat.
+
 ## Contents
 
 1. [Points on a curve](#1-points-on-a-curve)

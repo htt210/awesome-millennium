@@ -33,7 +33,7 @@ On 26 October 2026 OpenAI released a preprint giving a **deterministic algorithm
 
 <!-- BEGIN:latest -->
 - **[Exact Birch–Swinnerton-Dyer Formula from Low Selmer Corank](papers/2026/10/exact-bsd-low-selmer-corank/)** (2026-10-07) — Claims the complete Birch–Swinnerton-Dyer formula, with every prime factor exact, for every elliptic curve over $\mathbb{Q}$ whose Selmer group at some prime has corank $0$ or $1$, with no further hypotheses on the curve.  
-  *Birch and Swinnerton-Dyer Conjecture (partial) · Preprint · Not formalized · Not yet examined · explainer + code*
+  *Birch and Swinnerton-Dyer Conjecture (partial) · Preprint · Not formalized · Not yet examined · explainer + video + code*
 - **[The rational Hodge conjecture for CM abelian varieties](papers/2026/10/hodge-cm-abelian-varieties/)** (2026-10-06) — Claims the Hodge conjecture for every complex abelian variety with complex multiplication, in every dimension and codimension, and through theorems of Milne the Tate conjecture for abelian varieties over finite fields.  
   *Hodge Conjecture (partial) · Preprint · Formalized (Lean 4) · Not yet examined · explainer + code*
 - **[The canonical massive continuum limit of the two-dimensional O(3) model](papers/2026/10/o3-sigma-model-continuum-limit/)** (2026-10-04) — Claims a rigorous construction of the continuum limit of the two-dimensional lattice $O(3)$ model: an interacting relativistic quantum field theory with a unique vacuum and a positive mass gap, the same for every way of removing the cutoff.  
