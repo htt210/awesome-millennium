@@ -475,7 +475,7 @@ class C4Known(Video):
         marks = VGroup()
         for k, t in enumerate(row):
             if k in (0, 2, 3, 6):
-                m = VGroup(tick(s=0.9), txt("if ...", 18, GREY_B)).arrange(DOWN, buff=0.05)
+                m = VGroup(txt("if ...", 20, GREY_B), tick(s=0.9)).arrange(DOWN, buff=0.18)
             else:
                 m = txt("?", 36, YELLOW)
             marks.add(m.next_to(t, UP, buff=0.25))
