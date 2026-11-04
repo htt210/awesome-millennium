@@ -27,6 +27,7 @@
 ## circuit-lower-bounds
 
 - [The Exponential Time Hypothesis is False](../papers/2026/10/eth-is-false/) (2026-10-25)
+- [Beyond the Square-Root Exponent for Depth-Three Boolean Circuits](../papers/2026/09/depth-three-circuits-beyond-square-root/) (2026-09-23)
 
 ## complex-multiplication
 
@@ -39,6 +40,10 @@
 ## cubic-theta
 
 - [The Quasi-Riemann Hypothesis: a zero-free half-plane Re(s) > 7/8](../papers/2026/09/quasi-riemann-hypothesis/) (2026-09-30)
+
+## depth-three-circuits
+
+- [Beyond the Square-Root Exponent for Depth-Three Boolean Circuits](../papers/2026/09/depth-three-circuits-beyond-square-root/) (2026-09-23)
 
 ## dirichlet-l-functions
 
@@ -110,6 +115,7 @@
 - [The rational Hodge conjecture for CM abelian varieties](../papers/2026/10/hodge-cm-abelian-varieties/) (2026-10-06)
 - [The Quasi-Riemann Hypothesis: a zero-free half-plane Re(s) > 7/8](../papers/2026/09/quasi-riemann-hypothesis/) (2026-09-30)
 - [The Unique Games Theorem](../papers/2026/09/unique-games-theorem/) (2026-09-23)
+- [Beyond the Square-Root Exponent for Depth-Three Boolean Circuits](../papers/2026/09/depth-three-circuits-beyond-square-root/) (2026-09-23)
 - [Finite Time Blowup for Navier–Stokes](../papers/2026/09/navier-stokes-blowup/) (2026-09-08)
 
 ## max-cut
@@ -135,6 +141,10 @@
 ## polynomial-method
 
 - [The Exponential Time Hypothesis is False](../papers/2026/10/eth-is-false/) (2026-10-25)
+
+## random-restrictions
+
+- [Beyond the Square-Root Exponent for Depth-Three Boolean Circuits](../papers/2026/09/depth-three-circuits-beyond-square-root/) (2026-09-23)
 
 ## rational-points
 
@@ -171,6 +181,7 @@
 ## sparsification
 
 - [The Exponential Time Hypothesis is False](../papers/2026/10/eth-is-false/) (2026-10-25)
+- [Beyond the Square-Root Exponent for Depth-Three Boolean Circuits](../papers/2026/09/depth-three-circuits-beyond-square-root/) (2026-09-23)
 
 ## surgery
 

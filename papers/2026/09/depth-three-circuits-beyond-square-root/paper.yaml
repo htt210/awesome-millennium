@@ -1,0 +1,43 @@
+# yaml-language-server: $schema=../../../../schema/paper.schema.json
+slug: depth-three-circuits-beyond-square-root
+title: Beyond the Square-Root Exponent for Depth-Three Boolean Circuits
+short_title: Depth-three circuits beyond the square root
+authors: [OpenAI]
+date: 2026-09-23
+first_version: 2026-09-23
+tldr: >-
+  Claims one explicit polynomial-time function whose three-layer OR–AND–OR circuits need $2^{\omega(\sqrt n)}$
+  gates, past the square-root exponent that explicit depth-three lower bounds had not beaten since the 1980s.
+millennium:
+  - problem: p-vs-np
+    relation: adjacent
+    note: >-
+      A circuit lower bound for a weak model, three-layer circuits, for a function that is easy for ordinary
+      programs. It does not decide P vs NP and is far from the bounds that would affect general circuits.
+fields: [computational-complexity, theoretical-computer-science]
+tags: [circuit-lower-bounds, depth-three-circuits, random-restrictions, sparsification, lean]
+status:
+  review: preprint
+  formalization: complete
+  formalization_system: Lean 4
+  community: unexamined
+  as_of: 2026-11-04
+  note: >-
+    Dated 23 September 2026 and released with OpenAI's batch of manuscripts on 6 October. OpenAI published a Lean 4
+    formalization of the main theorem (we have not re-run it). According to search results, an ECCC report
+    (TR26-248, October 2026) builds on the result to treat every fixed depth; we could not open it directly. No
+    independent assessment or reported error found.
+links:
+  paper: https://github.com/openai/math/blob/main/preprints/Beyond-the-Square-Root-Exponent-for-Depth-Three-Boolean-Circuits-September-23-2026/main.pdf
+  formalization: https://github.com/openai/math/blob/main/lean/docs/112.md
+  related:
+    - label: "ECCC TR26-248: follow-up extending the bound to every fixed depth (October 2026)"
+      url: https://eccc.weizmann.ac.il/report/2026/248/
+    - label: "Gurumukhani, Paturi, Pudlák, Saks, Talebanfard, Local enumeration and majority lower bounds (CCC 2024)"
+      url: https://doi.org/10.4230/LIPIcs.CCC.2024.17
+    - label: "Paturi, Pudlák, Zane, Satisfiability coding lemma (1999)"
+      url: https://scholar.lib.vt.edu/ejournals/CJTCS/cjtcs-mirror/articles/1999/11/contents.html
+explainer:
+  added: 2026-11-04
+  code: code/make_figures.py
+  figures: figures

@@ -38,9 +38,11 @@ They are nested: $\text{SETH} \Rightarrow \text{ETH} \Rightarrow \mathsf{P} \ne 
 |---|---|---|
 | 2026-10-25 | **[The Exponential Time Hypothesis is False](../papers/2026/10/eth-is-false/)**<br>OpenAI — A deterministic algorithm counts the satisfying assignments of any $k$-CNF in subexponential time and polynomial space; the case $k = 3$ refutes ETH. | Preprint · Formalized (Lean 4) · Under examination |
 | 2026-09-23 | **[The Unique Games Theorem](../papers/2026/09/unique-games-theorem/)**<br>OpenAI — Claims a proof of Khot's Unique Games Conjecture, which would make the best known approximation algorithms for Max-Cut, Vertex Cover and many other problems provably optimal unless P = NP. | Preprint · Formalized (Lean 4) · Under examination |
+| 2026-09-23 | **[Beyond the Square-Root Exponent for Depth-Three Boolean Circuits](../papers/2026/09/depth-three-circuits-beyond-square-root/)**<br>OpenAI — Claims one explicit polynomial-time function whose three-layer OR–AND–OR circuits need $2^{\omega(\sqrt n)}$ gates, past the square-root exponent that explicit depth-three lower bounds had not beaten since the 1980s. | Preprint · Formalized (Lean 4) · Not yet examined |
 
 - *ETH is false*: Refutes ETH, SETH, #ETH, Gap-ETH and NSETH. A subexponential running time can still be superpolynomial, so P vs NP stays open.
 - *Unique Games Theorem*: Does not decide whether P equals NP. It shows that many approximation problems are exactly as hard as NP problems, so their best known algorithms cannot be improved unless P = NP.
+- *Depth-three circuits beyond the square root*: A circuit lower bound for a weak model, three-layer circuits, for a function that is easy for ordinary programs. It does not decide P vs NP and is far from the bounds that would affect general circuits.
 <!-- END:papers -->
 
 ## Queue
@@ -48,6 +50,5 @@ They are nested: $\text{SETH} \Rightarrow \text{ETH} \Rightarrow \mathsf{P} \ne 
 Papers we plan to explain next. Their claims have **not** been reviewed here yet.
 
 <!-- BEGIN:backlog -->
-- **[Beyond the Square-Root Exponent for Depth-Three Boolean Circuits](https://github.com/openai/math/blob/main/preprints/Beyond-the-Square-Root-Exponent-for-Depth-Three-Boolean-Circuits-September-23-2026/main.pdf)** — OpenAI, 2026-09-23 · *adjacent*  
-  Claims an explicit polynomial-time computable function that needs $2^{\omega(\sqrt{n})}$ gates in depth-three circuits, past a long-standing barrier for circuit lower bounds (openai/math family 112).
+_Nothing queued._
 <!-- END:backlog -->
