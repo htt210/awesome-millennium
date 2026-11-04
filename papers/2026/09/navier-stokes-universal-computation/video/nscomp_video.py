@@ -159,13 +159,13 @@ class C1Fluids(Video):
     def construct(self):
         self.chapter(0, "1. Fluids")
         self.narrate("1.1")
-        eq = Tex(R"\partial_t u + (u\cdot\nabla)u", "=", R"-\nabla p", "+", R"\nu\Delta u", "+", "f",
-                 font_size=64).move_to(0.9 * UP)
-        labs = [("momentum", 0, BLUE_C), ("pressure", 2, TEAL_C), ("friction", 4, PURPLE_B), ("force", 6, ORANGE)]
+        eq = Tex(R"\partial_t u+(u\cdot\nabla)u=-\nabla p+\nu\Delta u+f", font_size=64).move_to(0.9 * UP)
+        parts = [("momentum", slice(0, 10), BLUE_C, DOWN), ("pressure", slice(11, 14), TEAL_C, UP),
+                 ("friction", slice(15, 18), PURPLE_B, DOWN), ("force", slice(19, 20), ORANGE, UP)]
         tags = VGroup()
-        for name, i, col in labs:
-            eq[i].set_color(col)
-            tags.add(txt(name, 24, col).next_to(eq[i], DOWN, buff=0.35))
+        for name, sl, col, side in parts:
+            eq[sl].set_color(col)
+            tags.add(txt(name, 24, col).next_to(eq[sl], side, buff=0.35))
         self.play(Write(eq), run_time=2)
         self.cue("its momentum")
         self.play(LaggedStart(*[FadeIn(t, shift=0.1 * UP) for t in tags], lag_ratio=0.5), run_time=3)
@@ -386,7 +386,7 @@ class C4How(Video):
 
         self.narrate("4.6")
         axis = Arrow(2.2 * DOWN, 2.4 * UP, buff=0).set_stroke(GREY_B, 3).set_fill(GREY_B).shift(3.5 * LEFT)
-        al = txt("clock: the third direction", 24, GREY_A).next_to(axis, RIGHT, buff=0.2).shift(1.8 * UP)
+        al = txt("clock: the third direction", 24, GREY_A).next_to(axis, UP, buff=0.15)
         ticks = VGroup(*[VGroup(Line(0.15 * LEFT, 0.15 * RIGHT).set_stroke(GREY_B, 2),
                                 txt(f"step {k}", 20, GREY_A)).arrange(RIGHT, buff=0.15)
                          .move_to(axis.get_start() + (0.6 + 1.2 * k) * UP + 0.45 * RIGHT) for k in range(4)])
@@ -401,7 +401,7 @@ class C4How(Video):
         self.clear_content()
 
         self.narrate("4.7")
-        eq = Tex(R"f", "=", R"\partial_t u + (u\cdot\nabla)u + \nabla p - \nu\Delta u", font_size=60).move_to(0.9 * UP)
+        eq = Tex(R"f=\partial_t u+(u\cdot\nabla)u+\nabla p-\nu\Delta u", font_size=60).move_to(0.9 * UP)
         eq[0].set_color(ORANGE)
         note = txt("choose the flow u first; the force is whatever the equation needs", 26, GREY_A)
         note.next_to(eq, DOWN, buff=0.5)
