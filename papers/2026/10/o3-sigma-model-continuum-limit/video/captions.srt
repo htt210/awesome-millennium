@@ -1,0 +1,175 @@
+1
+00:00:00,033 --> 00:00:07,533
+Put an arrow at every point of a grid. Neighbouring arrows like to point the same way.
+
+2
+00:00:07,533 --> 00:00:17,033
+Now shrink the grid to nothing. Do the arrows become a smooth quantum field, and does that field have a mass gap?
+
+3
+00:00:17,033 --> 00:00:28,400
+In October 2026, OpenAI claimed to answer both questions with a proof, for a famous stand-in for the Yang–Mills problem.
+
+4
+00:00:34,633 --> 00:00:40,567
+In quantum field theory, particles are ripples in fields that fill space.
+
+5
+00:00:40,567 --> 00:00:47,600
+The strong nuclear force is described by a Yang–Mills theory.
+
+6
+00:00:47,600 --> 00:00:54,133
+Its force carriers have no mass in the equations, yet the lightest particles it makes do.
+
+7
+00:00:54,133 --> 00:01:00,967
+The smallest energy above the empty vacuum is the mass gap.
+
+8
+00:01:00,967 --> 00:01:12,200
+The Millennium problem asks for both: build four-dimensional Yang–Mills theory with full rigor, and prove that it has a mass gap.
+
+9
+00:01:12,200 --> 00:01:18,700
+No interacting quantum field theory in four dimensions has ever been built rigorously.
+
+10
+00:01:18,700 --> 00:01:24,167
+So physicists practise on simpler models.
+
+11
+00:01:24,167 --> 00:01:33,800
+So: for Yang–Mills, build the theory and prove the gap. Both are open.
+
+12
+00:01:38,033 --> 00:01:49,133
+In the O(3) model, each point of a square grid carries an arrow of length one, pointing anywhere in three-dimensional space.
+
+13
+00:01:49,133 --> 00:01:53,300
+A number called beta sets how strongly neighbours align.
+
+14
+00:01:53,300 --> 00:02:01,700
+These are samples from our own simulation: larger beta, larger patches.
+
+15
+00:02:01,700 --> 00:02:10,200
+Like Yang–Mills, this model is asymptotically free, as Polyakov showed in 1975,
+
+16
+00:02:10,200 --> 00:02:20,500
+and it is expected to make a mass gap out of nothing. But it has only two dimensions, and no gauge field.
+
+17
+00:02:20,500 --> 00:02:25,733
+In two dimensions the arrows never line up across the whole grid.
+
+18
+00:02:25,733 --> 00:02:30,067
+The question is how fast distant arrows forget each other.
+
+19
+00:02:30,067 --> 00:02:38,000
+Our simulation shows exponential decay: straight lines on this log scale.
+
+20
+00:02:38,000 --> 00:02:47,933
+So: a grid of arrows, asymptotically free, and expected to have a gap.
+
+21
+00:02:52,166 --> 00:03:02,633
+The decay length, called the correlation length, explodes as beta grows: roughly like e to the two pi beta.
+
+22
+00:03:02,633 --> 00:03:13,633
+To reach a continuum, shrink the grid while raising beta, so that the correlation length stays fixed in physical units.
+
+23
+00:03:13,633 --> 00:03:21,900
+The paper measures everything in units set by the lattice itself: the correlation length and the susceptibility.
+
+24
+00:03:21,900 --> 00:03:30,133
+In those units, our simulations at very different beta fall on one curve.
+
+25
+00:03:30,133 --> 00:03:40,733
+Proving that such a limit really exists, for every correlation, and finding out what it is, is the hard part.
+
+26
+00:03:40,733 --> 00:03:50,100
+So: raise beta, shrink the grid, and keep the physical scale fixed.
+
+27
+00:03:54,333 --> 00:04:05,367
+Here is the claim. As beta goes to infinity, in any way at all, the rescaled fields converge to one limit.
+
+28
+00:04:05,367 --> 00:04:09,633
+The limit satisfies the Osterwalder–Schrader axioms.
+
+29
+00:04:09,633 --> 00:04:20,000
+So it defines a genuine relativistic quantum field theory, in one space and one time dimension.
+
+30
+00:04:20,000 --> 00:04:30,100
+It has a single vacuum, and every other state has energy at least some positive m: a mass gap.
+
+31
+00:04:30,100 --> 00:04:37,967
+And it is interacting: a four-point correlation shows it is not a free field.
+
+32
+00:04:37,967 --> 00:04:47,667
+So the claim is one canonical limit: an interacting quantum field theory with a mass gap.
+
+33
+00:04:51,900 --> 00:05:03,667
+The method is the renormalization group. Group the arrows into squares, keep one averaged arrow per square, and repeat.
+
+34
+00:05:03,667 --> 00:05:08,234
+The paper does this exactly, tracking every correction.
+
+35
+00:05:08,234 --> 00:05:17,567
+New estimates show the corrections shrink at each step, and rare rough regions stay under control.
+
+36
+00:05:17,567 --> 00:05:20,100
+A square grid is not round.
+
+37
+00:05:20,100 --> 00:05:31,134
+Comparing two tilted blockings gives a rotation by an irrational angle, and with it full rotation symmetry in the limit.
+
+38
+00:05:31,134 --> 00:05:40,167
+Finally, the Osterwalder–Schrader reconstruction turns the decay of correlations into the mass gap.
+
+39
+00:05:40,167 --> 00:05:48,634
+So: block, control the corrections, and reconstruct.
+
+40
+00:05:52,866 --> 00:06:04,933
+It comes with companion papers, including one claiming exponential decay at every beta, for all O(n) models with n at least three.
+
+41
+00:06:04,933 --> 00:06:08,700
+Only that companion result is checked in Lean.
+
+42
+00:06:08,700 --> 00:06:17,733
+The continuum limit itself is not formalized, and we found no expert assessment yet.
+
+43
+00:06:17,733 --> 00:06:27,166
+It does not solve the Yang–Mills problem, which needs four dimensions and a gauge field.
+
+44
+00:06:27,166 --> 00:06:38,700
+But if it holds, a model physicists have studied for fifty years finally has a rigorous continuum theory with a mass gap.

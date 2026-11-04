@@ -10,6 +10,8 @@
 | **Status** (4 November 2026) | Not peer reviewed. No Lean formalization of this paper; OpenAI's Lean work in the same family covers a companion result on exponential decay. No expert assessment found |
 | **More** | [figures](figures/) · [Monte Carlo code](code/o3_mc.py) · [figure code](code/make_figures.py) |
 
+**[▶ Watch the video](video/o3-sigma-model-continuum-limit.mp4)** (7 minutes): the story of this page, told with animations, narrated by an American male voice and captioned. Also with an [American female narrator](video/o3-sigma-model-continuum-limit-us-female.mp4), same pictures and timing. The [script](video/storyboard.md) lists what is on screen and what is said, beat by beat.
+
 ## Contents
 
 1. [Yang–Mills and the mass gap](#1-yang-mills-and-the-mass-gap)
