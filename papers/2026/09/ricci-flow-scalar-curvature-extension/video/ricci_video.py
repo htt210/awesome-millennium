@@ -98,7 +98,7 @@ class C0Open(Video):
         self.play(s.animate.set_value(1.0), run_time=3)
         db.clear_updaters()
         warn = txt("curvature → ∞", 32, RED_C).move_to(2.3 * UP)
-        star = Star(n=8, outer_radius=0.35).set_fill(RED_C, 1).set_stroke(width=0).move_to(0.4 * UP)
+        star = RegularPolygon(n=8).set_height(0.6).set_fill(RED_C, 1).set_stroke(width=0).move_to(0.4 * UP)
         self.play(FadeIn(warn), FadeIn(star, scale=0.3))
         self.finish()
 
@@ -106,7 +106,7 @@ class C0Open(Video):
         d = dial(0.25, center=1.7 * DOWN + 4.0 * RIGHT)
         self.play(db.animate.shift(1.5 * LEFT), star.animate.shift(1.5 * LEFT), warn.animate.shift(1.5 * LEFT),
                   FadeIn(d))
-        self.play(Wiggle(d[1], scale_value=1.0, rotation_angle=0.03 * TAU))
+        self.play(WiggleOutThenIn(d[1], scale_value=1.0, rotation_angle=0.03 * TAU, rotate_about_point=d[1].get_start()))
         self.cue("no in four")
         ans = VGroup(txt("4 dimensions: no", 28, GREEN_C), txt("high dimensions: yes", 28, ORANGE))
         ans.arrange(DOWN, buff=0.2, aligned_edge=LEFT).move_to(4.0 * RIGHT + 1.0 * UP)
