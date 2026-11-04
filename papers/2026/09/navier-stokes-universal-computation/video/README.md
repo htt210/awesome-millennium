@@ -40,7 +40,7 @@ The fluid box, the swirls, the drop's path, the parking and the clock are schema
 
 ## Rendering
 
-From this directory, with the setup described in the [ETH video](../../eth-is-false/video/README.md#rendering):
+From this directory, with the setup described in the [ETH video](../../../10/eth-is-false/video/README.md#rendering):
 
 ```bash
 ./render.sh                # silent 1080p30
