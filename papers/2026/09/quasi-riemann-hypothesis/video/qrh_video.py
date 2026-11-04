@@ -635,7 +635,7 @@ class C6Crowd(Video):
         self.chapter(3, "6. How it works: a crowd and a symmetry")
         rng = np.random.default_rng(7)
         n = 40
-        base = rng.exponential(0.5, n)
+        base = rng.exponential(0.35, n)
         copies = sorted(rng.choice(np.arange(1, n), 7, replace=False))
         ours = 0
         floor = 1.6 * DOWN
@@ -667,16 +667,16 @@ class C6Crowd(Video):
         self.finish()
 
         self.narrate("6.3")
-        budget = 0.9
+        budget = 0.6
         bl = DashedLine(floor + np.array([-6, budget, 0]), floor + np.array([5.5, budget, 0])).set_stroke(GREEN_C, 3)
-        bt = txt("proved bound on the average", 24, GREEN_C).next_to(bl, UP, buff=0.1).align_to(bl, RIGHT)
+        bt = txt("dashed line: the proved bound on the average", 24, GREEN_C).next_to(fam, DOWN, buff=0.2)
         self.play(ShowCreation(bl), FadeIn(bt))
         self.finish()
 
         self.narrate("6.4")
         colored = bars(0.6, True)
         self.play(Transform(crowd, colored))
-        cl = txt("copies of our sum", 26, ORANGE).next_to(fam, DOWN, buff=0.25)
+        cl = txt("orange: copies of our sum", 24, ORANGE).next_to(bt, DOWN, buff=0.15)
         self.play(FadeIn(cl))
         self.finish()
 
@@ -686,17 +686,17 @@ class C6Crowd(Video):
             return Line(floor + np.array([-6, a, 0]), floor + np.array([5.5, a, 0])).set_stroke(col, 4)
 
         self.narrate("6.5")
-        tall = bars(3.6, True)
+        tall = bars(2.8, True)
         av = avg_line(0.6, GREY_B)
         self.play(ShowCreation(av))
-        self.play(Transform(crowd, tall), Transform(av, avg_line(3.6, RED_C)), run_time=2)
-        over = txt("average too big", 26, RED_C).next_to(av, UP, buff=0.1).align_to(av, LEFT)
+        self.play(Transform(crowd, tall), Transform(av, avg_line(2.8, RED_C)), run_time=2)
+        over = txt("solid line: the actual average, too big", 24, RED_C).next_to(cl, DOWN, buff=0.15)
         self.play(FadeIn(over))
         self.finish()
 
         self.narrate("6.6")
         self.play(Transform(crowd, bars(0.3, True)), Transform(av, avg_line(0.3, GREY_B)), FadeOut(over), run_time=2)
-        small = txt("so our sum is small", 28, YELLOW).next_to(cl, DOWN, buff=0.25)
+        small = txt("so our sum is small", 26, YELLOW).next_to(cl, DOWN, buff=0.15)
         self.play(FadeIn(small))
         self.finish()
         self.clear_content()
