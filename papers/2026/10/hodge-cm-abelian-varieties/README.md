@@ -10,6 +10,8 @@
 | **Status** (4 November 2026) | Not peer reviewed. Lean formalization of the main theorem published by OpenAI. No public expert assessment found |
 | **More** | [Lean scope](https://github.com/openai/math/blob/main/lean/docs/032.md) · [figures](figures/) · [figure code](code/make_figures.py) |
 
+**[▶ Watch the video](video/hodge-cm-abelian-varieties.mp4)** (10 minutes): the story of this page, told with animations, narrated by an American male voice and captioned. Also with an [American female narrator](video/hodge-cm-abelian-varieties-us-female.mp4), same pictures and timing. The [script](video/storyboard.md) lists what is on screen and what is said, beat by beat.
+
 ## Contents
 
 1. [Shapes, holes and shadows](#1-shapes-holes-and-shadows)

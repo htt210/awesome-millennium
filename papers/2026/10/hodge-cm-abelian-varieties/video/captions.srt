@@ -1,0 +1,307 @@
+1
+00:00:00,033 --> 00:00:05,467
+Shapes have holes, and mathematicians keep a careful list of them.
+
+2
+00:00:05,467 --> 00:00:11,100
+Each loop that cannot be shrunk is one entry on that list.
+
+3
+00:00:11,100 --> 00:00:17,700
+Some entries come from smaller shapes drawn inside, shapes cut out by equations.
+
+4
+00:00:17,700 --> 00:00:24,500
+Do all the entries that look like they should, really come from such shapes?
+
+5
+00:00:24,500 --> 00:00:28,900
+That is the Hodge conjecture, a Millennium Prize problem.
+
+6
+00:00:28,900 --> 00:00:36,800
+In 2026, OpenAI claimed to prove it for one important family of shapes.
+
+7
+00:00:43,066 --> 00:00:51,500
+Algebraic geometry studies shapes cut out by polynomial equations. A circle is the simplest example.
+
+8
+00:00:51,500 --> 00:00:56,866
+Such shapes are called varieties.
+
+9
+00:00:56,866 --> 00:01:03,633
+Allow the coordinates to be complex numbers, and even simple equations give rich shapes.
+
+10
+00:01:03,633 --> 00:01:09,733
+The complex solutions of this cubic equation form a doughnut.
+
+11
+00:01:09,733 --> 00:01:12,800
+Topology records the holes of a shape.
+
+12
+00:01:12,800 --> 00:01:19,966
+On a doughnut, a loop around the hole and a loop around the tube cannot be shrunk to a point.
+
+13
+00:01:19,966 --> 00:01:25,066
+Each one gives a cohomology class.
+
+14
+00:01:25,066 --> 00:01:34,166
+Higher-dimensional shapes have holes of every dimension, and so classes in every degree.
+
+15
+00:01:34,166 --> 00:01:39,533
+Now draw a smaller shape inside, itself cut out by equations.
+
+16
+00:01:39,533 --> 00:01:47,266
+It is called an algebraic cycle, and it has a class too: its shadow.
+
+17
+00:01:47,266 --> 00:01:57,333
+So: classes record holes, and shapes cut out by equations cast shadows among them.
+
+18
+00:02:01,566 --> 00:02:09,066
+For complex shapes, every class splits into pieces labelled by two numbers, p and q.
+
+19
+00:02:09,066 --> 00:02:15,066
+Roughly, they count two kinds of directions.
+
+20
+00:02:15,066 --> 00:02:21,766
+Here are the sizes of those pieces for a three-dimensional example, arranged in a diamond.
+
+21
+00:02:21,766 --> 00:02:31,800
+Shadows of cycles always land in the balanced middle column, where p equals q, and they have rational coefficients.
+
+22
+00:02:31,800 --> 00:02:38,800
+A class that passes both tests is called a Hodge class.
+
+23
+00:02:38,800 --> 00:02:48,433
+The Hodge conjecture says the converse: every Hodge class is the shadow of some rational combination of algebraic cycles.
+
+24
+00:02:48,433 --> 00:02:53,600
+Hodge posed it in 1950.
+
+25
+00:02:53,600 --> 00:02:59,300
+In degree two it is known, by a theorem of Lefschetz from 1924.
+
+26
+00:02:59,300 --> 00:03:05,266
+Multiplying those classes together reaches higher degrees too.
+
+27
+00:03:05,266 --> 00:03:17,233
+The hard part is any Hodge class that is not built that way: an exotic class. For those, someone has to find the cycle.
+
+28
+00:03:17,233 --> 00:03:26,333
+So every Hodge class should be a shadow, and the exotic ones are the hard part.
+
+29
+00:03:30,566 --> 00:03:36,400
+Take the complex plane and a lattice, a grid of points.
+
+30
+00:03:36,400 --> 00:03:41,300
+Glue each point to every point that differs from it by a lattice step.
+
+31
+00:03:41,300 --> 00:03:48,800
+Opposite edges of the shaded cell meet, and the plane becomes a doughnut.
+
+32
+00:03:48,800 --> 00:03:54,333
+Do the same in more complex dimensions, and you get an abelian variety:
+
+33
+00:03:54,333 --> 00:04:02,600
+a many-holed, higher-dimensional doughnut that can still be cut out by equations.
+
+34
+00:04:02,600 --> 00:04:06,033
+Most lattices have no special symmetry.
+
+35
+00:04:06,033 --> 00:04:14,966
+But the square lattice is carried to itself by a quarter turn, which is multiplication by i.
+
+36
+00:04:14,966 --> 00:04:26,833
+When an abelian variety has the largest possible set of such symmetries, it is said to have complex multiplication, or to be CM.
+
+37
+00:04:26,833 --> 00:04:33,900
+CM varieties are rare, only countably many, yet spread densely among all the others.
+
+38
+00:04:33,900 --> 00:04:42,233
+Their symmetries are governed by number fields, which makes them central in number theory.
+
+39
+00:04:42,233 --> 00:04:47,000
+They are also where the hardest test cases of the Hodge conjecture live:
+
+40
+00:04:47,000 --> 00:04:55,566
+exotic classes, called Weil classes, that are not built from products of simple ones.
+
+41
+00:04:55,566 --> 00:05:06,633
+So: CM abelian varieties are doughnuts with extra symmetry, and they carry exotic Hodge classes.
+
+42
+00:05:10,866 --> 00:05:13,333
+Earlier work set the stage.
+
+43
+00:05:13,333 --> 00:05:23,700
+In 1982 Deligne proved that Hodge classes on abelian varieties have a strong arithmetic property shared by shadows of cycles.
+
+44
+00:05:23,700 --> 00:05:33,500
+In 2025, Eyal Markman proved the conjecture for all abelian varieties of dimension four.
+
+45
+00:05:33,500 --> 00:05:40,900
+Here is the claim. On every abelian variety with complex multiplication, of any dimension,
+
+46
+00:05:40,900 --> 00:05:48,166
+every Hodge class is the shadow of a rational combination of algebraic cycles.
+
+47
+00:05:48,166 --> 00:05:53,233
+That includes all the exotic ones.
+
+48
+00:05:53,233 --> 00:06:01,400
+So the claim is the Hodge conjecture for every CM abelian variety.
+
+49
+00:06:05,633 --> 00:06:10,367
+The proof has five stages. First, a reduction.
+
+50
+00:06:10,367 --> 00:06:18,433
+Each basic CM piece is described by a list of signs, one for each pair of directions.
+
+51
+00:06:18,433 --> 00:06:25,967
+The paper shows that every Hodge class on a CM variety can be assembled from one kind of building block:
+
+52
+00:06:25,967 --> 00:06:33,567
+a class on four pieces whose signs balance, the first two adding up to the last two.
+
+53
+00:06:33,567 --> 00:06:40,100
+So it is enough to show that every balanced block is a shadow.
+
+54
+00:06:40,100 --> 00:06:49,167
+Second, a surface does the work. If some surface maps to the four pieces, and a certain integral over it is not zero,
+
+55
+00:06:49,167 --> 00:06:57,300
+then the image of that surface is an algebraic cycle whose shadow is the block.
+
+56
+00:06:57,300 --> 00:07:06,300
+Third, the surface is built from theta functions on a quotient of the complex ball, a classical object in number theory.
+
+57
+00:07:06,300 --> 00:07:11,933
+The paper shows the integral is not zero.
+
+58
+00:07:11,933 --> 00:07:15,133
+Fourth, arithmetic.
+
+59
+00:07:15,133 --> 00:07:27,133
+Using Hecke operators and the Frobenius map modulo primes, it shows the theta forms come from exactly the right CM pieces.
+
+60
+00:07:27,133 --> 00:07:36,000
+Fifth, everything is assembled on one surface and brought back to rational coefficients.
+
+61
+00:07:36,000 --> 00:07:48,467
+So: balanced blocks, a surface with a nonzero integral, built from theta functions, and checked by arithmetic.
+
+62
+00:07:52,700 --> 00:07:57,300
+If it holds, older theorems of James Milne give more.
+
+63
+00:07:57,300 --> 00:08:07,100
+The Tate conjecture, the cousin of the Hodge conjecture over finite fields, would follow for every abelian variety.
+
+64
+00:08:07,100 --> 00:08:15,700
+So would one of Grothendieck's standard conjectures for abelian varieties, in every characteristic.
+
+65
+00:08:15,700 --> 00:08:24,134
+And several companion papers use this result to prove the Hodge conjecture for further families.
+
+66
+00:08:24,134 --> 00:08:34,367
+One family settled, and with it the Tate conjecture for abelian varieties over finite fields.
+
+67
+00:08:38,600 --> 00:08:46,067
+On the twenty-sixth of October, OpenAI added a computer-checked proof of the main theorem in Lean.
+
+68
+00:08:46,067 --> 00:08:54,234
+We have not re-run it, and it does not cover the consequences for the Tate conjecture.
+
+69
+00:08:54,234 --> 00:09:03,167
+Three other Hodge papers from the same release were withdrawn in October, after a sign error in one of them.
+
+70
+00:09:03,167 --> 00:09:13,600
+We checked the source: this paper does not cite any of them, and its one revision only updates a citation.
+
+71
+00:09:13,600 --> 00:09:22,100
+As of the fourth of November, we found no public assessment of the written proof by an expert.
+
+72
+00:09:22,100 --> 00:09:31,967
+So: a computer-checked main theorem, and a written proof that experts have yet to assess.
+
+73
+00:09:36,200 --> 00:09:39,234
+It does not solve the Millennium problem.
+
+74
+00:09:39,234 --> 00:09:49,067
+The conjecture is about every smooth projective variety, and CM abelian varieties are one special family among them.
+
+75
+00:09:49,067 --> 00:09:55,900
+General abelian varieties, K3 surfaces, and most other shapes are not covered.
+
+76
+00:09:55,900 --> 00:10:05,967
+The proof's tools, theta functions, Hecke operators and Frobenius, are special to this family.
+
+77
+00:10:05,967 --> 00:10:17,300
+But for the shapes with the most symmetry, and some of the strangest Hodge classes, every class may now be a shadow.
