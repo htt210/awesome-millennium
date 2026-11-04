@@ -106,7 +106,7 @@ class C0Open(Video):
         d = dial(0.25, center=1.7 * DOWN + 4.0 * RIGHT)
         self.play(db.animate.shift(1.5 * LEFT), star.animate.shift(1.5 * LEFT), warn.animate.shift(1.5 * LEFT),
                   FadeIn(d))
-        self.play(WiggleOutThenIn(d[1], scale_value=1.0, rotation_angle=0.03 * TAU, rotate_about_point=d[1].get_start()))
+        self.play(Rotate(d[1], 0.12, about_point=d[1].get_start()), rate_func=there_and_back, run_time=1.2)
         self.cue("no in four")
         ans = VGroup(txt("4 dimensions: no", 28, GREEN_C), txt("high dimensions: yes", 28, ORANGE))
         ans.arrange(DOWN, buff=0.2, aligned_edge=LEFT).move_to(4.0 * RIGHT + 1.0 * UP)
