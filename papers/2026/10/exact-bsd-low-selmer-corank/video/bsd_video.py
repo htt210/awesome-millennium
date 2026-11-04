@@ -171,8 +171,8 @@ class C0Open(Video):
     def construct(self):
         self.chapter_title = "0. Cold open"
         eq = Tex(R"y^2 + y = x^3 - x", font_size=56).to_edge(UP, buff=0.8)
-        ax = plane(w=4.6, h=5.0)
-        ax.shift(0.3 * DOWN - ax.box.get_center())
+        ax = plane(w=4.0, h=4.4)
+        ax.shift(0.1 * UP - ax.box.get_center())
         cv = curve_branches(ax, (0, 1, -1, 0), -1.6, 2.1)
         self.narrate("0.1")
         self.play(Write(eq))
@@ -210,8 +210,8 @@ class C0Open(Video):
 class C1Points(Video):
     def construct(self):
         self.chapter(0, "1. Points on a curve")
-        ax = plane(w=4.6, h=5.4)
-        ax.shift(3.3 * LEFT + 0.35 * DOWN - ax.box.get_center())
+        ax = plane(w=4.0, h=4.6)
+        ax.shift(3.3 * LEFT + 0.05 * UP - ax.box.get_center())
         cv = curve_branches(ax, (0, 1, -1, 0), -1.6, 2.1)
         eq = Tex(R"y^2 + y = x^3 - x", font_size=40).next_to(ax.box, UP, buff=0.05)
         P, Q, T, R = (-1, 0), (0, 0), (1, 0), (1, -1)
@@ -246,7 +246,7 @@ class C1Points(Video):
         for n, pt in enumerate(multiples(12), start=1):
             rows.add(VGroup(txt(f"{n} × (0, 0):", 24, CURVE), txt("x = " + frac_str(pt[0]), 24, WHITE))
                      .arrange(RIGHT, buff=0.3))
-        rows.arrange(DOWN, aligned_edge=LEFT, buff=0.12).move_to(3.0 * RIGHT + 0.4 * DOWN)
+        rows.arrange(DOWN, aligned_edge=LEFT, buff=0.1).move_to(3.0 * RIGHT + 0.1 * DOWN)
         xcol = max(r[0].get_right()[0] for r in rows) + 0.3
         for row in rows:
             row[1].move_to(np.array([xcol, row[1].get_y(), 0]), aligned_edge=LEFT)
@@ -566,10 +566,10 @@ class C6How(Video):
             r.set_stroke(color, 3).set_fill(BLACK, 0.9)
             return VGroup(r, t.move_to(r))
 
-        b1 = box(R"X(E) \geq 0", BLUE_C).move_to(4.2 * LEFT + 0.9 * DOWN)
-        b2 = box(R"X(E^D) \geq 0", BLUE_C).move_to(4.2 * LEFT + 2.3 * DOWN)
-        b3 = box(R"X(E) + X(E^D) = 0", GREEN_C).move_to(0.3 * RIGHT + 1.6 * DOWN)
-        b4 = box(R"X(E) = 0", ORANGE).move_to(4.6 * RIGHT + 1.6 * DOWN)
+        b1 = box(R"X(E) \geq 0", BLUE_C).move_to(4.2 * LEFT + 0.45 * DOWN)
+        b2 = box(R"X(E^D) \geq 0", BLUE_C).move_to(4.2 * LEFT + 1.75 * DOWN)
+        b3 = box(R"X(E) + X(E^D) = 0", GREEN_C).move_to(0.3 * RIGHT + 1.1 * DOWN)
+        b4 = box(R"X(E) = 0", ORANGE).move_to(4.6 * RIGHT + 1.1 * DOWN)
 
         self.narrate("6.4")
         self.play(FadeIn(b1))
