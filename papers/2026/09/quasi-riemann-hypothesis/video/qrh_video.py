@@ -83,7 +83,7 @@ def li(x: float) -> float:
 
 
 IS_P = sieve(1_000_000)
-PI = np.cumsum(IS_P)
+PRIME_COUNT = np.cumsum(IS_P)
 
 
 def psi_step(x: float) -> float:
@@ -226,7 +226,7 @@ class C0Open(Video):
         ax = Chart((0, 100), (0, 30), 8.5, 3.8, grid=False, xlabel="x", ylabel="primes up to x")
         ax.shift(0.4 * UP - ax.box.get_center())
         xs = list(range(0, 101))
-        st = staircase(ax, xs, [int(PI[x]) if x >= 2 else 0 for x in xs])
+        st = staircase(ax, xs, [int(PRIME_COUNT[x]) if x >= 2 else 0 for x in xs])
         sm = curve(ax, li, 2, 100, n=120, color=SMOOTH, width=5)
         self.play(FadeIn(ax), ShowCreation(st), run_time=2.5)
         self.cue("they follow a smooth curve")
@@ -256,7 +256,7 @@ class C1Primes(Video):
     def construct(self):
         self.chapter(0, "1. Primes")
         self.narrate("1.1")
-        tiles = VGroup(*[number_tile(n) for n in range(1, 61)]).arrange_in_grid(6, 10, buff=(0.55, 0.3))
+        tiles = VGroup(*[number_tile(n) for n in range(1, 61)]).arrange_in_grid(6, 10, h_buff=0.55, v_buff=0.3)
         tiles.move_to(0.4 * UP)
         self.play(LaggedStart(*[FadeIn(t) for t in tiles], lag_ratio=0.02), run_time=2)
         self.play(*[tiles[n - 1].animate.set_color(PRIME).scale(1.15) for n in range(2, 61) if IS_P[n]],
@@ -270,7 +270,7 @@ class C1Primes(Video):
                    xlabel="x", ylabel="primes up to x", grid=False)
         ax.shift(0.5 * UP - ax.box.get_center())
         xs = list(range(0, 101))
-        st = staircase(ax, xs, [int(PI[x]) if x >= 2 else 0 for x in xs])
+        st = staircase(ax, xs, [int(PRIME_COUNT[x]) if x >= 2 else 0 for x in xs])
         self.play(FadeIn(ax))
         self.play(ShowCreation(st), run_time=3, rate_func=linear)
         n25 = txt("25 primes", 26, PRIME).next_to(ax.c2p(100, 25), UL, buff=0.15)
@@ -291,7 +291,7 @@ class C1Primes(Video):
                     xlabel="x (log scale)", ylabel="curve minus count", grid=False)
         ax2.shift(0.5 * UP - ax2.box.get_center())
         lxs = np.linspace(2, 6, 500)
-        err = [li(10 ** v) - PI[int(10 ** v)] for v in lxs]
+        err = [li(10 ** v) - PRIME_COUNT[int(10 ** v)] for v in lxs]
         pts = [ax2.c2p(v, e) for v, e in zip(lxs, err)]
         wob = VMobject().set_points_as_corners(pts).set_stroke(PRIME, 3)
         env = lambda v: math.sqrt(10 ** v) * math.log(10 ** v) / (8 * math.pi)  # noqa: E731
@@ -568,7 +568,7 @@ class C5Cancel(Video):
             m = int(mu[n])
             sc = {1: ("+1", GREEN_C), -1: ("−1", RED_C), 0: ("0", GREY_C)}[m]
             tiles.add(VGroup(txt(str(n), 26, WHITE), txt(sc[0], 24, sc[1])).arrange(DOWN, buff=0.12))
-        tiles.arrange_in_grid(3, 10, buff=(0.45, 0.45)).move_to(0.5 * UP)
+        tiles.arrange_in_grid(3, 10, h_buff=0.45, v_buff=0.45).move_to(0.5 * UP)
         self.play(LaggedStart(*[FadeIn(t[0]) for t in tiles], lag_ratio=0.03))
         self.cue("An even number")
         self.play(LaggedStart(*[FadeIn(t[1]) for t in tiles], lag_ratio=0.05), run_time=3)
@@ -837,7 +837,7 @@ class C7Follow(Video):
         self.clear_content()
 
         self.narrate("7.5")
-        nums = VGroup(*[txt(str(v), 22, YELLOW) for v in IDONEAL]).arrange_in_grid(5, 13, buff=(0.28, 0.25))
+        nums = VGroup(*[txt(str(v), 22, YELLOW) for v in IDONEAL]).arrange_in_grid(5, 13, h_buff=0.28, v_buff=0.25)
         nums.move_to(0.7 * UP)
         il = txt("Euler's 65 idoneal numbers: the list is complete", 28, GREEN_C).next_to(nums, DOWN, buff=0.5)
         self.play(LaggedStart(*[FadeIn(t) for t in nums], lag_ratio=0.02), run_time=2.5)
@@ -966,6 +966,6 @@ class Thumbnail(Scene):
         ax = Chart((0, 100), (0, 30), 6.0, 3.2, grid=False)
         ax.shift(2.6 * RIGHT + 0.9 * DOWN - ax.box.get_center())
         xs = list(range(0, 101))
-        st = staircase(ax, xs, [int(PI[x]) if x >= 2 else 0 for x in xs])
+        st = staircase(ax, xs, [int(PRIME_COUNT[x]) if x >= 2 else 0 for x in xs])
         sm = curve(ax, li, 2, 100, n=120, color=SMOOTH, width=5)
         self.add(title, sub, strip, bands, strip.dots, ax, st, sm)
