@@ -328,12 +328,12 @@ class C2Zeta(Video):
         self.finish()
 
         self.narrate("2.2")
-        o = 2.0 * LEFT + 2.0 * DOWN
+        o = 2.0 * LEFT + 2.4 * DOWN
         xa = Arrow(o, o + 4.5 * RIGHT, buff=0, fill_color=GREY_B, thickness=3)
-        ya = Arrow(o, o + 2.6 * UP, buff=0, fill_color=GREY_B, thickness=3)
+        ya = Arrow(o, o + 2.2 * UP, buff=0, fill_color=GREY_B, thickness=3)
         xl = txt("position", 24, GREY_A).next_to(xa, DOWN, buff=0.15)
         yl = txt("height", 24, GREY_A).next_to(ya, LEFT, buff=0.15)
-        s = Dot(o + 2.8 * RIGHT + 1.6 * UP, radius=0.11, fill_color=YELLOW)
+        s = Dot(o + 2.8 * RIGHT + 1.3 * UP, radius=0.11, fill_color=YELLOW)
         sl = Tex("s", font_size=48).set_color(YELLOW).next_to(s, UR, buff=0.1)
         self.play(GrowArrow(xa), GrowArrow(ya), FadeIn(xl), FadeIn(yl))
         self.play(FadeIn(s, scale=1.5), FadeIn(sl))
@@ -368,7 +368,8 @@ class C2Zeta(Video):
         approx = always_redraw(lambda: VMobject().set_points_as_corners(
             [ax.c2p(x, max(-2, min(57, psi_explicit(x, int(k.get_value()))))) for x in np.linspace(2.05, 50, 700)]
         ).set_stroke(SMOOTH, 4))
-        klab = always_redraw(lambda: txt(f"smooth curve + {int(k.get_value())} waves", 26, SMOOTH)
+        klab = always_redraw(lambda: txt(f"smooth curve + {int(k.get_value())} wave"
+                                         f"{'' if int(k.get_value()) == 1 else 's'}", 26, SMOOTH)
                              .next_to(ax.box, UP, buff=0.1).align_to(ax.box, LEFT))
         self.play(FadeIn(ax), ShowCreation(stair), run_time=2)
         self.play(FadeIn(approx), FadeIn(klab))
@@ -395,7 +396,7 @@ class C2Zeta(Video):
 
         self.narrate("2.6")
         strip = Strip(zeros=False).move_to(0.35 * UP)
-        name = txt("the critical strip", 28, GREY_A).next_to(strip.band, RIGHT, buff=0.5)
+        name = txt("the critical strip", 28, GREY_A).next_to(strip.band, LEFT, buff=0.5)
         self.play(FadeIn(strip), FadeIn(name))
         self.cue("Here are the first")
         self.play(LaggedStart(*[FadeIn(d, scale=1.6) for d in strip.dots], lag_ratio=0.15), run_time=2.5)
@@ -405,7 +406,7 @@ class C2Zeta(Video):
         self.narrate("2.7")
         z = Circle(radius=0.09).set_stroke(ROGUE, 3).move_to(strip.p(0.8, 40))
         m = Circle(radius=0.09).set_stroke(ROGUE, 3).move_to(strip.p(0.2, 40))
-        zl = txt("if a zero were here", 22, ROGUE).next_to(z, UP, buff=0.2)
+        zl = txt("if a zero were here", 24, ROGUE).next_to(strip.band, RIGHT, buff=0.4).match_y(z)
         arr = CurvedArrow(z.get_left() + 0.05 * LEFT, m.get_right() + 0.05 * RIGHT, angle=0.8).set_stroke(ROGUE, 3)
         self.play(FadeIn(z), FadeIn(zl))
         self.cue("comes with one")
