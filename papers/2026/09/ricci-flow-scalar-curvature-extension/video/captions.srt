@@ -1,0 +1,155 @@
+1
+00:00:00,033 --> 00:00:04,833
+Let a shape smooth itself out, the way heat spreads.
+
+2
+00:00:04,833 --> 00:00:12,633
+This is Ricci flow, the tool behind the proof of the Poincaré conjecture.
+
+3
+00:00:12,633 --> 00:00:19,933
+Sometimes the flow tears: a neck pinches, and the curvature there blows up.
+
+4
+00:00:19,933 --> 00:00:24,700
+Can it tear while the simplest curvature reading stays calm?
+
+5
+00:00:24,700 --> 00:00:37,033
+OpenAI claims an answer: no in four dimensions, yes in high dimensions.
+
+6
+00:00:40,266 --> 00:00:53,100
+Ricci flow, introduced by Richard Hamilton in 1982, changes how lengths are measured over time, driven by the Ricci curvature.
+
+7
+00:00:53,100 --> 00:01:03,733
+A round sphere simply shrinks. Its curvature grows until, at a finite time, the sphere disappears.
+
+8
+00:01:03,733 --> 00:01:07,300
+A flow can also break down at a thin neck.
+
+9
+00:01:07,300 --> 00:01:13,833
+Perelman understood these breakdowns in three dimensions well enough to cut them out and continue,
+
+10
+00:01:13,833 --> 00:01:18,666
+and that proved the Poincaré conjecture.
+
+11
+00:01:18,666 --> 00:01:26,866
+So: Ricci flow smooths shapes, but it can break down.
+
+12
+00:01:31,100 --> 00:01:39,500
+At each point, the full curvature is a collection of numbers: how the space bends in every pair of directions.
+
+13
+00:01:39,500 --> 00:01:49,534
+Averaging gives the Ricci curvature, and averaging again gives a single number, the scalar curvature.
+
+14
+00:01:49,534 --> 00:01:55,434
+In four dimensions, the full curvature has twenty numbers at each point,
+
+15
+00:01:55,434 --> 00:02:02,634
+the Ricci curvature ten, and the scalar curvature just one.
+
+16
+00:02:02,634 --> 00:02:09,567
+So a space can have zero scalar curvature, and still be curved.
+
+17
+00:02:09,567 --> 00:02:17,734
+So scalar curvature is a single number, and it can miss a lot.
+
+18
+00:02:21,966 --> 00:02:26,800
+A flow continues as long as its full curvature stays bounded.
+
+19
+00:02:26,800 --> 00:02:32,633
+In 2005 Natasha Šešum showed bounded Ricci curvature is enough.
+
+20
+00:02:32,633 --> 00:02:39,133
+The question is whether bounded scalar curvature is enough.
+
+21
+00:02:39,133 --> 00:02:44,866
+The danger is a tiny piece with zero Ricci curvature that keeps shrinking.
+
+22
+00:02:44,866 --> 00:02:52,933
+Its scalar curvature stays zero, yet its full curvature grows without bound.
+
+23
+00:02:52,933 --> 00:03:03,566
+Earlier work showed that any such tear would have to be fast: faster than the usual rate at which spheres and necks collapse.
+
+24
+00:03:03,566 --> 00:03:11,866
+So the question is: is bounded scalar curvature enough to keep going?
+
+25
+00:03:16,100 --> 00:03:20,434
+The first paper claims yes, in four dimensions.
+
+26
+00:03:20,434 --> 00:03:29,067
+If the scalar curvature stays bounded, the flow continues smoothly on the same space.
+
+27
+00:03:29,067 --> 00:03:38,967
+To prove it, zoom into a would-be tear. You find a tree of pieces with zero Ricci curvature, nested inside each other.
+
+28
+00:03:38,967 --> 00:03:47,667
+An energy, the total scalar curvature with a correction at the edge, shows the outermost piece cannot keep shrinking.
+
+29
+00:03:47,667 --> 00:03:52,300
+So the tear never forms.
+
+30
+00:03:52,300 --> 00:03:56,567
+The second paper claims no, in high dimensions.
+
+31
+00:03:56,567 --> 00:04:07,467
+It builds a flow, in at least thirteen dimensions, whose scalar curvature stays bounded while the shape still tears.
+
+32
+00:04:07,467 --> 00:04:12,300
+The shape is very symmetric, described by two radii.
+
+33
+00:04:12,300 --> 00:04:21,067
+Near one end it collapses toward a cone, with curvature blowing up as fast as one likes.
+
+34
+00:04:21,067 --> 00:04:30,267
+So the claims are: yes in four dimensions, no in high dimensions.
+
+35
+00:04:34,500 --> 00:04:40,834
+Neither paper has a computer-checked proof, and we found no expert assessment yet.
+
+36
+00:04:40,834 --> 00:04:48,867
+The four-dimensional proof also relies on a companion paper from the same release.
+
+37
+00:04:48,867 --> 00:04:54,767
+The Poincaré conjecture itself is already proved, and is not in question.
+
+38
+00:04:54,767 --> 00:05:02,234
+These papers are about its tool, in four dimensions and beyond.
+
+39
+00:05:02,234 --> 00:05:11,400
+But if they hold, they settle a basic question about how Ricci flow can break down.

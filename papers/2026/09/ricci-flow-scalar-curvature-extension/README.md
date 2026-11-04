@@ -12,6 +12,8 @@
 | **Status** (4 November 2026) | Not peer reviewed. No Lean formalization. No expert assessment found |
 | **More** | [figures](figures/) · [figure code](code/make_figures.py) · [our explainer of Perelman's proof](../../../2002/11/perelman-poincare/README.md) |
 
+**[▶ Watch the video](video/ricci-flow-scalar-curvature-extension.mp4)** (5 minutes): the story of this page, told with animations, narrated by an American male voice and captioned. Also with an [American female narrator](video/ricci-flow-scalar-curvature-extension-us-female.mp4), same pictures and timing. The [script](video/storyboard.md) lists what is on screen and what is said, beat by beat.
+
 ## Contents
 
 1. [Ricci flow and the Poincaré conjecture](#1-ricci-flow-and-the-poincaré-conjecture)
