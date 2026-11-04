@@ -291,6 +291,77 @@
     }
   },
   {
+    "slug": "unique-games-theorem",
+    "path": "papers/2026/09/unique-games-theorem",
+    "title": "The Unique Games Theorem",
+    "short_title": "Unique Games Theorem",
+    "authors": [
+      "OpenAI"
+    ],
+    "date": "2026-09-23",
+    "first_version": "2026-09-23",
+    "tldr": "Claims a proof of Khot's Unique Games Conjecture, which would make the best known approximation algorithms for Max-Cut, Vertex Cover and many other problems provably optimal unless P = NP.",
+    "millennium": [
+      {
+        "problem": "p-vs-np",
+        "relation": "adjacent",
+        "note": "Does not decide whether P equals NP. It shows that many approximation problems are exactly as hard as NP problems, so their best known algorithms cannot be improved unless P = NP."
+      }
+    ],
+    "fields": [
+      "computational-complexity",
+      "theoretical-computer-science"
+    ],
+    "tags": [
+      "unique-games-conjecture",
+      "hardness-of-approximation",
+      "pcp",
+      "max-cut",
+      "vertex-cover",
+      "grassmann-graphs",
+      "lean"
+    ],
+    "status": {
+      "review": "preprint",
+      "formalization": "complete",
+      "formalization_system": "Lean 4",
+      "community": "under-examination",
+      "as_of": "2026-11-04",
+      "note": "Dated 23 September 2026 and released with OpenAI's batch of manuscripts on 6 October. OpenAI published Lean 4 formalizations of the main reduction and of the direct Max-Cut, Vertex Cover, Min-UnCut and directed feedback vertex set hardness results (we have not re-run them). Press and blog coverage in October reports that experts including Dana Moshkovitz, Subhash Khot, Johan Håstad and Dor Minzer were studying the proof, without a settled verdict; we could not open those sources directly. No error has been reported to our knowledge."
+    },
+    "links": {
+      "paper": "https://github.com/openai/math/blob/main/preprints/The-Unique-Games-Theorem-September-23-2026/paper.pdf",
+      "formalization": "https://github.com/openai/math/blob/main/lean/docs/102.md",
+      "related": [
+        {
+          "label": "Companion: a direct proof of optimal Max-Cut hardness",
+          "url": "https://github.com/openai/math/blob/main/preprints/A-Direct-Proof-of-Optimal-Max-Cut-Hardness-September-23-2026/paper.pdf"
+        },
+        {
+          "label": "Companion: the factor-two hardness threshold for Vertex Cover",
+          "url": "https://github.com/openai/math/blob/main/preprints/The-Factor-Two-Hardness-Threshold-for-Vertex-Cover-September-23-2026/paper.pdf"
+        },
+        {
+          "label": "Quanta: As AI closed in on Unique Games proof, researchers raced to beat the machines (7 October 2026)",
+          "url": "https://www.quantamagazine.org/as-ai-closed-in-on-unique-games-proof-researchers-raced-to-beat-the-machines-20261007/"
+        },
+        {
+          "label": "Shtetl-Optimized: talk by Dana Moshkovitz on the Unique Games Conjecture",
+          "url": "https://scottaaronson.blog/?p=10232"
+        },
+        {
+          "label": "Khot, On the power of unique 2-prover 1-round games (2002)",
+          "url": "https://doi.org/10.1145/509907.510017"
+        }
+      ]
+    },
+    "explainer": {
+      "added": "2026-11-04",
+      "code": "code/make_figures.py",
+      "figures": "figures"
+    }
+  },
+  {
     "slug": "navier-stokes-blowup",
     "path": "papers/2026/09/navier-stokes-blowup",
     "title": "Finite Time Blowup for Navier–Stokes",

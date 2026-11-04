@@ -64,9 +64,17 @@
 
 - [Perelman's Ricci flow papers: the proof of the Poincaré conjecture](../papers/2002/11/perelman-poincare/) (2002-11-11)
 
+## grassmann-graphs
+
+- [The Unique Games Theorem](../papers/2026/09/unique-games-theorem/) (2026-09-23)
+
 ## hamilton
 
 - [Perelman's Ricci flow papers: the proof of the Poincaré conjecture](../papers/2002/11/perelman-poincare/) (2002-11-11)
+
+## hardness-of-approximation
+
+- [The Unique Games Theorem](../papers/2026/09/unique-games-theorem/) (2026-09-23)
 
 ## hecke-l-functions
 
@@ -101,11 +109,20 @@
 - [The Exponential Time Hypothesis is False](../papers/2026/10/eth-is-false/) (2026-10-25)
 - [The rational Hodge conjecture for CM abelian varieties](../papers/2026/10/hodge-cm-abelian-varieties/) (2026-10-06)
 - [The Quasi-Riemann Hypothesis: a zero-free half-plane Re(s) > 7/8](../papers/2026/09/quasi-riemann-hypothesis/) (2026-09-30)
+- [The Unique Games Theorem](../papers/2026/09/unique-games-theorem/) (2026-09-23)
 - [Finite Time Blowup for Navier–Stokes](../papers/2026/09/navier-stokes-blowup/) (2026-09-08)
+
+## max-cut
+
+- [The Unique Games Theorem](../papers/2026/09/unique-games-theorem/) (2026-09-23)
 
 ## navier-stokes
 
 - [Finite Time Blowup for Navier–Stokes](../papers/2026/09/navier-stokes-blowup/) (2026-09-08)
+
+## pcp
+
+- [The Unique Games Theorem](../papers/2026/09/unique-games-theorem/) (2026-09-23)
 
 ## perelman
 
@@ -174,6 +191,14 @@
 ## three-manifolds
 
 - [Perelman's Ricci flow papers: the proof of the Poincaré conjecture](../papers/2002/11/perelman-poincare/) (2002-11-11)
+
+## unique-games-conjecture
+
+- [The Unique Games Theorem](../papers/2026/09/unique-games-theorem/) (2026-09-23)
+
+## vertex-cover
+
+- [The Unique Games Theorem](../papers/2026/09/unique-games-theorem/) (2026-09-23)
 
 ## weak-strong-uniqueness
 

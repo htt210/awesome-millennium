@@ -19,17 +19,6 @@
     forcing: a marked particle reaches a target region exactly when a given Turing machine halts
     (openai/math family 376).
 
-- title: The Unique Games Theorem
-  authors: [OpenAI]
-  date: 2026-09-23
-  url: https://github.com/openai/math/blob/main/preprints/The-Unique-Games-Theorem-September-23-2026/paper.pdf
-  millennium:
-    - problem: p-vs-np
-      relation: adjacent
-  note: >-
-    Claims a proof of Khot's Unique Games Conjecture, with optimal NP-hardness of approximation for Max-Cut
-    and Vertex Cover (openai/math family 102).
-
 - title: Beyond the Square-Root Exponent for Depth-Three Boolean Circuits
   authors: [OpenAI]
   date: 2026-09-23

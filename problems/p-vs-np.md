@@ -37,8 +37,10 @@ They are nested: $\text{SETH} \Rightarrow \text{ETH} \Rightarrow \mathsf{P} \ne 
 | Date | Paper | Status |
 |---|---|---|
 | 2026-10-25 | **[The Exponential Time Hypothesis is False](../papers/2026/10/eth-is-false/)**<br>OpenAI — A deterministic algorithm counts the satisfying assignments of any $k$-CNF in subexponential time and polynomial space; the case $k = 3$ refutes ETH. | Preprint · Formalized (Lean 4) · Under examination |
+| 2026-09-23 | **[The Unique Games Theorem](../papers/2026/09/unique-games-theorem/)**<br>OpenAI — Claims a proof of Khot's Unique Games Conjecture, which would make the best known approximation algorithms for Max-Cut, Vertex Cover and many other problems provably optimal unless P = NP. | Preprint · Formalized (Lean 4) · Under examination |
 
 - *ETH is false*: Refutes ETH, SETH, #ETH, Gap-ETH and NSETH. A subexponential running time can still be superpolynomial, so P vs NP stays open.
+- *Unique Games Theorem*: Does not decide whether P equals NP. It shows that many approximation problems are exactly as hard as NP problems, so their best known algorithms cannot be improved unless P = NP.
 <!-- END:papers -->
 
 ## Queue
@@ -46,8 +48,6 @@ They are nested: $\text{SETH} \Rightarrow \text{ETH} \Rightarrow \mathsf{P} \ne 
 Papers we plan to explain next. Their claims have **not** been reviewed here yet.
 
 <!-- BEGIN:backlog -->
-- **[The Unique Games Theorem](https://github.com/openai/math/blob/main/preprints/The-Unique-Games-Theorem-September-23-2026/paper.pdf)** — OpenAI, 2026-09-23 · *adjacent*  
-  Claims a proof of Khot's Unique Games Conjecture, with optimal NP-hardness of approximation for Max-Cut and Vertex Cover (openai/math family 102).
 - **[Beyond the Square-Root Exponent for Depth-Three Boolean Circuits](https://github.com/openai/math/blob/main/preprints/Beyond-the-Square-Root-Exponent-for-Depth-Three-Boolean-Circuits-September-23-2026/main.pdf)** — OpenAI, 2026-09-23 · *adjacent*  
   Claims an explicit polynomial-time computable function that needs $2^{\omega(\sqrt{n})}$ gates in depth-three circuits, past a long-standing barrier for circuit lower bounds (openai/math family 112).
 <!-- END:backlog -->
