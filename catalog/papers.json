@@ -209,6 +209,74 @@
     }
   },
   {
+    "slug": "o3-sigma-model-continuum-limit",
+    "path": "papers/2026/10/o3-sigma-model-continuum-limit",
+    "title": "The canonical massive continuum limit of the two-dimensional O(3) model",
+    "short_title": "O(3) continuum limit",
+    "authors": [
+      "OpenAI"
+    ],
+    "date": "2026-10-04",
+    "first_version": "2026-10-04",
+    "tldr": "Claims a rigorous construction of the continuum limit of the two-dimensional lattice $O(3)$ model: an interacting relativistic quantum field theory with a unique vacuum and a positive mass gap, the same for every way of removing the cutoff.",
+    "millennium": [
+      {
+        "problem": "yang-mills",
+        "relation": "adjacent",
+        "note": "An asymptotically free two-dimensional model with a mass gap, long used as a stand-in for Yang–Mills theory. It has no gauge field and lives in two dimensions, so it does not touch the four-dimensional problem."
+      }
+    ],
+    "fields": [
+      "mathematical-physics",
+      "probability"
+    ],
+    "tags": [
+      "quantum-field-theory",
+      "sigma-model",
+      "mass-gap",
+      "continuum-limit",
+      "renormalization-group",
+      "osterwalder-schrader"
+    ],
+    "status": {
+      "review": "preprint",
+      "formalization": "none",
+      "community": "unexamined",
+      "as_of": "2026-11-04",
+      "note": "Released with OpenAI's batch of manuscripts on 6 October 2026 (openai/math family 215). The family's Lean 4 formalization covers only a companion result, exponential decay of correlations in two-dimensional O(n) models for n at least 3; the continuum limit and its mass gap are not formalized. According to search results, a Zenodo preprint of 13 October builds on it conditionally. No expert assessment or reported error found."
+    },
+    "links": {
+      "paper": "https://github.com/openai/math/blob/main/preprints/The-canonical-massive-continuum-limit-of-the-two-dimensional-O3-model-October-4-2026/massive-continuum-o3.pdf",
+      "related": [
+        {
+          "label": "Companion: Sharp mass bounds for the two-dimensional O(4) model (23 September 2026)",
+          "url": "https://github.com/openai/math/blob/main/preprints/Sharp-mass-bounds-for-the-two-dimensional-O4-model-September-23-2026/paper.pdf"
+        },
+        {
+          "label": "Companion: Exponential decay in two-dimensional classical O(n) models (23 September 2026)",
+          "url": "https://github.com/openai/math/blob/main/preprints/Exponential-decay-in-two-dimensional-classical-On-models-September-23-2026/paper.pdf"
+        },
+        {
+          "label": "Companion: An isolated particle pole for the two-dimensional O(3) spin field (4 October 2026)",
+          "url": "https://github.com/openai/math/blob/main/preprints/An-Isolated-Particle-Pole-for-the-Two-Dimensional-O3-Spin-Field-October-4-2026/o3-particle-pole.pdf"
+        },
+        {
+          "label": "Lean scope of family 215 (the exponential-decay companion)",
+          "url": "https://github.com/openai/math/blob/main/lean/docs/215.md"
+        },
+        {
+          "label": "Polyakov, Interaction of Goldstone particles in two dimensions (1975)",
+          "url": "https://doi.org/10.1016/0370-2693(75)90161-6"
+        }
+      ]
+    },
+    "explainer": {
+      "added": "2026-11-04",
+      "code": "code/o3_mc.py",
+      "figures": "figures"
+    }
+  },
+  {
     "slug": "quasi-riemann-hypothesis",
     "path": "papers/2026/09/quasi-riemann-hypothesis",
     "title": "The Quasi-Riemann Hypothesis: a zero-free half-plane Re(s) > 7/8",
@@ -288,6 +356,71 @@
       "figures": "figures",
       "video": "video/quasi-riemann-hypothesis.mp4",
       "poster": "video/poster.png"
+    }
+  },
+  {
+    "slug": "navier-stokes-universal-computation",
+    "path": "papers/2026/09/navier-stokes-universal-computation",
+    "title": "Universal Computation with Eventually Stationary Navier–Stokes Forcing",
+    "short_title": "Navier–Stokes flows that compute",
+    "authors": [
+      "OpenAI"
+    ],
+    "date": "2026-09-27",
+    "first_version": "2026-09-27",
+    "tldr": "For any Turing machine and input, an explicit smooth force, constant after time 1, makes a viscous fluid starting at rest carry one particle into a fixed region exactly when the machine halts.",
+    "millennium": [
+      {
+        "problem": "navier-stokes",
+        "relation": "adjacent",
+        "note": "The flows stay smooth for all time, so it says nothing about blowup. It makes precise the \"fluid computer\" idea that Tao proposed as one route toward blowup, for forced flows on the flat torus."
+      }
+    ],
+    "fields": [
+      "partial-differential-equations",
+      "fluid-dynamics",
+      "computability"
+    ],
+    "tags": [
+      "navier-stokes",
+      "turing-completeness",
+      "undecidability",
+      "generalized-shifts",
+      "reversible-computation",
+      "lean"
+    ],
+    "status": {
+      "review": "preprint",
+      "formalization": "none",
+      "community": "unexamined",
+      "as_of": "2026-11-04",
+      "note": "Released with OpenAI's batch of manuscripts on 6 October 2026 (openai/math family 376). The family's Lean 4 formalizations cover four companion manuscripts, including a fixed-particle halting detector on all of R^3 with forcing periodic after time 1; this paper's torus construction is outside their stated scope. No expert assessment or reported error found."
+    },
+    "links": {
+      "paper": "https://github.com/openai/math/blob/main/preprints/Universal-Computation-with-Eventually-Stationary-Navier-Stokes-Forcing-September-27-2026/manuscript.pdf",
+      "related": [
+        {
+          "label": "Lean scope of family 376 (companion manuscripts)",
+          "url": "https://github.com/openai/math/blob/main/lean/docs/376.md"
+        },
+        {
+          "label": "Companion: Incompressible Box Transport and Finite Computation (27 September 2026)",
+          "url": "https://github.com/openai/math/blob/main/preprints/Incompressible-Box-Transport-and-Finite-Computation-September-27-2026/manuscript.pdf"
+        },
+        {
+          "label": "Tao, Finite time blowup for an averaged three-dimensional Navier–Stokes equation (2016)",
+          "url": "https://doi.org/10.1090/jams/838"
+        },
+        {
+          "label": "Cardona, Miranda, Peralta-Salas, Presas, Constructing Turing complete Euler flows in dimension 3 (2021)",
+          "url": "https://doi.org/10.1073/pnas.2026818118"
+        }
+      ]
+    },
+    "explainer": {
+      "added": "2026-11-04",
+      "code": "code/make_figures.py",
+      "figures": "figures"
     }
   },
   {

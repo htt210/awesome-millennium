@@ -7,30 +7,6 @@
 #         millennium: [{problem, relation}], note (one line, no "|"),
 #         links: [{label, url}] (optional)
 
-- title: Universal Computation with Eventually Stationary Navier–Stokes Forcing
-  authors: [OpenAI]
-  date: 2026-09-27
-  url: https://github.com/openai/math/blob/main/preprints/Universal-Computation-with-Eventually-Stationary-Navier-Stokes-Forcing-September-27-2026/manuscript.pdf
-  millennium:
-    - problem: navier-stokes
-      relation: adjacent
-  note: >-
-    Claims viscous incompressible flows, started from rest, that perform universal computation under smooth
-    forcing: a marked particle reaches a target region exactly when a given Turing machine halts
-    (openai/math family 376).
-
-- title: The canonical massive continuum limit of the two-dimensional O(3) model
-  authors: [OpenAI]
-  date: 2026-10-04
-  url: https://github.com/openai/math/blob/main/preprints/The-canonical-massive-continuum-limit-of-the-two-dimensional-O3-model-October-4-2026/massive-continuum-o3.pdf
-  millennium:
-    - problem: yang-mills
-      relation: adjacent
-  note: >-
-    Claims a rigorous continuum limit of the two-dimensional $O(3)$ sigma model with a positive mass gap — an
-    asymptotically free toy model for the mass-gap phenomenon, not Yang–Mills theory itself
-    (openai/math family 215).
-
 - title: Bounded scalar curvature and smooth extension of four-dimensional Ricci flow
   authors: [OpenAI]
   date: 2026-09-24

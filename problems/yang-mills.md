@@ -16,7 +16,15 @@ For every compact simple gauge group $G$, prove that a nontrivial quantum Yang�
 ## Explained here
 
 <!-- BEGIN:papers -->
-_No explainers yet — see the queue below._
+### Adjacent results
+
+*Papers that settle a closely related question in the problem's landscape without deciding it.*
+
+| Date | Paper | Status |
+|---|---|---|
+| 2026-10-04 | **[The canonical massive continuum limit of the two-dimensional O(3) model](../papers/2026/10/o3-sigma-model-continuum-limit/)**<br>OpenAI — Claims a rigorous construction of the continuum limit of the two-dimensional lattice $O(3)$ model: an interacting relativistic quantum field theory with a unique vacuum and a positive mass gap, the same for every way of removing the cutoff. | Preprint · Not formalized · Not yet examined |
+
+- *O(3) continuum limit*: An asymptotically free two-dimensional model with a mass gap, long used as a stand-in for Yang–Mills theory. It has no gauge field and lives in two dimensions, so it does not touch the four-dimensional problem.
 <!-- END:papers -->
 
 ## Queue
@@ -24,6 +32,5 @@ _No explainers yet — see the queue below._
 Papers we plan to explain next. Their claims have **not** been reviewed here yet.
 
 <!-- BEGIN:backlog -->
-- **[The canonical massive continuum limit of the two-dimensional O(3) model](https://github.com/openai/math/blob/main/preprints/The-canonical-massive-continuum-limit-of-the-two-dimensional-O3-model-October-4-2026/massive-continuum-o3.pdf)** — OpenAI, 2026-10-04 · *adjacent*  
-  Claims a rigorous continuum limit of the two-dimensional $O(3)$ sigma model with a positive mass gap — an asymptotically free toy model for the mass-gap phenomenon, not Yang–Mills theory itself (openai/math family 215).
+_Nothing queued._
 <!-- END:backlog -->

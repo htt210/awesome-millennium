@@ -33,6 +33,10 @@
 
 - [The rational Hodge conjecture for CM abelian varieties](../papers/2026/10/hodge-cm-abelian-varieties/) (2026-10-06)
 
+## continuum-limit
+
+- [The canonical massive continuum limit of the two-dimensional O(3) model](../papers/2026/10/o3-sigma-model-continuum-limit/) (2026-10-04)
+
 ## convex-integration
 
 - [Finite Time Blowup for Navier–Stokes](../papers/2026/09/navier-stokes-blowup/) (2026-09-08)
@@ -64,6 +68,10 @@
 ## forcing
 
 - [Finite Time Blowup for Navier–Stokes](../papers/2026/09/navier-stokes-blowup/) (2026-09-08)
+
+## generalized-shifts
+
+- [Universal Computation with Eventually Stationary Navier–Stokes Forcing](../papers/2026/09/navier-stokes-universal-computation/) (2026-09-27)
 
 ## geometrization
 
@@ -114,9 +122,14 @@
 - [The Exponential Time Hypothesis is False](../papers/2026/10/eth-is-false/) (2026-10-25)
 - [The rational Hodge conjecture for CM abelian varieties](../papers/2026/10/hodge-cm-abelian-varieties/) (2026-10-06)
 - [The Quasi-Riemann Hypothesis: a zero-free half-plane Re(s) > 7/8](../papers/2026/09/quasi-riemann-hypothesis/) (2026-09-30)
+- [Universal Computation with Eventually Stationary Navier–Stokes Forcing](../papers/2026/09/navier-stokes-universal-computation/) (2026-09-27)
 - [The Unique Games Theorem](../papers/2026/09/unique-games-theorem/) (2026-09-23)
 - [Beyond the Square-Root Exponent for Depth-Three Boolean Circuits](../papers/2026/09/depth-three-circuits-beyond-square-root/) (2026-09-23)
 - [Finite Time Blowup for Navier–Stokes](../papers/2026/09/navier-stokes-blowup/) (2026-09-08)
+
+## mass-gap
+
+- [The canonical massive continuum limit of the two-dimensional O(3) model](../papers/2026/10/o3-sigma-model-continuum-limit/) (2026-10-04)
 
 ## max-cut
 
@@ -124,7 +137,12 @@
 
 ## navier-stokes
 
+- [Universal Computation with Eventually Stationary Navier–Stokes Forcing](../papers/2026/09/navier-stokes-universal-computation/) (2026-09-27)
 - [Finite Time Blowup for Navier–Stokes](../papers/2026/09/navier-stokes-blowup/) (2026-09-08)
+
+## osterwalder-schrader
+
+- [The canonical massive continuum limit of the two-dimensional O(3) model](../papers/2026/10/o3-sigma-model-continuum-limit/) (2026-10-04)
 
 ## pcp
 
@@ -142,6 +160,10 @@
 
 - [The Exponential Time Hypothesis is False](../papers/2026/10/eth-is-false/) (2026-10-25)
 
+## quantum-field-theory
+
+- [The canonical massive continuum limit of the two-dimensional O(3) model](../papers/2026/10/o3-sigma-model-continuum-limit/) (2026-10-04)
+
 ## random-restrictions
 
 - [Beyond the Square-Root Exponent for Depth-Three Boolean Circuits](../papers/2026/09/depth-three-circuits-beyond-square-root/) (2026-09-23)
@@ -149,6 +171,14 @@
 ## rational-points
 
 - [Exact Birch–Swinnerton-Dyer Formula from Low Selmer Corank](../papers/2026/10/exact-bsd-low-selmer-corank/) (2026-10-07)
+
+## renormalization-group
+
+- [The canonical massive continuum limit of the two-dimensional O(3) model](../papers/2026/10/o3-sigma-model-continuum-limit/) (2026-10-04)
+
+## reversible-computation
+
+- [Universal Computation with Eventually Stationary Navier–Stokes Forcing](../papers/2026/09/navier-stokes-universal-computation/) (2026-09-27)
 
 ## ricci-flow
 
@@ -173,6 +203,10 @@
 ## seth
 
 - [The Exponential Time Hypothesis is False](../papers/2026/10/eth-is-false/) (2026-10-25)
+
+## sigma-model
+
+- [The canonical massive continuum limit of the two-dimensional O(3) model](../papers/2026/10/o3-sigma-model-continuum-limit/) (2026-10-04)
 
 ## singularity
 
@@ -202,6 +236,14 @@
 ## three-manifolds
 
 - [Perelman's Ricci flow papers: the proof of the Poincaré conjecture](../papers/2002/11/perelman-poincare/) (2002-11-11)
+
+## turing-completeness
+
+- [Universal Computation with Eventually Stationary Navier–Stokes Forcing](../papers/2026/09/navier-stokes-universal-computation/) (2026-09-27)
+
+## undecidability
+
+- [Universal Computation with Eventually Stationary Navier–Stokes Forcing](../papers/2026/09/navier-stokes-universal-computation/) (2026-09-27)
 
 ## unique-games-conjecture
 

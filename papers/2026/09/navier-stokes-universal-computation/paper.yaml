@@ -1,0 +1,43 @@
+# yaml-language-server: $schema=../../../../schema/paper.schema.json
+slug: navier-stokes-universal-computation
+title: Universal Computation with Eventually Stationary Navier–Stokes Forcing
+short_title: Navier–Stokes flows that compute
+authors: [OpenAI]
+date: 2026-09-27
+first_version: 2026-09-27
+tldr: >-
+  For any Turing machine and input, an explicit smooth force, constant after time 1, makes a viscous fluid starting at
+  rest carry one particle into a fixed region exactly when the machine halts.
+millennium:
+  - problem: navier-stokes
+    relation: adjacent
+    note: >-
+      The flows stay smooth for all time, so it says nothing about blowup. It makes precise the "fluid computer" idea
+      that Tao proposed as one route toward blowup, for forced flows on the flat torus.
+fields: [partial-differential-equations, fluid-dynamics, computability]
+tags: [navier-stokes, turing-completeness, undecidability, generalized-shifts, reversible-computation, lean]
+status:
+  review: preprint
+  formalization: none
+  community: unexamined
+  as_of: 2026-11-04
+  note: >-
+    Released with OpenAI's batch of manuscripts on 6 October 2026 (openai/math family 376). The family's Lean 4
+    formalizations cover four companion manuscripts, including a fixed-particle halting detector on all of R^3 with
+    forcing periodic after time 1; this paper's torus construction is outside their stated scope. No expert
+    assessment or reported error found.
+links:
+  paper: https://github.com/openai/math/blob/main/preprints/Universal-Computation-with-Eventually-Stationary-Navier-Stokes-Forcing-September-27-2026/manuscript.pdf
+  related:
+    - label: "Lean scope of family 376 (companion manuscripts)"
+      url: https://github.com/openai/math/blob/main/lean/docs/376.md
+    - label: "Companion: Incompressible Box Transport and Finite Computation (27 September 2026)"
+      url: https://github.com/openai/math/blob/main/preprints/Incompressible-Box-Transport-and-Finite-Computation-September-27-2026/manuscript.pdf
+    - label: "Tao, Finite time blowup for an averaged three-dimensional Navier–Stokes equation (2016)"
+      url: https://doi.org/10.1090/jams/838
+    - label: "Cardona, Miranda, Peralta-Salas, Presas, Constructing Turing complete Euler flows in dimension 3 (2021)"
+      url: https://doi.org/10.1073/pnas.2026818118
+explainer:
+  added: 2026-11-04
+  code: code/make_figures.py
+  figures: figures

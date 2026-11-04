@@ -33,6 +33,16 @@ The official problem asks for **any one** of four statements:
 | 2026-09-08 | **[Finite Time Blowup for Navier–Stokes](../papers/2026/09/navier-stokes-blowup/)**<br>OpenAI — For every viscosity, a smooth force that is switched on for a while drives a fluid starting at rest to unbounded speed at time 1 with bounded energy, which would settle the Clay problem through its breakdown alternatives (C) and (D). | Preprint · Formalized (Lean 4) · Under examination |
 
 - *Navier–Stokes blowup*: Claims breakdown alternatives (C) and (D) of the official problem, which allow a smooth, decaying force. Whether flows with no force can break down stays open. The Clay Institute has not ruled.
+
+### Adjacent results
+
+*Papers that settle a closely related question in the problem's landscape without deciding it.*
+
+| Date | Paper | Status |
+|---|---|---|
+| 2026-09-27 | **[Universal Computation with Eventually Stationary Navier–Stokes Forcing](../papers/2026/09/navier-stokes-universal-computation/)**<br>OpenAI — For any Turing machine and input, an explicit smooth force, constant after time 1, makes a viscous fluid starting at rest carry one particle into a fixed region exactly when the machine halts. | Preprint · Not formalized · Not yet examined |
+
+- *Navier–Stokes flows that compute*: The flows stay smooth for all time, so it says nothing about blowup. It makes precise the "fluid computer" idea that Tao proposed as one route toward blowup, for forced flows on the flat torus.
 <!-- END:papers -->
 
 ## Queue
@@ -40,6 +50,5 @@ The official problem asks for **any one** of four statements:
 Papers we plan to explain next. Their claims have **not** been reviewed here yet.
 
 <!-- BEGIN:backlog -->
-- **[Universal Computation with Eventually Stationary Navier–Stokes Forcing](https://github.com/openai/math/blob/main/preprints/Universal-Computation-with-Eventually-Stationary-Navier-Stokes-Forcing-September-27-2026/manuscript.pdf)** — OpenAI, 2026-09-27 · *adjacent*  
-  Claims viscous incompressible flows, started from rest, that perform universal computation under smooth forcing: a marked particle reaches a target region exactly when a given Turing machine halts (openai/math family 376).
+_Nothing queued._
 <!-- END:backlog -->
