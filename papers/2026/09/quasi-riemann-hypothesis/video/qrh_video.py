@@ -532,7 +532,7 @@ class C4Claim(Video):
         self.finish()
 
         self.narrate("4.4")
-        rogue = Dot(strip.p(0.97, 1.0), radius=0.11, fill_color=ROGUE)
+        rogue = Dot(strip.p(0.95, 5.0), radius=0.11, fill_color=ROGUE)
         self.play(FadeIn(rogue, scale=2))
         self.play(ShowCreation(cross(s=1.0).move_to(rogue)))
         gone = txt("rogue zero: ruled out", 26, ROGUE).next_to(mid, DOWN, buff=0.5)
