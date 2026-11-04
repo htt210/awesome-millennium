@@ -86,7 +86,7 @@ def block(q, k):
 
 def ladder(center=ORIGIN, gap=1.0, label=True):
     base = Line(1.4 * LEFT, 1.4 * RIGHT).set_stroke(YELLOW, 4).move_to(center)
-    vac = txt("vacuum", 24, YELLOW).next_to(base, LEFT, buff=0.3)
+    vac = txt("vacuum", 24, YELLOW).next_to(base, LEFT, buff=0.75)
     levels = VGroup(*[Line(1.4 * LEFT, 1.4 * RIGHT).set_stroke(BLUE_C, 3).move_to(center + (gap + 0.25 * k) * UP)
                       for k in range(6)])
     brace = Brace(Line(center, center + gap * UP), RIGHT, buff=1.6).set_color(ORANGE)
@@ -100,7 +100,8 @@ def ladder(center=ORIGIN, gap=1.0, label=True):
 def log_chart(x_range, y_range, width, height, xticks, yticks, xlabel, ylabel, xfmt=None):
     return Chart(x_range, y_range, width, height, xticks=xticks, yticks=yticks,
                  xfmt=xfmt or (lambda v: txt(f"{v:g}", 18, GREY_B)),
-                 yfmt=lambda v: txt(f"10^{int(v)}" if v not in (0, 1) else ("1" if v == 0 else "10"), 18, GREY_B),
+                 yfmt=lambda v: txt({-4: "0.0001", -3: "0.001", -2: "0.01", -1: "0.1", 0: "1", 1: "10", 2: "100"}[int(v)],
+                                    18, GREY_B),
                  xlabel=xlabel, ylabel=ylabel, grid=False)
 
 
@@ -297,12 +298,12 @@ class C3Continuum(Video):
         for steps in (4, 8, 16):
             a = 3.2 / steps
             g = VGroup()
-            n = int(4.4 / a)
+            n = int(2.4 / a)
             for k in range(-n, n + 1):
-                g.add(Line([k * a, -4.4, 0], [k * a, 4.4, 0]).set_stroke(GREY_D, 1.5))
-                g.add(Line([-4.4, k * a, 0], [4.4, k * a, 0]).set_stroke(GREY_D, 1.5))
+                g.add(Line([k * a, -2.4, 0], [k * a, 2.4, 0]).set_stroke(GREY_D, 1.5))
+                g.add(Line([-2.4, k * a, 0], [2.4, k * a, 0]).set_stroke(GREY_D, 1.5))
             g.move_to(circle.get_center())
-            grids.append((g, txt(f"{steps // 2} grid steps across the radius", 24, GREY_A).move_to(2.3 * DOWN)))
+            grids.append((g, txt(f"{steps // 2} grid steps across the radius", 24, GREY_A).next_to(g, RIGHT, buff=0.4)))
         g0, l0 = grids[0]
         self.play(FadeIn(g0), ShowCreation(circle), FadeIn(cl), FadeIn(l0))
         for g, l in grids[1:]:
@@ -438,14 +439,14 @@ class C5How(Video):
         self.narrate("5.3")
         def grid(angle, color):
             g = VGroup()
-            for k in range(-6, 7):
-                g.add(Line([k * 0.5, -3, 0], [k * 0.5, 3, 0]).set_stroke(color, 1.6))
-                g.add(Line([-3, k * 0.5, 0], [3, k * 0.5, 0]).set_stroke(color, 1.6))
+            for k in range(-4, 5):
+                g.add(Line([k * 0.45, -1.8, 0], [k * 0.45, 1.8, 0]).set_stroke(color, 1.6))
+                g.add(Line([-1.8, k * 0.45, 0], [1.8, k * 0.45, 0]).set_stroke(color, 1.6))
             return g.rotate(angle).move_to(0.5 * UP)
         g1 = grid(0, GREY_C)
         g2 = grid(math.atan(0.5), BLUE_C)
-        mask = Circle(radius=2.2).move_to(0.5 * UP).set_stroke(GREY_B, 2)
-        tl = txt("tilted blocking: a rotation by an irrational angle", 24, BLUE_C).next_to(mask, DOWN, buff=0.3)
+        mask = Circle(radius=1.7).move_to(0.5 * UP).set_stroke(GREY_B, 2)
+        tl = txt("tilted blocking:\na rotation by an\nirrational angle", 24, BLUE_C).move_to(4.6 * RIGHT + 0.5 * UP)
         g1.set_opacity(0.8)
         self.play(FadeIn(g1), ShowCreation(mask))
         self.play(FadeIn(g2), FadeIn(tl))
@@ -454,9 +455,9 @@ class C5How(Video):
         self.clear_content()
 
         self.narrate("5.4")
-        a = card(["correlations decay"], width=4.0, size=28).move_to(4.2 * LEFT + 0.5 * UP)
-        b = card(["reconstruction"], width=3.6, size=28).move_to(0.5 * UP)
-        c = card(["mass gap"], width=3.0, size=30, color=ORANGE).move_to(4.4 * RIGHT + 0.5 * UP)
+        a = card(["correlations decay"], width=3.6, size=26).move_to(4.6 * LEFT + 0.5 * UP)
+        b = card(["reconstruction"], width=3.0, size=26).move_to(0.5 * UP)
+        c = card(["mass gap"], width=2.6, size=28, color=ORANGE).move_to(4.6 * RIGHT + 0.5 * UP)
         a1 = Arrow(a.get_right(), b.get_left(), buff=0.1).set_stroke(YELLOW, 4).set_fill(YELLOW)
         a2 = Arrow(b.get_right(), c.get_left(), buff=0.1).set_stroke(YELLOW, 4).set_fill(YELLOW)
         self.play(FadeIn(a))
