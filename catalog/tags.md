@@ -4,6 +4,18 @@
 
 [← Catalog](README.md)
 
+## abelian-varieties
+
+- [The rational Hodge conjecture for CM abelian varieties](../papers/2026/10/hodge-cm-abelian-varieties/) (2026-10-06)
+
+## algebraic-cycles
+
+- [The rational Hodge conjecture for CM abelian varieties](../papers/2026/10/hodge-cm-abelian-varieties/) (2026-10-06)
+
+## ball-quotients
+
+- [The rational Hodge conjecture for CM abelian varieties](../papers/2026/10/hodge-cm-abelian-varieties/) (2026-10-06)
+
 ## birch-swinnerton-dyer
 
 - [Exact Birch–Swinnerton-Dyer Formula from Low Selmer Corank](../papers/2026/10/exact-bsd-low-selmer-corank/) (2026-10-07)
@@ -15,6 +27,10 @@
 ## circuit-lower-bounds
 
 - [The Exponential Time Hypothesis is False](../papers/2026/10/eth-is-false/) (2026-10-25)
+
+## complex-multiplication
+
+- [The rational Hodge conjecture for CM abelian varieties](../papers/2026/10/hodge-cm-abelian-varieties/) (2026-10-06)
 
 ## convex-integration
 
@@ -60,6 +76,10 @@
 
 - [Exact Birch–Swinnerton-Dyer Formula from Low Selmer Corank](../papers/2026/10/exact-bsd-low-selmer-corank/) (2026-10-07)
 
+## hodge-conjecture
+
+- [The rational Hodge conjecture for CM abelian varieties](../papers/2026/10/hodge-cm-abelian-varieties/) (2026-10-06)
+
 ## interpolation
 
 - [The Exponential Time Hypothesis is False](../papers/2026/10/eth-is-false/) (2026-10-25)
@@ -79,6 +99,7 @@
 ## lean
 
 - [The Exponential Time Hypothesis is False](../papers/2026/10/eth-is-false/) (2026-10-25)
+- [The rational Hodge conjecture for CM abelian varieties](../papers/2026/10/hodge-cm-abelian-varieties/) (2026-10-06)
 - [The Quasi-Riemann Hypothesis: a zero-free half-plane Re(s) > 7/8](../papers/2026/09/quasi-riemann-hypothesis/) (2026-09-30)
 - [Finite Time Blowup for Navier–Stokes](../papers/2026/09/navier-stokes-blowup/) (2026-09-08)
 
@@ -138,9 +159,17 @@
 
 - [Perelman's Ricci flow papers: the proof of the Poincaré conjecture](../papers/2002/11/perelman-poincare/) (2002-11-11)
 
+## tate-conjecture
+
+- [The rational Hodge conjecture for CM abelian varieties](../papers/2026/10/hodge-cm-abelian-varieties/) (2026-10-06)
+
 ## tate-shafarevich-group
 
 - [Exact Birch–Swinnerton-Dyer Formula from Low Selmer Corank](../papers/2026/10/exact-bsd-low-selmer-corank/) (2026-10-07)
+
+## theta-functions
+
+- [The rational Hodge conjecture for CM abelian varieties](../papers/2026/10/hodge-cm-abelian-varieties/) (2026-10-06)
 
 ## three-manifolds
 

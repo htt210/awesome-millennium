@@ -7,17 +7,6 @@
 #         millennium: [{problem, relation}], note (one line, no "|"),
 #         links: [{label, url}] (optional)
 
-- title: The rational Hodge conjecture for CM abelian varieties
-  authors: [OpenAI]
-  date: 2026-10-06
-  url: https://github.com/openai/math/blob/main/preprints/The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026/paper.pdf
-  millennium:
-    - problem: hodge-conjecture
-      relation: partial
-  note: >-
-    Claims the Hodge conjecture for every complex abelian variety with complex multiplication, in every
-    dimension and codimension (openai/math family 032).
-
 - title: Universal Computation with Eventually Stationary Navier–Stokes Forcing
   authors: [OpenAI]
   date: 2026-09-27

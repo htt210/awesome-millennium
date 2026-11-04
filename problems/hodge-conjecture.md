@@ -22,7 +22,15 @@ The Hodge conjecture asserts that every class in $\mathrm{Hdg}^{p}(X)$ is a rati
 ## Explained here
 
 <!-- BEGIN:papers -->
-_No explainers yet — see the queue below._
+### Partial results
+
+*Papers that prove a special case or a significant piece of the problem.*
+
+| Date | Paper | Status |
+|---|---|---|
+| 2026-10-06 | **[The rational Hodge conjecture for CM abelian varieties](../papers/2026/10/hodge-cm-abelian-varieties/)**<br>OpenAI — Claims the Hodge conjecture for every complex abelian variety with complex multiplication, in every dimension and codimension, and through theorems of Milne the Tate conjecture for abelian varieties over finite fields. | Preprint · Formalized (Lean 4) · Not yet examined |
+
+- *Hodge conjecture for CM abelian varieties*: Proves the conjecture for one important family of shapes, CM abelian varieties and their products, where exotic Hodge classes not built from divisors do occur. The conjecture for general varieties stays open.
 <!-- END:papers -->
 
 ## Queue
@@ -30,6 +38,5 @@ _No explainers yet — see the queue below._
 Papers we plan to explain next. Their claims have **not** been reviewed here yet.
 
 <!-- BEGIN:backlog -->
-- **[The rational Hodge conjecture for CM abelian varieties](https://github.com/openai/math/blob/main/preprints/The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026/paper.pdf)** — OpenAI, 2026-10-06 · *partial*  
-  Claims the Hodge conjecture for every complex abelian variety with complex multiplication, in every dimension and codimension (openai/math family 032).
+_Nothing queued._
 <!-- END:backlog -->

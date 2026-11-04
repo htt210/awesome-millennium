@@ -141,6 +141,74 @@
     }
   },
   {
+    "slug": "hodge-cm-abelian-varieties",
+    "path": "papers/2026/10/hodge-cm-abelian-varieties",
+    "title": "The rational Hodge conjecture for CM abelian varieties",
+    "short_title": "Hodge conjecture for CM abelian varieties",
+    "authors": [
+      "OpenAI"
+    ],
+    "date": "2026-10-06",
+    "first_version": "2026-09-30",
+    "tldr": "Claims the Hodge conjecture for every complex abelian variety with complex multiplication, in every dimension and codimension, and through theorems of Milne the Tate conjecture for abelian varieties over finite fields.",
+    "millennium": [
+      {
+        "problem": "hodge-conjecture",
+        "relation": "partial",
+        "note": "Proves the conjecture for one important family of shapes, CM abelian varieties and their products, where exotic Hodge classes not built from divisors do occur. The conjecture for general varieties stays open."
+      }
+    ],
+    "fields": [
+      "algebraic-geometry",
+      "number-theory"
+    ],
+    "tags": [
+      "hodge-conjecture",
+      "abelian-varieties",
+      "complex-multiplication",
+      "algebraic-cycles",
+      "tate-conjecture",
+      "theta-functions",
+      "ball-quotients",
+      "lean"
+    ],
+    "status": {
+      "review": "preprint",
+      "formalization": "complete",
+      "formalization_system": "Lean 4",
+      "community": "unexamined",
+      "as_of": "2026-11-04",
+      "note": "First posted 30 September 2026 and released with OpenAI's batch of manuscripts on 6 October; the 6 October edition only updates a citation. OpenAI added a Lean 4 formalization of the main theorem on 26 October (we have not re-run it); the consequences for the Tate and standard conjectures are outside its scope. On 6 and 7 October OpenAI withdrew three other Hodge-related manuscripts after a sign error; this paper does not cite them. We found no public expert assessment as of this date."
+    },
+    "links": {
+      "paper": "https://github.com/openai/math/blob/main/preprints/The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026/paper.pdf",
+      "formalization": "https://github.com/openai/math/blob/main/lean/docs/032.md",
+      "related": [
+        {
+          "label": "First edition (30 September 2026)",
+          "url": "https://github.com/openai/math/blob/main/preprints/The-rational-Hodge-conjecture-for-CM-abelian-varieties-September-30-2026/paper.pdf"
+        },
+        {
+          "label": "Withdrawal notice: Algebraicity of Weil classes on split abelian eightfolds",
+          "url": "https://github.com/openai/math/blob/main/preprints/Algebraicity-of-Weil-classes-on-split-abelian-eightfolds-September-18-2026/README.md"
+        },
+        {
+          "label": "OpenAI math release: release history",
+          "url": "https://github.com/openai/math/blob/main/history.md"
+        },
+        {
+          "label": "Clay Institute problem description (P. Deligne)",
+          "url": "https://www.claymath.org/library/monographs/MPPc.pdf"
+        }
+      ]
+    },
+    "explainer": {
+      "added": "2026-11-04",
+      "code": "code/make_figures.py",
+      "figures": "figures"
+    }
+  },
+  {
     "slug": "quasi-riemann-hypothesis",
     "path": "papers/2026/09/quasi-riemann-hypothesis",
     "title": "The Quasi-Riemann Hypothesis: a zero-free half-plane Re(s) > 7/8",
