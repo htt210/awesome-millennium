@@ -273,7 +273,7 @@ class C1Primes(Video):
         st = staircase(ax, xs, [int(PRIME_COUNT[x]) if x >= 2 else 0 for x in xs])
         self.play(FadeIn(ax))
         self.play(ShowCreation(st), run_time=3, rate_func=linear)
-        n25 = txt("25 primes", 26, PRIME).next_to(ax.c2p(100, 25), UL, buff=0.15)
+        n25 = txt("25 primes", 26, PRIME).next_to(ax.c2p(100, 25), RIGHT, buff=0.15)
         self.play(FadeIn(n25))
         self.finish()
 
@@ -301,7 +301,7 @@ class C1Primes(Video):
         self.play(FadeIn(ax2))
         self.play(ShowCreation(wob), run_time=3)
         self.cue("Up to a million")
-        lab = txt("about 130 off, out of 78,498", 24, PRIME).next_to(ax2.c2p(6, 130), UL, buff=0.2)
+        lab = txt("about 130 off, out of 78,498", 24, PRIME).move_to(ax2.c2p(3.6, 330))
         self.play(FadeIn(lab))
         self.finish()
 
