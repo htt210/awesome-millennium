@@ -1,0 +1,395 @@
+1
+00:00:00,033 --> 00:00:10,500
+Two, three, five, seven, eleven, thirteen. The prime numbers. One at a time, they look random.
+
+2
+00:00:10,500 --> 00:00:17,900
+But count them, and they follow a smooth curve, with a small wobble. How big can that wobble get?
+
+3
+00:00:17,900 --> 00:00:23,100
+The answer is hidden in the zeros of one function.
+
+4
+00:00:23,100 --> 00:00:32,667
+In September 2026, OpenAI released a paper claiming to keep those zeros away from the edge, for the first time.
+
+5
+00:00:32,667 --> 00:00:40,233
+It is not the Riemann hypothesis. But if it holds, it is a major step toward it.
+
+6
+00:00:46,500 --> 00:00:58,234
+A prime is a whole number bigger than one that only divides by one and itself. There is no simple rule for the next one.
+
+7
+00:00:58,234 --> 00:01:07,167
+Here is a staircase that climbs one step at every prime. Up to one hundred, there are twenty-five of them.
+
+8
+00:01:07,167 --> 00:01:11,767
+And here is a smooth curve that follows the staircase closely.
+
+9
+00:01:11,767 --> 00:01:21,734
+That the count of primes follows this curve forever is the prime number theorem, proved in 1896.
+
+10
+00:01:21,734 --> 00:01:25,234
+The interesting part is the gap between the two.
+
+11
+00:01:25,234 --> 00:01:34,067
+Up to a million there are seventy-eight thousand primes, and the curve is off by only about a hundred and thirty.
+
+12
+00:01:34,067 --> 00:01:42,467
+How large can that gap ever get? Nobody knows exactly. But we know what decides it.
+
+13
+00:01:42,467 --> 00:01:52,500
+So: primes follow a smooth curve, and the question is the size of the wobble around it.
+
+14
+00:01:56,733 --> 00:02:03,000
+In 1859, Bernhard Riemann studied one function, called zeta.
+
+15
+00:02:03,000 --> 00:02:11,767
+Add up one, plus one over two to the s, plus one over three to the s, and so on forever.
+
+16
+00:02:11,767 --> 00:02:22,833
+The input s is a complex number. Think of it as a point on a map, with a position from left to right and a height.
+
+17
+00:02:22,833 --> 00:02:29,767
+Euler had noticed that this sum over all whole numbers equals a product over the primes alone.
+
+18
+00:02:29,767 --> 00:02:35,600
+So zeta knows about every prime at once.
+
+19
+00:02:35,600 --> 00:02:48,100
+Riemann found an exact formula for the prime count: the smooth curve, plus one wave for each place where zeta equals zero.
+
+20
+00:02:48,100 --> 00:02:53,033
+How loud each wave is depends on how far right its zero sits.
+
+21
+00:02:53,033 --> 00:02:58,767
+A zero near position one makes a wave almost as big as the count itself.
+
+22
+00:02:58,767 --> 00:03:07,600
+A zero at one half makes the smallest wave possible, about the square root of x.
+
+23
+00:03:07,600 --> 00:03:14,733
+All the interesting zeros live in a band between positions zero and one, called the critical strip.
+
+24
+00:03:14,733 --> 00:03:18,600
+Here are the first thirteen.
+
+25
+00:03:18,600 --> 00:03:27,067
+They come in mirror pairs: a zero at position beta comes with one at one minus beta.
+
+26
+00:03:27,067 --> 00:03:38,300
+So the zeros of zeta set the wobble of the primes, and the further right a zero sits, the louder its wave.
+
+27
+00:03:42,533 --> 00:03:49,167
+The Riemann hypothesis says every zero in the strip sits exactly on the line at one half.
+
+28
+00:03:49,167 --> 00:03:56,633
+Computers have checked more than ten trillion of them, and every one is on the line.
+
+29
+00:03:56,633 --> 00:04:04,100
+It is one of the seven Millennium Prize Problems, and still unproved.
+
+30
+00:04:04,100 --> 00:04:12,667
+What has been proved is far weaker. In 1896 it was shown that there are no zeros on the right edge itself.
+
+31
+00:04:12,667 --> 00:04:17,267
+That was enough for the prime number theorem.
+
+32
+00:04:17,267 --> 00:04:25,200
+Later work pushed the zeros a little way in from the edge, but only by a margin that shrinks as you go higher up.
+
+33
+00:04:25,200 --> 00:04:32,533
+Far enough up, the zeros might creep right up to the edge.
+
+34
+00:04:32,533 --> 00:04:37,000
+So mathematicians asked a much more modest question.
+
+35
+00:04:37,000 --> 00:04:44,800
+Is there some fixed line, anywhere short of the edge, with no zeros to its right, at any height at all?
+
+36
+00:04:44,800 --> 00:04:54,100
+This is the quasi-Riemann hypothesis. Nobody could prove it with any number.
+
+37
+00:04:54,100 --> 00:05:00,567
+The same questions apply to a family of cousins of zeta, called Dirichlet L-functions.
+
+38
+00:05:00,567 --> 00:05:09,533
+Each one counts primes in a pattern, like the primes that leave remainder one when divided by four.
+
+39
+00:05:09,533 --> 00:05:18,000
+For these, there was one more worry: a single rogue zero, sitting on the real line extremely close to one.
+
+40
+00:05:18,000 --> 00:05:25,067
+It is called a Landau–Siegel zero, and nobody could rule it out.
+
+41
+00:05:25,067 --> 00:05:35,733
+So the question was: is there some fixed line, short of the edge, with no zeros to its right?
+
+42
+00:05:39,966 --> 00:05:51,166
+Here is the claim. Zeta, and every one of its Dirichlet cousins, has no zeros with position greater than seven eighths.
+
+43
+00:05:51,166 --> 00:05:58,066
+No exceptions: at every height, for every pattern of primes.
+
+44
+00:05:58,066 --> 00:06:02,966
+By the mirror symmetry, there are none to the left of one eighth either.
+
+45
+00:06:02,966 --> 00:06:08,866
+Every zero is trapped in the middle three quarters of the strip.
+
+46
+00:06:08,866 --> 00:06:14,466
+And the rogue zero near one is gone with them.
+
+47
+00:06:14,466 --> 00:06:22,466
+The paper proves this in two stages: first a line at eleven twelfths, then sharpened to seven eighths.
+
+48
+00:06:22,466 --> 00:06:32,100
+A shorter companion paper, written with human help, gives a second proof of the eleven twelfths line.
+
+49
+00:06:32,100 --> 00:06:44,100
+So the claim is: no zeros past seven eighths, for zeta and all its cousins. Now, how is it proved?
+
+50
+00:06:48,333 --> 00:06:52,467
+Give every whole number a score from its prime factors.
+
+51
+00:06:52,467 --> 00:07:04,167
+An even number of different primes scores plus one, an odd number scores minus one, and a repeated prime factor scores zero.
+
+52
+00:07:04,167 --> 00:07:11,967
+These scores behave like coin flips. Add them up, and the running total stays small.
+
+53
+00:07:11,967 --> 00:07:22,000
+This total is tied exactly to the zeros. A zero at position beta would push it up to about x to the beta.
+
+54
+00:07:22,000 --> 00:07:28,900
+And the other way round: if you can prove the total never grows faster than x to some power theta,
+
+55
+00:07:28,900 --> 00:07:34,067
+there are no zeros to the right of theta.
+
+56
+00:07:34,067 --> 00:07:39,100
+So the proof assumes there is a rightmost zero beyond the line,
+
+57
+00:07:39,100 --> 00:07:47,033
+builds one sum in two ways, and shows it would have to be both large and small.
+
+58
+00:07:47,033 --> 00:07:56,467
+So: no zeros past a line is the same as sums that provably cancel.
+
+59
+00:08:00,700 --> 00:08:07,234
+Bounding one such sum directly is hopeless. That is the whole difficulty.
+
+60
+00:08:07,234 --> 00:08:16,867
+So the proof hides it in a crowd. It builds a large family of related sums, by twisting the original with extra symbols,
+
+61
+00:08:16,867 --> 00:08:22,234
+cousins of asking whether a number is a perfect square.
+
+62
+00:08:22,234 --> 00:08:30,200
+Two facts do the work. First, the family as a whole cancels well on average.
+
+63
+00:08:30,200 --> 00:08:40,667
+Second, our sum appears in the family many times over, as nearly identical copies, one for each of many primes.
+
+64
+00:08:40,667 --> 00:08:47,534
+If our sum were large, its copies alone would push the average over the bound.
+
+65
+00:08:47,534 --> 00:08:51,934
+So it must be small.
+
+66
+00:08:51,934 --> 00:08:58,867
+To bound the average, the proof rewrites it and finds special sums with a hidden symmetry.
+
+67
+00:08:58,867 --> 00:09:08,100
+They are the coefficients of the cubic theta function, studied by Kubota and Patterson since the nineteen seventies.
+
+68
+00:09:08,100 --> 00:09:18,534
+That symmetry trades a long, hard sum for a shorter one. Repeating the trade shrinks the problem, step by step.
+
+69
+00:09:18,534 --> 00:09:24,334
+All of this happens in a different number system: the Eisenstein integers,
+
+70
+00:09:24,334 --> 00:09:31,834
+built from a cube root of one, laid out on a grid of triangles.
+
+71
+00:09:31,834 --> 00:09:37,367
+Each Dirichlet L-function is a factor of an L-function of this number system.
+
+72
+00:09:37,367 --> 00:09:47,167
+So a zero-free line proved for the whole Eisenstein family carries back to zeta and its cousins.
+
+73
+00:09:47,167 --> 00:09:50,434
+The first stage reaches eleven twelfths.
+
+74
+00:09:50,434 --> 00:10:01,800
+The second changes the setup, with sums of unequal lengths and carefully chosen primes, and squeezes the line to seven eighths.
+
+75
+00:10:01,800 --> 00:10:13,067
+So: hide the sum in a crowd, bound the crowd with a hidden symmetry, and carry the result back to zeta.
+
+76
+00:10:17,300 --> 00:10:27,200
+If it holds up, several old problems fall at once. The rogue zeros near one are gone for good.
+
+77
+00:10:27,200 --> 00:10:32,334
+For every prime, the smallest number that is not a perfect square,
+
+78
+00:10:32,334 --> 00:10:39,600
+after dividing by that prime, is tiny: at most a fixed power of the logarithm of the prime.
+
+79
+00:10:39,600 --> 00:10:45,634
+That settles an old conjecture of Vinogradov.
+
+80
+00:10:45,634 --> 00:10:54,067
+It means square roots modulo a prime can be found quickly, without random guessing.
+
+81
+00:10:54,067 --> 00:11:02,600
+Primes in every pattern follow their smooth curves, with a guaranteed bound on the error.
+
+82
+00:11:02,600 --> 00:11:14,167
+And the companion paper notes it confirms that Euler's list of sixty-five special numbers, called idoneal numbers, is complete.
+
+83
+00:11:14,167 --> 00:11:21,800
+One zero-free line, and several old results follow.
+
+84
+00:11:26,033 --> 00:11:30,767
+OpenAI also published a computer-checked version in Lean.
+
+85
+00:11:30,767 --> 00:11:40,500
+The statement for zeta is one line: if the real part of s is more than seven eighths, zeta of s is not zero.
+
+86
+00:11:40,500 --> 00:11:43,333
+We have not re-run it ourselves.
+
+87
+00:11:43,333 --> 00:11:52,733
+And a computer check certifies the theorem, not the hundred and ninety-nine page written argument.
+
+88
+00:11:52,733 --> 00:12:00,433
+People are now reading it. Quanta Magazine reported in October that number theorists are working through the proof,
+
+89
+00:12:00,433 --> 00:12:07,833
+and that Peter Sarnak turned a course he teaches into a study of it.
+
+90
+00:12:07,833 --> 00:12:12,467
+Others have already rewritten the related argument about rogue zeros:
+
+91
+00:12:12,467 --> 00:12:22,267
+William Banks with explicit numbers, Bryce Kerr with a simpler proof, and Ben Green with his own account.
+
+92
+00:12:22,267 --> 00:12:29,667
+No error has been reported so far. No journal has reviewed it yet.
+
+93
+00:12:29,667 --> 00:12:38,867
+So: a computer-checked statement, and a human reading that is still under way.
+
+94
+00:12:43,100 --> 00:12:49,867
+It does not prove the Riemann hypothesis. That needs every zero on the line at one half.
+
+95
+00:12:49,867 --> 00:12:56,534
+This keeps them between one eighth and seven eighths.
+
+96
+00:12:56,534 --> 00:13:08,000
+The wobble it guarantees is about x to the seven eighths, still far from the square root of x the Riemann hypothesis predicts.
+
+97
+00:13:08,000 --> 00:13:14,967
+And experts doubt this method can be pushed all the way to one half.
+
+98
+00:13:14,967 --> 00:13:18,434
+The primes still keep their deepest secret.
+
+99
+00:13:18,434 --> 00:13:26,900
+But if this proof holds, their zeros have finally been pushed away from the edge.
