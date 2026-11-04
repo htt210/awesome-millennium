@@ -909,7 +909,8 @@ class C9Close(Video):
         self.chapter(4, "9. What it does not do")
         self.narrate("9.1")
         strip = Strip().move_to(2.8 * LEFT + 0.2 * DOWN)
-        bands = VGroup(strip.zone(7 / 8, 1, NEW, 0.6), strip.zone(0, 1 / 8, NEW, 0.6))
+        bands = VGroup(strip.zone(7 / 8, 1, NEW, 0.6), strip.zone(0, 1 / 8, NEW, 0.6),
+                       strip.vline(7 / 8, NEW, "7/8"), strip.vline(1 / 8, NEW, "1/8"))
         self.play(FadeIn(strip), FadeIn(bands))
         self.add(strip.dots)
         rh = txt("Riemann hypothesis:\nevery zero on the line at 1/2\n(still open)", 26, ZERO)
