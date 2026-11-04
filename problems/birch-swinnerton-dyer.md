@@ -22,7 +22,15 @@ and the refined form predicts the leading Taylor coefficient of $L(E, s)$ at $s 
 ## Explained here
 
 <!-- BEGIN:papers -->
-_No explainers yet — see the queue below._
+### Partial results
+
+*Papers that prove a special case or a significant piece of the problem.*
+
+| Date | Paper | Status |
+|---|---|---|
+| 2026-10-07 | **[Exact Birch–Swinnerton-Dyer Formula from Low Selmer Corank](../papers/2026/10/exact-bsd-low-selmer-corank/)**<br>OpenAI — Claims the complete Birch–Swinnerton-Dyer formula, with every prime factor exact, for every elliptic curve over $\mathbb{Q}$ whose Selmer group at some prime has corank $0$ or $1$, with no further hypotheses on the curve. | Preprint · Not formalized · Not yet examined |
+
+- *Exact BSD formula in low rank*: Settles the conjecture, including the exact leading-term formula and finiteness of the Tate–Shafarevich group, for curves of rank $0$ or $1$ in the Selmer sense. Curves of rank $2$ or more are untouched.
 <!-- END:papers -->
 
 ## Queue
@@ -30,6 +38,5 @@ _No explainers yet — see the queue below._
 Papers we plan to explain next. Their claims have **not** been reviewed here yet.
 
 <!-- BEGIN:backlog -->
-- **[Exact Birch–Swinnerton-Dyer Formula from Low Selmer Corank](https://github.com/openai/math/blob/main/preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-7-2026/exact-bsd-low-selmer-corank.pdf)** — OpenAI, 2026-10-07 · *partial*  
-  Claims the full BSD leading-term formula for every elliptic curve over $\mathbb{Q}$ whose $q$-power Selmer group has corank $0$ or $1$ for some prime $q$, including finiteness of the Tate–Shafarevich group (openai/math family 002).
+_Nothing queued._
 <!-- END:backlog -->

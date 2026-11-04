@@ -68,6 +68,79 @@
     }
   },
   {
+    "slug": "exact-bsd-low-selmer-corank",
+    "path": "papers/2026/10/exact-bsd-low-selmer-corank",
+    "title": "Exact Birch–Swinnerton-Dyer Formula from Low Selmer Corank",
+    "short_title": "Exact BSD formula in low rank",
+    "authors": [
+      "OpenAI"
+    ],
+    "date": "2026-10-07",
+    "first_version": "2026-10-03",
+    "tldr": "Claims the complete Birch–Swinnerton-Dyer formula, with every prime factor exact, for every elliptic curve over $\\mathbb{Q}$ whose Selmer group at some prime has corank $0$ or $1$, with no further hypotheses on the curve.",
+    "millennium": [
+      {
+        "problem": "birch-swinnerton-dyer",
+        "relation": "partial",
+        "note": "Settles the conjecture, including the exact leading-term formula and finiteness of the Tate–Shafarevich group, for curves of rank $0$ or $1$ in the Selmer sense. Curves of rank $2$ or more are untouched."
+      }
+    ],
+    "fields": [
+      "number-theory",
+      "arithmetic-geometry"
+    ],
+    "tags": [
+      "birch-swinnerton-dyer",
+      "elliptic-curves",
+      "selmer-groups",
+      "tate-shafarevich-group",
+      "iwasawa-theory",
+      "heegner-points",
+      "rational-points"
+    ],
+    "status": {
+      "review": "preprint",
+      "formalization": "none",
+      "community": "unexamined",
+      "as_of": "2026-11-04",
+      "note": "First posted 3 October 2026 and released with OpenAI's batch of manuscripts on 6 October; the 7 October edition only drops a citation and updates references. The proof depends on three companion OpenAI manuscripts (a low-corank converse, the two-primary formula and Goldfeld's twist densities, about 380 pages together), which are also unreviewed. There is no Lean formalization. We found no public expert assessment as of this date."
+    },
+    "links": {
+      "paper": "https://github.com/openai/math/blob/main/preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-7-2026/exact-bsd-low-selmer-corank.pdf",
+      "related": [
+        {
+          "label": "First edition (3 October 2026)",
+          "url": "https://github.com/openai/math/blob/main/preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-3-2026/exact-bsd-low-selmer-corank.pdf"
+        },
+        {
+          "label": "Companion: the Selmer converse for elliptic curves at every prime",
+          "url": "https://github.com/openai/math/blob/main/preprints/The-Selmer-converse-for-elliptic-curves-at-every-prime-October-7-2026/main.pdf"
+        },
+        {
+          "label": "Companion: the two-primary BSD formula in Selmer corank at most one",
+          "url": "https://github.com/openai/math/blob/main/preprints/The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-October-6-2026/paper.pdf"
+        },
+        {
+          "label": "Companion: Goldfeld's analytic density conjecture and the 2-converse",
+          "url": "https://github.com/openai/math/blob/main/preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/paper.pdf"
+        },
+        {
+          "label": "OpenAI math release: release history",
+          "url": "https://github.com/openai/math/blob/main/history.md"
+        },
+        {
+          "label": "Clay Institute problem description (A. Wiles)",
+          "url": "https://www.claymath.org/library/monographs/MPPc.pdf"
+        }
+      ]
+    },
+    "explainer": {
+      "added": "2026-11-04",
+      "code": "code/make_figures.py",
+      "figures": "figures"
+    }
+  },
+  {
     "slug": "quasi-riemann-hypothesis",
     "path": "papers/2026/09/quasi-riemann-hypothesis",
     "title": "The Quasi-Riemann Hypothesis: a zero-free half-plane Re(s) > 7/8",

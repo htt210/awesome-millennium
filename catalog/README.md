@@ -2,13 +2,13 @@
 
 # Catalog
 
-4 explained papers. Browse by year or by tag; [`papers.json`](papers.json) has every field for scripts.
+5 explained papers. Browse by year or by tag; [`papers.json`](papers.json) has every field for scripts.
 
 ## By year
 
 | Year | Papers |
 |---|---|
-| [2026](2026.md) | 3 |
+| [2026](2026.md) | 4 |
 | [2002](2002.md) | 1 |
 
 ## By Millennium problem
@@ -18,9 +18,9 @@
 - [Yang–Mills Existence and Mass Gap](../problems/yang-mills.md) — 0
 - [Navier–Stokes Existence and Smoothness](../problems/navier-stokes.md) — 1
 - [Hodge Conjecture](../problems/hodge-conjecture.md) — 0
-- [Birch and Swinnerton-Dyer Conjecture](../problems/birch-swinnerton-dyer.md) — 0
+- [Birch and Swinnerton-Dyer Conjecture](../problems/birch-swinnerton-dyer.md) — 1
 - [Poincaré Conjecture](../problems/poincare-conjecture.md) — 1
 
 ## By tag
 
-[blowup](tags.md#blowup) (1) · [circuit-lower-bounds](tags.md#circuit-lower-bounds) (1) · [convex-integration](tags.md#convex-integration) (1) · [cubic-theta](tags.md#cubic-theta) (1) · [dirichlet-l-functions](tags.md#dirichlet-l-functions) (1) · [eth](tags.md#eth) (1) · [exact-counting](tags.md#exact-counting) (1) · [forcing](tags.md#forcing) (1) · [geometrization](tags.md#geometrization) (1) · [hamilton](tags.md#hamilton) (1) · [hecke-l-functions](tags.md#hecke-l-functions) (1) · [interpolation](tags.md#interpolation) (1) · [landau-siegel-zeros](tags.md#landau-siegel-zeros) (1) · [large-sieve](tags.md#large-sieve) (1) · [lean](tags.md#lean) (3) · [navier-stokes](tags.md#navier-stokes) (1) · [perelman](tags.md#perelman) (1) · [poincare-conjecture](tags.md#poincare-conjecture) (1) · [polynomial-method](tags.md#polynomial-method) (1) · [ricci-flow](tags.md#ricci-flow) (1) · [riemann-zeta](tags.md#riemann-zeta) (1) · [sat](tags.md#sat) (1) · [self-similar](tags.md#self-similar) (1) · [seth](tags.md#seth) (1) · [singularity](tags.md#singularity) (1) · [sparsification](tags.md#sparsification) (1) · [surgery](tags.md#surgery) (1) · [three-manifolds](tags.md#three-manifolds) (1) · [weak-strong-uniqueness](tags.md#weak-strong-uniqueness) (1) · [zero-free-region](tags.md#zero-free-region) (1)
+[birch-swinnerton-dyer](tags.md#birch-swinnerton-dyer) (1) · [blowup](tags.md#blowup) (1) · [circuit-lower-bounds](tags.md#circuit-lower-bounds) (1) · [convex-integration](tags.md#convex-integration) (1) · [cubic-theta](tags.md#cubic-theta) (1) · [dirichlet-l-functions](tags.md#dirichlet-l-functions) (1) · [elliptic-curves](tags.md#elliptic-curves) (1) · [eth](tags.md#eth) (1) · [exact-counting](tags.md#exact-counting) (1) · [forcing](tags.md#forcing) (1) · [geometrization](tags.md#geometrization) (1) · [hamilton](tags.md#hamilton) (1) · [hecke-l-functions](tags.md#hecke-l-functions) (1) · [heegner-points](tags.md#heegner-points) (1) · [interpolation](tags.md#interpolation) (1) · [iwasawa-theory](tags.md#iwasawa-theory) (1) · [landau-siegel-zeros](tags.md#landau-siegel-zeros) (1) · [large-sieve](tags.md#large-sieve) (1) · [lean](tags.md#lean) (3) · [navier-stokes](tags.md#navier-stokes) (1) · [perelman](tags.md#perelman) (1) · [poincare-conjecture](tags.md#poincare-conjecture) (1) · [polynomial-method](tags.md#polynomial-method) (1) · [rational-points](tags.md#rational-points) (1) · [ricci-flow](tags.md#ricci-flow) (1) · [riemann-zeta](tags.md#riemann-zeta) (1) · [sat](tags.md#sat) (1) · [self-similar](tags.md#self-similar) (1) · [selmer-groups](tags.md#selmer-groups) (1) · [seth](tags.md#seth) (1) · [singularity](tags.md#singularity) (1) · [sparsification](tags.md#sparsification) (1) · [surgery](tags.md#surgery) (1) · [tate-shafarevich-group](tags.md#tate-shafarevich-group) (1) · [three-manifolds](tags.md#three-manifolds) (1) · [weak-strong-uniqueness](tags.md#weak-strong-uniqueness) (1) · [zero-free-region](tags.md#zero-free-region) (1)

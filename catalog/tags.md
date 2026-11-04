@@ -4,6 +4,10 @@
 
 [← Catalog](README.md)
 
+## birch-swinnerton-dyer
+
+- [Exact Birch–Swinnerton-Dyer Formula from Low Selmer Corank](../papers/2026/10/exact-bsd-low-selmer-corank/) (2026-10-07)
+
 ## blowup
 
 - [Finite Time Blowup for Navier–Stokes](../papers/2026/09/navier-stokes-blowup/) (2026-09-08)
@@ -23,6 +27,10 @@
 ## dirichlet-l-functions
 
 - [The Quasi-Riemann Hypothesis: a zero-free half-plane Re(s) > 7/8](../papers/2026/09/quasi-riemann-hypothesis/) (2026-09-30)
+
+## elliptic-curves
+
+- [Exact Birch–Swinnerton-Dyer Formula from Low Selmer Corank](../papers/2026/10/exact-bsd-low-selmer-corank/) (2026-10-07)
 
 ## eth
 
@@ -48,9 +56,17 @@
 
 - [The Quasi-Riemann Hypothesis: a zero-free half-plane Re(s) > 7/8](../papers/2026/09/quasi-riemann-hypothesis/) (2026-09-30)
 
+## heegner-points
+
+- [Exact Birch–Swinnerton-Dyer Formula from Low Selmer Corank](../papers/2026/10/exact-bsd-low-selmer-corank/) (2026-10-07)
+
 ## interpolation
 
 - [The Exponential Time Hypothesis is False](../papers/2026/10/eth-is-false/) (2026-10-25)
+
+## iwasawa-theory
+
+- [Exact Birch–Swinnerton-Dyer Formula from Low Selmer Corank](../papers/2026/10/exact-bsd-low-selmer-corank/) (2026-10-07)
 
 ## landau-siegel-zeros
 
@@ -82,6 +98,10 @@
 
 - [The Exponential Time Hypothesis is False](../papers/2026/10/eth-is-false/) (2026-10-25)
 
+## rational-points
+
+- [Exact Birch–Swinnerton-Dyer Formula from Low Selmer Corank](../papers/2026/10/exact-bsd-low-selmer-corank/) (2026-10-07)
+
 ## ricci-flow
 
 - [Perelman's Ricci flow papers: the proof of the Poincaré conjecture](../papers/2002/11/perelman-poincare/) (2002-11-11)
@@ -98,6 +118,10 @@
 
 - [Finite Time Blowup for Navier–Stokes](../papers/2026/09/navier-stokes-blowup/) (2026-09-08)
 
+## selmer-groups
+
+- [Exact Birch–Swinnerton-Dyer Formula from Low Selmer Corank](../papers/2026/10/exact-bsd-low-selmer-corank/) (2026-10-07)
+
 ## seth
 
 - [The Exponential Time Hypothesis is False](../papers/2026/10/eth-is-false/) (2026-10-25)
@@ -113,6 +137,10 @@
 ## surgery
 
 - [Perelman's Ricci flow papers: the proof of the Poincaré conjecture](../papers/2002/11/perelman-poincare/) (2002-11-11)
+
+## tate-shafarevich-group
+
+- [Exact Birch–Swinnerton-Dyer Formula from Low Selmer Corank](../papers/2026/10/exact-bsd-low-selmer-corank/) (2026-10-07)
 
 ## three-manifolds
 

@@ -7,18 +7,6 @@
 #         millennium: [{problem, relation}], note (one line, no "|"),
 #         links: [{label, url}] (optional)
 
-- title: Exact Birch–Swinnerton-Dyer Formula from Low Selmer Corank
-  authors: [OpenAI]
-  date: 2026-10-07
-  url: https://github.com/openai/math/blob/main/preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-7-2026/exact-bsd-low-selmer-corank.pdf
-  millennium:
-    - problem: birch-swinnerton-dyer
-      relation: partial
-  note: >-
-    Claims the full BSD leading-term formula for every elliptic curve over $\mathbb{Q}$ whose $q$-power Selmer
-    group has corank $0$ or $1$ for some prime $q$, including finiteness of the Tate–Shafarevich group
-    (openai/math family 002).
-
 - title: The rational Hodge conjecture for CM abelian varieties
   authors: [OpenAI]
   date: 2026-10-06
