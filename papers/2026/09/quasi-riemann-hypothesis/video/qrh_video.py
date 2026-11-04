@@ -456,9 +456,10 @@ class C3Question(Video):
         self.play(FadeOut(VGroup(el, zl)))
 
         self.narrate("3.5")
-        x0 = 0.95
+        x0 = 0.85   # illustrative: any fixed line short of 1 would do
         fixed = strip.zone(x0, 1, NEW, 0.45)
         fl = strip.vline(x0, NEW)
+        self.play(zone.animate.set_fill(opacity=0.2))
         ql = txt("some fixed line?\nno zeros to its right,\nat any height", 26, NEW)
         ql.next_to(strip.band, RIGHT, buff=0.6).shift(1.0 * UP)
         name = txt("the quasi-Riemann hypothesis", 28, YELLOW).next_to(ql, DOWN, buff=0.45, aligned_edge=LEFT)
