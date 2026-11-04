@@ -643,10 +643,10 @@ class C7Follow(Video):
         self.narrate("7.1")
         n = 60
         ranks = rng.permutation([0] * 30 + [1] * 29 + [2])
-        cells = VGroup(*[Square(0.42).set_stroke(width=0).set_fill(BLUE_D if r == 0 else (TEAL_D if r == 1 else RED_D),
+        cells = VGroup(*[Square(0.42).set_stroke(width=0).set_fill(BLUE_D if r == 0 else (PURPLE_D if r == 1 else RED_D),
                                                                    1)
                          for r in ranks]).arrange_in_grid(4, 15, h_buff=0.08, v_buff=0.08).move_to(0.9 * UP)
-        key = VGroup(txt("rank 0", 24, BLUE_C), txt("rank 1", 24, TEAL_C), txt("rank 2 or more: rare", 24, RED_C))
+        key = VGroup(txt("rank 0", 24, BLUE_C), txt("rank 1", 24, PURPLE_B), txt("rank 2 or more: rare", 24, RED_C))
         key.arrange(RIGHT, buff=0.6).next_to(cells, DOWN, buff=0.35)
         fl = txt("twists of one curve", 28, GREY_A).next_to(cells, UP, buff=0.25)
         self.play(FadeIn(fl), LaggedStart(*[FadeIn(c) for c in cells], lag_ratio=0.01), run_time=2)
@@ -679,8 +679,8 @@ class C7Follow(Video):
 
         self.narrate("7.4")
         target = rows[5]   # 53
-        self.play(*[r.animate.set_opacity(0.25) for r in rows if r is not target], FadeOut(rule))
-        self.play(target.animate.scale(1.5).move_to(0.2 * DOWN).set_color(YELLOW))
+        self.play(*[FadeOut(r) for r in rows if r is not target], FadeOut(rule))
+        self.play(target.animate.scale(1.5).move_to(0.3 * UP).set_color(YELLOW))
         self.finish()
 
         self.recap("7.5", ["The full formula for almost all twists;", "and primes as sums of two cubes."])
