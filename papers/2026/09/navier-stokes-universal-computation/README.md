@@ -10,6 +10,8 @@
 | **Status** (4 November 2026) | Not peer reviewed. Lean 4 formalizations of closely related constructions in the same family, not of this theorem. No expert assessment found |
 | **More** | [figures](figures/) · [figure code](code/make_figures.py) · [our explainer of OpenAI's Navier–Stokes blowup paper](../navier-stokes-blowup/README.md) |
 
+**[▶ Watch the video](video/navier-stokes-universal-computation.mp4)** (6 minutes): the story of this page, told with animations, narrated by an American male voice and captioned. Also with an [American female narrator](video/navier-stokes-universal-computation-us-female.mp4), same pictures and timing. The [script](video/storyboard.md) lists what is on screen and what is said, beat by beat.
+
 ## Contents
 
 1. [Fluids and the Millennium problem](#1-fluids-and-the-millennium-problem)

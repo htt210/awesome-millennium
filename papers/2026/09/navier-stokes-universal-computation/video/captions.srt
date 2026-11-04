@@ -1,0 +1,151 @@
+1
+00:00:00,033 --> 00:00:07,567
+Take a box of water at rest, and push it with a smooth force. Follow one drop.
+
+2
+00:00:07,567 --> 00:00:11,800
+Can you predict whether the drop ever reaches a certain region?
+
+3
+00:00:11,800 --> 00:00:21,300
+OpenAI claims a force for which the drop gets there exactly when a chosen computer program eventually stops.
+
+4
+00:00:21,300 --> 00:00:27,400
+So water, pushed the right way, can run any program.
+
+5
+00:00:33,633 --> 00:00:38,867
+The Navier–Stokes equations describe how a fluid like water moves:
+
+6
+00:00:38,867 --> 00:00:47,967
+its momentum, its pressure, its internal friction, and any outside force.
+
+7
+00:00:47,967 --> 00:00:59,233
+The Millennium problem asks whether smooth flows in three dimensions stay smooth forever, or can break down in finite time.
+
+8
+00:00:59,233 --> 00:01:07,267
+In 2016, Terence Tao suggested a way to attack it: build a fluid that acts like a computer,
+
+9
+00:01:07,267 --> 00:01:14,200
+programmed to copy itself smaller and faster, again and again.
+
+10
+00:01:14,200 --> 00:01:23,300
+So: does smoothness last? One idea is to make fluids compute.
+
+11
+00:01:27,533 --> 00:01:40,167
+A Turing machine is the simplest computer: a head on a long tape, reading and writing symbols, following a short table of rules.
+
+12
+00:01:40,167 --> 00:01:49,967
+Here is a real run. This machine writes four ones, and then stops. We say it halts.
+
+13
+00:01:49,967 --> 00:01:58,600
+Turing proved that no algorithm can decide, for every machine, whether it will halt.
+
+14
+00:01:58,600 --> 00:02:08,500
+So if a physical system can imitate every machine, some questions about its future cannot be decided either.
+
+15
+00:02:08,500 --> 00:02:18,100
+So machines cannot always be predicted. The question is whether fluids can imitate them.
+
+16
+00:02:22,333 --> 00:02:33,967
+Here is the claim. Take a fluid in a box with opposite faces glued together, with a fixed viscosity, starting at rest.
+
+17
+00:02:33,967 --> 00:02:42,667
+For any machine and input, an algorithm writes down a smooth force that stops changing after one unit of time.
+
+18
+00:02:42,667 --> 00:02:47,267
+It never runs the machine.
+
+19
+00:02:47,267 --> 00:02:53,900
+With that force, the fluid moves smoothly forever.
+
+20
+00:02:53,900 --> 00:03:01,600
+And one marked drop enters a fixed strip if and only if the machine halts.
+
+21
+00:03:01,600 --> 00:03:10,267
+So the claim is a force that turns a fluid at rest into any computer.
+
+22
+00:03:14,500 --> 00:03:17,800
+The key idea is Cristopher Moore's.
+
+23
+00:03:17,800 --> 00:03:24,700
+Write the tape left of the head as the digits of one number, and the rest as the digits of another.
+
+24
+00:03:24,700 --> 00:03:30,567
+The whole tape becomes one point in a square.
+
+25
+00:03:30,567 --> 00:03:42,700
+Each step moves the point. Here is the same run as before, computed exactly: it lands in the halting band at step six.
+
+26
+00:03:42,700 --> 00:03:48,134
+Each rule acts on one rectangle by squeezing one way and stretching the other.
+
+27
+00:03:48,134 --> 00:03:56,100
+Area is kept, which is exactly what a fluid that cannot be compressed does.
+
+28
+00:03:56,100 --> 00:04:01,267
+But a machine can erase, and a fluid's motion can always be undone.
+
+29
+00:04:01,267 --> 00:04:10,134
+So the machine first keeps a record of everything it would erase, an idea of Charles Bennett.
+
+30
+00:04:10,134 --> 00:04:19,834
+Then smooth swirls carry every rectangle to its target, all rules at once, without collisions.
+
+31
+00:04:19,834 --> 00:04:31,834
+A third direction acts as a clock: drifting up by one unit runs one step. After a gentle start, the flow stops changing.
+
+32
+00:04:31,834 --> 00:04:41,567
+Finally, the force is read off from the equation: it is whatever makes this chosen flow obey Navier–Stokes.
+
+33
+00:04:41,567 --> 00:04:53,134
+So: tape becomes point, rules become area-keeping maps, and swirls plus a clock give the force.
+
+34
+00:04:57,366 --> 00:05:05,866
+OpenAI checked closely related constructions in Lean, including a drop that detects halting in all of space.
+
+35
+00:05:05,866 --> 00:05:14,766
+This exact theorem is outside that scope, and we found no expert assessment yet.
+
+36
+00:05:14,766 --> 00:05:22,500
+It does not answer the Millennium problem: these flows stay smooth forever.
+
+37
+00:05:22,500 --> 00:05:32,566
+And it is only one ingredient of Tao's program. Making a fluid compute its own blowup is a much harder step.
+
+38
+00:05:32,566 --> 00:05:42,666
+But it shows, rigorously, that a pushed fluid can be as unpredictable as any computer.
