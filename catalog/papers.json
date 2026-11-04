@@ -424,6 +424,65 @@
     }
   },
   {
+    "slug": "ricci-flow-scalar-curvature-extension",
+    "path": "papers/2026/09/ricci-flow-scalar-curvature-extension",
+    "title": "Bounded scalar curvature and smooth extension of four-dimensional Ricci flow",
+    "short_title": "Scalar curvature and Ricci-flow singularities",
+    "authors": [
+      "OpenAI"
+    ],
+    "date": "2026-09-24",
+    "first_version": "2026-09-24",
+    "tldr": "Claims that a Ricci flow on a closed four-manifold continues smoothly whenever its scalar curvature stays bounded; a companion paper claims this fails in high dimension, with a flow on $S^2\\times S^{q+1}$ whose scalar curvature stays bounded while its full curvature blows up.",
+    "millennium": [
+      {
+        "problem": "poincare-conjecture",
+        "relation": "adjacent",
+        "note": "About the singularities of Ricci flow, the tool behind Perelman's proof, in dimension four and higher. The Poincaré conjecture itself is already proved; this neither depends on nor changes that."
+      }
+    ],
+    "fields": [
+      "differential-geometry",
+      "geometric-analysis"
+    ],
+    "tags": [
+      "ricci-flow",
+      "scalar-curvature",
+      "singularities",
+      "four-manifolds",
+      "counterexample"
+    ],
+    "status": {
+      "review": "preprint",
+      "formalization": "none",
+      "community": "unexamined",
+      "as_of": "2026-11-04",
+      "note": "Released with OpenAI's batch of manuscripts on 6 October 2026 (openai/math family 351), together with the high-dimensional counterexample and a companion on degenerating Ricci-flat trees that the four-dimensional proof uses. No Lean formalization. No expert assessment or reported error found."
+    },
+    "links": {
+      "paper": "https://github.com/openai/math/blob/main/preprints/Bounded-scalar-curvature-and-smooth-extension-of-four-dimensional-Ricci-flow-September-24-2026/paper.pdf",
+      "related": [
+        {
+          "label": "Companion: A closed Ricci flow with bounded scalar curvature and finite-time curvature blowup (24 September 2026)",
+          "url": "https://github.com/openai/math/blob/main/preprints/A-closed-Ricci-flow-with-bounded-scalar-curvature-and-finite-time-curvature-blowup-September-24-2026/paper.pdf"
+        },
+        {
+          "label": "Companion: Path selection and an elliptic inequality on degenerating Ricci-flat trees (24 September 2026)",
+          "url": "https://github.com/openai/math/blob/main/preprints/Path-selection-and-an-elliptic-inequality-on-degenerating-Ricci-flat-trees-September-24-2026/paper.pdf"
+        },
+        {
+          "label": "Wang, On the conditions to extend Ricci flow (II) (2012)",
+          "url": "https://doi.org/10.1093/imrn/rnr141"
+        }
+      ]
+    },
+    "explainer": {
+      "added": "2026-11-04",
+      "code": "code/make_figures.py",
+      "figures": "figures"
+    }
+  },
+  {
     "slug": "unique-games-theorem",
     "path": "papers/2026/09/unique-games-theorem",
     "title": "The Unique Games Theorem",

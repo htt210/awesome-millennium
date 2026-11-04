@@ -6,27 +6,3 @@
 # Fields: title, authors, date (YYYY-MM-DD), url (primary source),
 #         millennium: [{problem, relation}], note (one line, no "|"),
 #         links: [{label, url}] (optional)
-
-- title: Bounded scalar curvature and smooth extension of four-dimensional Ricci flow
-  authors: [OpenAI]
-  date: 2026-09-24
-  url: https://github.com/openai/math/blob/main/preprints/Bounded-scalar-curvature-and-smooth-extension-of-four-dimensional-Ricci-flow-September-24-2026/paper.pdf
-  millennium:
-    - problem: poincare-conjecture
-      relation: adjacent
-  note: >-
-    Claims that a Ricci flow on a closed four-manifold continues smoothly past any finite time at which its
-    scalar curvature stays bounded: a question about the singularities of the flow behind Perelman's proof,
-    one dimension up (openai/math family 351).
-
-- title: A closed Ricci flow with bounded scalar curvature and finite-time curvature blowup
-  authors: [OpenAI]
-  date: 2026-09-24
-  url: https://github.com/openai/math/blob/main/preprints/A-closed-Ricci-flow-with-bounded-scalar-curvature-and-finite-time-curvature-blowup-September-24-2026/paper.pdf
-  millennium:
-    - problem: poincare-conjecture
-      relation: adjacent
-  note: >-
-    Claims a counterexample in high dimension: a Ricci flow on a closed manifold whose scalar curvature stays
-    bounded while its full curvature blows up in finite time, so the four-dimensional statement does not extend
-    to every dimension (openai/math family 351).

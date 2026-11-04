@@ -24,6 +24,16 @@ Perelman proved Thurston's more general **geometrization conjecture**, which cla
 | 2002-11-11 | **[Perelman's Ricci flow papers: the proof of the Poincaré conjecture](../papers/2002/11/perelman-poincare/)**<br>Grigori Perelman — Three arXiv preprints (2002–03) that finish Richard Hamilton's program: let a shape smooth itself by its own curvature (Ricci flow), cut out the thin necks that form, and show that a closed three-dimensional shape in which every loop can be shrunk dies out in finite time, which forces it to be the three-sphere. | Preprint · Not formalized · Accepted |
 
 - *Poincaré conjecture (Perelman)*: Proves the conjecture (and, with more work, Thurston's geometrization conjecture). The Clay Institute awarded the prize in 2010; Perelman declined it. The smooth four-dimensional Poincaré conjecture is a different question and is still open.
+
+### Adjacent results
+
+*Papers that settle a closely related question in the problem's landscape without deciding it.*
+
+| Date | Paper | Status |
+|---|---|---|
+| 2026-09-24 | **[Bounded scalar curvature and smooth extension of four-dimensional Ricci flow](../papers/2026/09/ricci-flow-scalar-curvature-extension/)**<br>OpenAI — Claims that a Ricci flow on a closed four-manifold continues smoothly whenever its scalar curvature stays bounded; a companion paper claims this fails in high dimension, with a flow on $S^2\times S^{q+1}$ whose scalar curvature stays bounded while its full curvature blows up. | Preprint · Not formalized · Not yet examined |
+
+- *Scalar curvature and Ricci-flow singularities*: About the singularities of Ricci flow, the tool behind Perelman's proof, in dimension four and higher. The Poincaré conjecture itself is already proved; this neither depends on nor changes that.
 <!-- END:papers -->
 
 ## Queue
@@ -31,8 +41,5 @@ Perelman proved Thurston's more general **geometrization conjecture**, which cla
 Papers we plan to explain next. Their claims have **not** been reviewed here yet.
 
 <!-- BEGIN:backlog -->
-- **[Bounded scalar curvature and smooth extension of four-dimensional Ricci flow](https://github.com/openai/math/blob/main/preprints/Bounded-scalar-curvature-and-smooth-extension-of-four-dimensional-Ricci-flow-September-24-2026/paper.pdf)** — OpenAI, 2026-09-24 · *adjacent*  
-  Claims that a Ricci flow on a closed four-manifold continues smoothly past any finite time at which its scalar curvature stays bounded: a question about the singularities of the flow behind Perelman's proof, one dimension up (openai/math family 351).
-- **[A closed Ricci flow with bounded scalar curvature and finite-time curvature blowup](https://github.com/openai/math/blob/main/preprints/A-closed-Ricci-flow-with-bounded-scalar-curvature-and-finite-time-curvature-blowup-September-24-2026/paper.pdf)** — OpenAI, 2026-09-24 · *adjacent*  
-  Claims a counterexample in high dimension: a Ricci flow on a closed manifold whose scalar curvature stays bounded while its full curvature blows up in finite time, so the four-dimensional statement does not extend to every dimension (openai/math family 351).
+_Nothing queued._
 <!-- END:backlog -->

@@ -41,6 +41,10 @@
 
 - [Finite Time Blowup for Navier–Stokes](../papers/2026/09/navier-stokes-blowup/) (2026-09-08)
 
+## counterexample
+
+- [Bounded scalar curvature and smooth extension of four-dimensional Ricci flow](../papers/2026/09/ricci-flow-scalar-curvature-extension/) (2026-09-24)
+
 ## cubic-theta
 
 - [The Quasi-Riemann Hypothesis: a zero-free half-plane Re(s) > 7/8](../papers/2026/09/quasi-riemann-hypothesis/) (2026-09-30)
@@ -68,6 +72,10 @@
 ## forcing
 
 - [Finite Time Blowup for Navier–Stokes](../papers/2026/09/navier-stokes-blowup/) (2026-09-08)
+
+## four-manifolds
+
+- [Bounded scalar curvature and smooth extension of four-dimensional Ricci flow](../papers/2026/09/ricci-flow-scalar-curvature-extension/) (2026-09-24)
 
 ## generalized-shifts
 
@@ -182,6 +190,7 @@
 
 ## ricci-flow
 
+- [Bounded scalar curvature and smooth extension of four-dimensional Ricci flow](../papers/2026/09/ricci-flow-scalar-curvature-extension/) (2026-09-24)
 - [Perelman's Ricci flow papers: the proof of the Poincaré conjecture](../papers/2002/11/perelman-poincare/) (2002-11-11)
 
 ## riemann-zeta
@@ -191,6 +200,10 @@
 ## sat
 
 - [The Exponential Time Hypothesis is False](../papers/2026/10/eth-is-false/) (2026-10-25)
+
+## scalar-curvature
+
+- [Bounded scalar curvature and smooth extension of four-dimensional Ricci flow](../papers/2026/09/ricci-flow-scalar-curvature-extension/) (2026-09-24)
 
 ## self-similar
 
@@ -207,6 +220,10 @@
 ## sigma-model
 
 - [The canonical massive continuum limit of the two-dimensional O(3) model](../papers/2026/10/o3-sigma-model-continuum-limit/) (2026-10-04)
+
+## singularities
+
+- [Bounded scalar curvature and smooth extension of four-dimensional Ricci flow](../papers/2026/09/ricci-flow-scalar-curvature-extension/) (2026-09-24)
 
 ## singularity
 
