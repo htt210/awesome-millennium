@@ -75,10 +75,11 @@ def li(x: float) -> float:
     """Offset logarithmic integral from 2 to x (Simpson's rule)."""
     if x <= 2:
         return 0.0
+    # substitute t = e^u: the integrand e^u / u is smooth, so Simpson's rule is accurate up to x = 10^6
     n = 2000
-    t = np.linspace(2, x, n + 1)
-    f = 1 / np.log(t)
-    h = (x - 2) / n
+    u = np.linspace(math.log(2), math.log(x), n + 1)
+    f = np.exp(u) / u
+    h = (u[-1] - u[0]) / n
     return float(h / 3 * (f[0] + f[-1] + 4 * f[1:-1:2].sum() + 2 * f[2:-1:2].sum()))
 
 
