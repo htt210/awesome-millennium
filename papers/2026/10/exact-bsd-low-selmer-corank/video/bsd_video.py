@@ -427,7 +427,7 @@ class C3Formula(Video):
 
         self.narrate("3.5")
         l4 = txt("Sha: the Tate–Shafarevich group", 28, SHA).move_to(1.6 * DOWN)
-        self.play(f.num[2].animate.set_color(SHA).scale(1.2), FadeIn(l4))
+        self.play(f.num[2].animate.set_color(SHA), FadeIn(l4))
         self.play(Indicate(f.num[2], color=SHA))
         self.finish()
 
